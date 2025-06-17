@@ -1,0 +1,98 @@
+﻿<!-- File: projects/downhill-racers.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downhill Racers — Роман Абашин</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background: #111;
+            color: #eee;
+            font-family: 'Segoe UI',sans-serif;
+        }
+
+        a {
+            color: #0af;
+            text-decoration: none
+        }
+
+            a:hover {
+                text-decoration: underline
+            }
+
+        header {
+            background: #000;
+            padding: 1rem;
+            text-align: center
+        }
+
+            header a {
+                color: #ccc;
+                font-size: 0.9rem
+            }
+
+        .hero {
+            height: 250px;
+            background: #222 url('../images/downhill-hero.jpg') center/cover no-repeat
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem
+        }
+
+            .content h1 {
+                color: #0af;
+                margin-bottom: 1rem
+            }
+
+            .content p {
+                margin-bottom: 1rem;
+                color: #ccc
+            }
+
+            .content ul {
+                list-style: disc inside;
+                color: #ccc;
+                margin-bottom: 1.5rem
+            }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem
+        }
+
+            .screenshots img {
+                width: 100%;
+                border: 1px solid #333;
+                border-radius: 4px
+            }
+    </style>
+</head>
+<body>
+    <header><a href="../index.html">← Назад к портфолио</a></header>
+    <div class="hero"></div>
+    <div class="content">
+        <h1>Downhill Racers</h1>
+        <p><strong>Релиз:</strong> Яндекс.Геймс</p>
+        <ul>
+            <li><strong>Роль:</strong> Проектирование трасс и механики спуска</li>
+            <li><strong>Фича:</strong> Тюнинг машин, внутриигровые покупки, лидерборд</li>
+            <li><strong>Интеграция:</strong> SDK аналитики и рекламы</li>
+        </ul>
+        <div class="screenshots">
+            <img src="../images/down1.jpg" alt="Скриншот Downhill Racers 1">
+            <img src="../images/down2.jpg" alt="Скриншот Downhill Racers 2">
+        </div>
+    </div>
+</body>
+</html>

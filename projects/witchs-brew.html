@@ -1,0 +1,98 @@
+﻿<!-- File: projects/witchs-brew.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witch’s Brew — Роман Абашин</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background: #111;
+            color: #eee;
+            font-family: 'Segoe UI',sans-serif;
+        }
+
+        a {
+            color: #0af;
+            text-decoration: none
+        }
+
+            a:hover {
+                text-decoration: underline
+            }
+
+        header {
+            background: #000;
+            padding: 1rem;
+            text-align: center
+        }
+
+            header a {
+                color: #ccc;
+                font-size: 0.9rem
+            }
+
+        .hero {
+            height: 250px;
+            background: #222 url('../images/witchs-brew-hero.jpg') center/cover no-repeat
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem
+        }
+
+            .content h1 {
+                color: #0af;
+                margin-bottom: 1rem
+            }
+
+            .content p {
+                margin-bottom: 1rem;
+                color: #ccc
+            }
+
+            .content ul {
+                list-style: disc inside;
+                color: #ccc;
+                margin-bottom: 1.5rem
+            }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem
+        }
+
+            .screenshots img {
+                width: 100%;
+                border: 1px solid #333;
+                border-radius: 4px
+            }
+    </style>
+</head>
+<body>
+    <header><a href="../index.html">← Назад к портфолио</a></header>
+    <div class="hero"></div>
+    <div class="content">
+        <h1>Witch’s Brew</h1>
+        <p><em>В разработке</em></p>
+        <ul>
+            <li><strong>Роль:</strong> Гейм-дизайн и программирование ключевых механик</li>
+            <li><strong>Задачи:</strong> сбор урожая, варка зелий, система прогрессии</li>
+            <li><strong>Интеграция:</strong> SDK аналитики и рекламы</li>
+        </ul>
+        <div class="screenshots">
+            <img src="../images/witch1.jpg" alt="Скриншот Witch’s Brew 1">
+            <img src="../images/witch2.jpg" alt="Скриншот Witch’s Brew 2">
+        </div>
+    </div>
+</body>
+</html>
