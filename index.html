@@ -19,12 +19,12 @@
         }
 
         a {
-            color: #0af;
+            color: inherit;
             text-decoration: none;
         }
 
             a:hover {
-                text-decoration: underline;
+                text-decoration: none;
             }
 
         header {
@@ -81,15 +81,17 @@
             gap: 1.5rem;
         }
 
-        .project-tile {
+        a.project-tile {
+            display: block;
             background: #1a1a1a;
             border: 1px solid #222;
             border-radius: 0.5rem;
             overflow: hidden;
             transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
         }
 
-            .project-tile:hover {
+            a.project-tile:hover {
                 transform: translateY(-5px);
                 border-color: #0af;
             }
@@ -103,8 +105,9 @@
         }
 
             .project-thumb img {
-                max-width: 80px;
-                max-height: 80px;
+                width: 410px;
+                height: 210px;
+                object-fit: contain;
             }
 
         .project-info {
@@ -120,21 +123,7 @@
             .project-info p {
                 font-size: 0.9rem;
                 color: #ccc;
-                margin-bottom: 1rem;
             }
-
-            .project-info a.button {
-                display: inline-block;
-                padding: 0.5rem 1rem;
-                background: #0af;
-                color: #000;
-                border-radius: 0.3rem;
-                font-size: 0.9rem;
-            }
-
-                .project-info a.button:hover {
-                    background: #08c;
-                }
 
         .info-section {
             display: grid;
@@ -203,6 +192,7 @@
         <a href="https://t.me/MelomanerL" target="_blank">Telegram</a>
     </div>
 
+    <!-- Обо мне -->
     <section id="about">
         <h2>Обо мне</h2>
         <div class="info-section">
@@ -212,106 +202,98 @@
         </div>
     </section>
 
+    <!-- Ключевые проекты -->
     <section id="projects">
         <h2>Ключевые проекты</h2>
         <div class="project-grid">
-            <div class="project-tile">
+            <a href="projects/sexy-beaches.html" class="project-tile">
                 <div class="project-thumb"><img src="images/sexy-beaches-icon.jpg" alt="Icon Sexy Beaches"></div>
                 <div class="project-info">
                     <h3>Sexy Beaches</h3>
                     <p>Гейм-дизайнер (Сентябрь 2023 — настоящее время). Баланс игры, настройка конфигов, монетизационные механики, аналитика.</p>
-                    <a href="projects/sexy-beaches.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/magic-solution.html" class="project-tile">
                 <div class="project-thumb"><img src="images/magic-solution-icon.jpg" alt="Icon Magic Solution"></div>
                 <div class="project-info">
                     <h3>Magic Solution</h3>
                     <p>Лид гейм-дизайнер (Июнь 2023 — Январь 2024). Управление командой, разработка с 0 до релиза, документация.</p>
-                    <a href="projects/magic-solution.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/ayist-games.html" class="project-tile">
                 <div class="project-thumb"><img src="images/ayist-games-icon.jpg" alt="Icon Ayist Games"></div>
                 <div class="project-info">
                     <h3>Ayist Games</h3>
                     <p>Технический гейм-дизайнер (Янв. 2021 — Июнь 2023). Разработка движка новелл, аналитика DevToDev, скриптинг INK.</p>
-                    <a href="projects/ayist-games.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/another-world.html" class="project-tile">
                 <div class="project-thumb"><img src="images/another-world-icon.jpg" alt="Icon Another World"></div>
                 <div class="project-info">
                     <h3>Another World</h3>
                     <p>Технический гейм-дизайнер (Июнь 2019 — Апр. 2020). Создание LBE VR игры, баланс AI и оружия, техническая документация.</p>
-                    <a href="projects/another-world.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/tetris-puzzle.html" class="project-tile">
                 <div class="project-thumb"><img src="images/tetris-puzzle-icon.jpg" alt="Icon Tetris Puzzle"></div>
                 <div class="project-info">
                     <h3>Tetris Puzzle</h3>
                     <p>Соло-разработка проекта с 0 до релиза. Полный цикл разработки и публикация.</p>
-                    <a href="projects/tetris-puzzle.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/crossword-puzzle.html" class="project-tile">
                 <div class="project-thumb"><img src="images/crossword-puzzle-icon.jpg" alt="Icon Crossword Puzzle"></div>
                 <div class="project-info">
                     <h3>Crossword Puzzle</h3>
                     <p>Соло-разработка проекта из исходника до релиза. Гейм-дизайн и баланс.</p>
-                    <a href="projects/crossword-puzzle.html" class="button">Подробнее</a>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
+    <!-- Личные проекты -->
     <section id="personal-projects">
         <h2>Личные проекты</h2>
         <div class="project-grid">
-            <div class="project-tile">
+            <a href="projects/witchs-brew.html" class="project-tile">
                 <div class="project-thumb"><img src="images/witchs-brew-icon.jpg" alt="Icon Witch’s Brew"></div>
                 <div class="project-info">
                     <h3>Witch’s Brew</h3>
                     <p>В разработке. Продумал механики сбора урожая и варки зелий; проектировал систему прогрессии; интегрировал SDK аналитики и рекламы.</p>
-                    <a href="projects/witchs-brew.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/hide-seek.html" class="project-tile">
                 <div class="project-thumb"><img src="images/hide-seek-icon.jpg" alt="Icon Hide & Seek"></div>
                 <div class="project-info">
                     <h3>Hide &amp; Seek (Roblox)</h3>
                     <p>В разработке. Создал механику пряток и ИИ-ботов для ролей «искатель» и «прячущийся»; интегрировал SDK аналитики и рекламы.</p>
-                    <a href="projects/hide-seek.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/horror-mita.html" class="project-tile">
                 <div class="project-thumb"><img src="images/horror-mita-icon.jpg" alt="Icon Horror Mita"></div>
                 <div class="project-info">
                     <h3>Horror Mita</h3>
                     <p>Релиз на Яндекс.Геймс. Разработал механику побега и поиска ключей; создал систему лидерборда; интегрировал SDK аналитики и рекламы.</p>
-                    <a href="projects/horror-mita.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/downhill-racers.html" class="project-tile">
                 <div class="project-thumb"><img src="images/downhill-racers-icon.jpg" alt="Icon Downhill Racers"></div>
                 <div class="project-info">
                     <h3>Downhill Racers</h3>
                     <p>Релиз на Яндекс.Геймс. Проектировал механику спуска, тюнинг машин и систему внутриигровых покупок; интегрировал SDK аналитики и рекламы.</p>
-                    <a href="projects/downhill-racers.html" class="button">Подробнее</a>
                 </div>
-            </div>
-            <div class="project-tile">
+            </a>
+            <a href="projects/river-quest.html" class="project-tile">
                 <div class="project-thumb"><img src="images/river-quest-icon.jpg" alt="Icon River Quest"></div>
                 <div class="project-info">
                     <h3>River Quest</h3>
                     <p>В разработке. Разработал механику путешествия по реке с боями против монстров; реализовал систему выживания; интегрировал SDK аналитики и рекламы.</p>
-                    <a href="projects/river-quest.html" class="button">Подробнее</a>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
+    <!-- Навыки и Дополнительные проекты -->
     <section id="info">
         <h2>Навыки и Дополнительные проекты</h2>
         <div class="info-section">
