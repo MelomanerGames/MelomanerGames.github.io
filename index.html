@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Роман Абашин — Game Designer & Developer</title>
+  <style>
+    /* Сброс и базовые стили */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: #0af; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      background: #000;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #0af;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    /* Контактные данные под шапкой */
+    .contact-short {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+    .contact-short p, .contact-short a { display: inline-block; margin: 0 0.5rem; color: #aaa; font-size: 0.9rem; }
+    .contact-short a:hover { color: #0af; }
+
+    /* Секция "Обо мне" */
+    #about {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    #about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0af;
+    }
+    #about p { font-size: 1rem; color: #ccc; }
+
+    /* Сетка проектов */
+    #projects {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    #projects h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #0af;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-tile {
+      background: #1a1a1a;
+      border: 1px solid #222;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .project-tile:hover {
+      transform: translateY(-5px);
+      border-color: #0af;
+    }
+    .project-thumb {
+      width: 100%;
+      height: 160px;
+      background: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .project-info {
+      padding: 1rem;
+    }
+    .project-info h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: #eee;
+    }
+    .project-info p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    .project-info a.button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #0af;
+      color: #000;
+      border-radius: 0.3rem;
+      font-size: 0.9rem;
+    }
+    .project-info a.button:hover { background: #08c; }
+
+    /* Footer / Контакты */
+    footer {
+      background: #000;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    footer a { margin: 0 0.5rem; color: #aaa; font-size: 0.9rem; }
+    footer a:hover { color: #0af; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Роман Абашин</h1>
+    <p>Game Designer & Developer — разрабатываю игры с нуля и веду готовые проекты</p>
+  </header>
+
+  <div class="contact-short">
+    <p>(+7) (985) 215-28-80</p>
+    <a href="mailto:melomanergames@gmail.com">melomanergames@gmail.com</a>
+    <a href="https://www.linkedin.com/in/melomanergames/" target="_blank">LinkedIn</a>
+    <a href="https://t.me/MelomanerL" target="_blank">Telegram</a>
+  </div>
+
+  <section id="about">
+    <h2>Обо мне</h2>
+    <p>Я технический гейм-дизайнер с опытом более 4 лет в индустрии игр. Специализируюсь на LBE VR, визуальных новеллах, ГПК и мидкор-проектах. Работаю с Unity и Unreal Engine 4, провожу аналитику поведения пользователей с помощью DevToDev и разрабатываю монетизационные механики.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Ключевые проекты и опыт</h2>
+    <div class="project-grid">
+      <div class="project-tile">
+        <div class="project-thumb">Sexy Beaches</div>
+        <div class="project-info">
+          <h3>Sexy Beaches</h3>
+          <p>Гейм-дизайнер (Сентябрь 2023 — настоящее время). Баланс игры, настройка конфигов, монетизационные механики, аналитика.</p>
+          <a href="projects/sexy-beaches.html" class="button">Подробнее</a>
+        </div>
+      </div>
+      <div class="project-tile">
+        <div class="project-thumb">Magic Solution</div>
+        <div class="project-info">
+          <h3>Magic Solution</h3>
+          <p>Лид гейм-дизайнер (Июнь 2023 — Январь 2024). Управление командой, разработка с 0 до релиза, документация.</p>
+          <a href="projects/magic-solution.html" class="button">Подробнее</a>
+        </div>
+      </div>
+      <div class="project-tile">
+        <div class="project-thumb">Ayist Games</div>
+        <div class="project-info">
+          <h3>Ayist Games</h3>
+          <p>Технический гейм-дизайнер (Янв. 2021 — Июнь 2023). Разработка движка новелл, аналитика DevToDev, скриптинг INK.</p>
+          <a href="projects/ayist-games.html" class="button">Подробнее</a>
+        </div>
+      </div>
+      <div class="project-tile">
+        <div class="project-thumb">Another World</div>
+        <div class="project-info">
+          <h3>Another World</h3>
+          <p>Технический гейм-дизайнер (Июнь 2019 — Апр. 2020). Создание LBE VR игры, баланс AI и оружия, техническая документация.</p>
+          <a href="projects/another-world.html" class="button">Подробнее</a>
+        </div>
+      </div>
+      <div class="project-tile">
+        <div class="project-thumb">Tetris Puzzle</div>
+        <div class="project-info">
+          <h3>Tetris Puzzle</h3>
+          <p>Соло-разработка проекта с 0 до релиза. Полный цикл разработки и публикация.</p>
+          <a href="projects/tetris-puzzle.html" class="button">Подробнее</a>
+        </div>
+      </div>
+      <div class="project-tile">
+        <div class="project-thumb">Crossword Puzzle</div>
+        <div class="project-info">
+          <h3>Crossword Puzzle</h3>
+          <p>Соло-разработка проекта из исходника до релиза. Гейм-дизайн и баланс.</p>
+          <a href="projects/crossword-puzzle.html" class="button">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Навыки: Unity, Unreal Engine, Blueprint, аналитика, баланс, управление командой</p>
+    <p>Дополнительные проекты: Game Dev Club, Pocket Survivor AI, Puzzle в Steam</p>
+    <a href="https://github.com/MelomanerGames" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/melomanergames/" target="_blank">LinkedIn</a>
+    <a href="mailto:melomanergames@gmail.com">Email</a>
+  </footer>
+</body>
+</html>
