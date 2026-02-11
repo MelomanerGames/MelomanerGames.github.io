@@ -122,6 +122,120 @@
             gap: 1.5rem;
         }
 
+        .about-summary {
+            color: #d0dae2;
+            margin-bottom: 1rem;
+        }
+
+        .about-blocks {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(160px, 220px));
+            justify-content: center;
+            gap: 0.85rem;
+            max-width: 940px;
+            margin: 0 auto;
+        }
+
+        .about-block {
+            background: #141414;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            padding: 0.72rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .about-label {
+            display: inline-block;
+            width: fit-content;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            border-radius: 999px;
+            padding: 0.14rem 0.46rem;
+            margin-bottom: 0.42rem;
+        }
+
+        .about-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.34rem;
+            align-content: flex-start;
+        }
+
+        .about-chip {
+            display: inline-block;
+            font-size: 0.73rem;
+            font-weight: 600;
+            border-radius: 999px;
+            padding: 0.2rem 0.5rem;
+            border: 1px solid transparent;
+            line-height: 1.25;
+        }
+
+        .about-block.roles .about-label {
+            background: #1a2636;
+            color: #9dd8ff;
+            border: 1px solid #2a4766;
+        }
+
+        .about-chip.role {
+            background: #11263a;
+            border-color: #2e587f;
+            color: #a8deff;
+        }
+
+        .about-block.platforms .about-label {
+            background: #1f2a19;
+            color: #b3e591;
+            border: 1px solid #3e6530;
+        }
+
+        .about-chip.platform {
+            background: #172615;
+            border-color: #3f6f34;
+            color: #c0f3a0;
+        }
+
+        .about-block.tasks .about-label {
+            background: #2e1f14;
+            color: #ffcb95;
+            border: 1px solid #6b4428;
+        }
+
+        .about-chip.task {
+            background: #2a1b12;
+            border-color: #744c2f;
+            color: #ffd4a8;
+        }
+
+        .about-block.tools .about-label {
+            background: #2a1b32;
+            color: #e3b8ff;
+            border: 1px solid #654178;
+        }
+
+        .about-chip.tool {
+            background: #24182b;
+            border-color: #6e4a82;
+            color: #e9c4ff;
+        }
+
+        @media (max-width: 900px) {
+            .about-blocks {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .about-blocks {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .project-tile {
             display: block;
             background: #1a1a1a;
@@ -334,6 +448,16 @@
             color: #0af;
         }
 
+            .info-box strong a {
+                color: inherit;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+            }
+
+            .info-box strong a:hover {
+                color: #fff;
+            }
+
         .info-box ul.external-links {
             list-style: none;
             padding-left: 0;
@@ -394,7 +518,58 @@
         <h2>Обо мне</h2>
         <div class="info-section">
             <div class="info-box">
-                <p>Я технический <strong>гейм-дизайнер</strong> и <strong>программист</strong> с более чем 4-летним опытом в игровой индустрии. В роли <strong>лида</strong> управлял командами до 6 человек, отвечая за разработку <strong>VR-проектов</strong>, <strong>визуальных новелл</strong> и <strong>mid-core</strong>-игр. Спроектировал и реализовал <strong>монетизационные механики</strong>, интегрировал <strong>SDK аналитики</strong> и <strong>рекламы</strong>, а также проводил глубокий анализ поведения игроков с помощью <strong>DevToDev</strong> и <strong>SQL</strong>. Экспертиза в <strong>Unity</strong> (C#, Blueprint) и <strong>Unreal Engine 4</strong>.</p>
+                <p>Я <strong>Game Designer</strong>, <strong>Developer</strong> и <strong>Project Manager</strong> с опытом полного цикла: от идеи и прототипа до релиза и пострелизной аналитики. Работал с mobile, web, VR/LBE VR и online-проектами, в том числе в ролях продюсера, QA и аналитика. Отвечал за баланс, монетизацию, A/B тесты, настройку рекламных показов и сохранений, а также за проектирование и настройку серверной части. В работе опираюсь на структурные процессы и метрики продукта.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-profile">
+        <h2>Компетенции</h2>
+        <div class="about-blocks">
+            <div class="about-block roles">
+                <span class="about-label">Роли в проектах</span>
+                <div class="about-items">
+                    <span class="about-chip role">Game Designer</span>
+                    <span class="about-chip role">Developer</span>
+                    <span class="about-chip role">Project Manager</span>
+                    <span class="about-chip role">Producer</span>
+                    <span class="about-chip role">QA</span>
+                    <span class="about-chip role">Analyst</span>
+                </div>
+            </div>
+            <div class="about-block platforms">
+                <span class="about-label">Платформы</span>
+                <div class="about-items">
+                    <span class="about-chip platform">Mobile</span>
+                    <span class="about-chip platform">Web</span>
+                    <span class="about-chip platform">VR / LBE VR</span>
+                    <span class="about-chip platform">Online Multiplayer</span>
+                    <span class="about-chip platform">Narrative Games</span>
+                </div>
+            </div>
+            <div class="about-block tasks">
+                <span class="about-label">Задачи</span>
+                <div class="about-items">
+                    <span class="about-chip task">Баланс и прогрессия</span>
+                    <span class="about-chip task">Монетизация</span>
+                    <span class="about-chip task">A/B тесты</span>
+                    <span class="about-chip task">Настройка рекламы</span>
+                    <span class="about-chip task">Настройка сохранений</span>
+                    <span class="about-chip task">Adaptive/Responsive UI</span>
+                    <span class="about-chip task">Проектирование сервера</span>
+                    <span class="about-chip task">Спринты и релизы</span>
+                </div>
+            </div>
+            <div class="about-block tools">
+                <span class="about-label">Инструменты</span>
+                <div class="about-items">
+                    <span class="about-chip tool">Unity (C#)</span>
+                    <span class="about-chip tool">Canvas / Ink</span>
+                    <span class="about-chip tool">SQL / DevToDev</span>
+                    <span class="about-chip tool">Firebase / AppMetrica</span>
+                    <span class="about-chip tool">Jira / FigJam</span>
+                    <span class="about-chip tool">Git / Plastic SCM</span>
+                </div>
             </div>
         </div>
     </section>
@@ -598,22 +773,25 @@
             <div class="info-box">
                 <h3>Навыки</h3>
                 <ul>
-                    <li><strong>C#, Blueprint</strong> — Unity и Unreal Engine</li>
-                    <li><strong>Баланс и проектирование</strong> геймплей-механик</li>
-                    <li><strong>VR</strong> и <strong>LBE VR</strong> разработка</li>
-                    <li><strong>Скриптинг INK</strong> для визуальных новелл</li>
-                    <li><strong>Монетизация</strong> и внутриигровые стратегии</li>
-                    <li><strong>Аналитика</strong> (DevToDev, SQL)</li>
-                    <li><strong>SDK аналитики и рекламы</strong> интеграция</li>
-                    <li><strong>Управление и обучение</strong> команды</li>
+                    <li><strong>Гейм-дизайн:</strong> core-loop, баланс, прогрессия и монетизация</li>
+                    <li><strong>Продакшен:</strong> спринты, релизное планирование, декомпозиция задач (Jira)</li>
+                    <li><strong>Аналитика:</strong> SQL, DevToDev, Firebase, AppMetrica, A/B тесты</li>
+                    <li><strong>QA:</strong> функциональное и регрессионное тестирование, предрелизная валидация</li>
+                    <li><strong>Разработка:</strong> Unity (C#), визуальный скриптинг (Canvas/Blueprint), Ink</li>
+                    <li><strong>UI/UX:</strong> Adaptive/Responsive UI под разные разрешения и соотношения сторон</li>
+                    <li><strong>Онлайн-системы:</strong> проектирование и настройка серверной части</li>
+                    <li><strong>Интеграции:</strong> SDK аналитики/рекламы, настройки сохранений и рекламных показов</li>
+                    <li><strong>Version Control:</strong> Git, Plastic SCM (merge и командные процессы)</li>
+                    <li><strong>Документация:</strong> FigJam, Google Docs/Sheets, ТЗ и продуктовые спецификации</li>
+                    <li><strong>Лидерство:</strong> координация кросс-функциональной команды и менторство</li>
                 </ul>
             </div>
             <div class="info-box">
                 <h3>Дополнительные проекты</h3>
                 <ul>
-                    <li><strong>Game Dev Club</strong> — наставник и ведущий мастер-классов по аналитике, балансу и продуктовым решениям</li>
-                    <li><strong>Pocket Survivor AI</strong> — консультации по балансу, прогрессии и удержанию</li>
-                    <li><strong>Puzzle в Steam</strong> — гейм-дизайн и UX-консультации на этапе проработки механик</li>
+                    <li><strong><a href="https://t.me/gamedev_club1" target="_blank" rel="noopener noreferrer">Game Dev Club</a></strong> — наставник и ведущий мастер-классов по аналитике, балансу и продуктовым решениям</li>
+                    <li><strong><a href="https://play.google.com/store/apps/details?id=com.gardenofdreams.pocketsurvivorai" target="_blank" rel="noopener noreferrer">Pocket Survivor AI</a></strong> — консультации по балансу, прогрессии и удержанию</li>
+                    <li><strong><a href="https://store.steampowered.com/app/1825110/Castle_of_Secrets/" target="_blank" rel="noopener noreferrer">Castle of Secrets</a></strong> — гейм-дизайн и UX-консультации на этапе проработки механик</li>
                     <li><strong>Командное менторство</strong> — ревью ТЗ, декомпозиция задач и помощь junior/middle гейм-дизайнерам</li>
                     <li><strong>Прототипы на Unity</strong> — быстрые MVP для проверки механик и монетизационных гипотез</li>
                 </ul>
