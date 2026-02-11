@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8" />
@@ -87,6 +87,35 @@
                 color: #0af;
             }
 
+        .section-note {
+            text-align: center;
+            color: #aab7c2;
+            font-size: 0.95rem;
+            margin: -0.65rem auto 1.35rem;
+            max-width: 760px;
+        }
+
+        .project-group {
+            margin-bottom: 2rem;
+        }
+
+            .project-group:last-child {
+                margin-bottom: 0;
+            }
+
+        .project-group-title {
+            margin: 0 0 0.85rem;
+            font-size: 1.2rem;
+            color: #9ddcff;
+            letter-spacing: 0.01em;
+        }
+
+        .project-group-note {
+            margin: -0.4rem 0 0.9rem;
+            color: #99a8b5;
+            font-size: 0.88rem;
+        }
+
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -135,6 +164,136 @@
             .project-info p {
                 font-size: 0.9rem;
                 color: #ccc;
+            }
+
+            .project-info .project-date {
+                display: inline-block;
+                margin-bottom: 0.45rem;
+                padding: 0.18rem 0.55rem;
+                border: 1px solid #24495c;
+                border-radius: 999px;
+                background: #122330;
+                color: #9ddcff;
+                font-size: 0.78rem;
+                font-weight: 600;
+                line-height: 1.2;
+            }
+
+            .project-info .project-date + p {
+                margin-top: 0.15rem;
+            }
+
+        .project-actions {
+            margin-top: 0.85rem;
+            display: flex;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 0.34rem 0.72rem;
+            line-height: 1.25;
+            transition: transform 0.2s, box-shadow 0.2s, filter 0.2s, border-color 0.2s;
+        }
+
+            .project-btn:hover {
+                transform: translateY(-1px);
+                text-decoration: none;
+            }
+
+        .project-tile-link:focus-visible {
+            outline: 2px solid #0af;
+            outline-offset: 2px;
+        }
+
+        .project-btn.secondary {
+            color: #d8f3ff;
+            border: 1px solid #2e5268;
+            background: #162733;
+        }
+
+            .project-btn.secondary:hover {
+                filter: brightness(1.08);
+                border-color: #3f7291;
+            }
+
+        .project-btn.itch {
+            color: #1b1106;
+            border: 1px solid #ffc36a;
+            background: linear-gradient(135deg, #ffda85 0%, #ffbf54 58%, #f6a73f 100%);
+            box-shadow: 0 6px 18px rgba(246, 167, 63, 0.28);
+        }
+
+            .project-btn.itch:hover {
+                filter: brightness(1.05);
+                box-shadow: 0 8px 22px rgba(246, 167, 63, 0.38);
+            }
+
+        .timeline {
+            max-width: 980px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 1.75rem;
+        }
+
+            .timeline::before {
+                content: "";
+                position: absolute;
+                left: 0.55rem;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: linear-gradient(180deg, #0af 0%, #1f2e3a 100%);
+            }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1rem;
+            padding-left: 0.9rem;
+        }
+
+            .timeline-item:last-child {
+                margin-bottom: 0;
+            }
+
+        .timeline-dot {
+            position: absolute;
+            left: -1.34rem;
+            top: 0.72rem;
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 999px;
+            background: #0af;
+            box-shadow: 0 0 0 4px rgba(10, 170, 255, 0.15);
+        }
+
+        .timeline-card {
+            background: #1a1a1a;
+            border: 1px solid #242424;
+            border-radius: 0.5rem;
+            padding: 0.85rem 1rem;
+        }
+
+            .timeline-card h3 {
+                color: #eee;
+                font-size: 1.1rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .timeline-card .timeline-date {
+                color: #9ddcff;
+                font-size: 0.8rem;
+                font-weight: 700;
+                margin-bottom: 0.3rem;
+            }
+
+            .timeline-card p {
+                color: #c9d2d9;
+                font-size: 0.9rem;
             }
 
         .info-section {
@@ -227,6 +386,7 @@
         <a href="mailto:melomanergames@gmail.com">melomanergames@gmail.com</a>
         <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer">Блог команды</a>
     </div>
 
     <!-- Обо мне -->
@@ -244,82 +404,190 @@
         <h2>Ключевые проекты</h2>
         <div class="project-grid">
             <a href="projects/uga-dooga.html" class="project-tile">
-                <div class="project-thumb"><img src="images/uga-dooga.jpg" alt="Icon Uga Dooga"></div>
+                <div class="project-thumb"><img src="images/UgaDooga/uga-dooga.jpg" alt="Icon Uga Dooga"></div>
                 <div class="project-info">
                     <h3>Uga Dooga</h3>
-                    <p>Project Manager / Producer, QA, Analyst, Game Designer (Июль 2024 — настоящее время). Спринты и релизы, A/B тесты, аналитика (SQL/Firebase/AppMetrica), баланс и монетизация.</p>
+                    <p class="project-date">Июль 2024 — настоящее время</p>
+                    <p>Project Manager / Producer, QA, Analyst, Game Designer. Спринты, релизы, A/B тесты, аналитика и монетизация.</p>
                 </div>
             </a>
             <a href="projects/sexy-beaches.html" class="project-tile">
-                <div class="project-thumb"><img src="images/sexy-beaches-icon.jpg" alt="Icon Sexy Beaches"></div>
+                <div class="project-thumb"><img src="images/sexy-beaches/sexy-beaches-icon.jpg" alt="Icon Sexy Beaches"></div>
                 <div class="project-info">
                     <h3>Sexy Beaches (18+)</h3>
-                    <p>Game Designer (Сентябрь 2023 — Май 2024). 18+ Web Idle-игра на Nutaku: баланс экономики, настройка конфигов, монетизация и пострелизная аналитика.</p>
+                    <p class="project-date">Сентябрь 2023 — Май 2024</p>
+                    <p>Game Designer. 18+ Web Idle-игра на Nutaku: баланс экономики, конфиги, монетизация и пострелизная аналитика.</p>
                 </div>
             </a>
             <a href="projects/magic-solution.html" class="project-tile">
-                <div class="project-thumb"><img src="images/magic-solution-icon.jpg" alt="Icon Magic Solution"></div>
+                <div class="project-thumb"><img src="images/magic-solution/magic-solution-icon.jpg" alt="Icon Magic Solution"></div>
                 <div class="project-info">
                     <h3>Magic Solution</h3>
-                    <p>Лид гейм-дизайнер (Июнь 2023 — Январь 2024). AI Chat и Brain Training: команда 6 человек, проекты с 0 до релиза, скрипты и документация.</p>
+                    <p class="project-date">Июнь 2023 — Январь 2024</p>
+                    <p>Лид гейм-дизайнер. AI Chat и Brain Training: команда 6 человек, проекты с 0 до релиза, скрипты и документация.</p>
                 </div>
             </a>
             <a href="projects/ayist-games.html" class="project-tile">
-                <div class="project-thumb"><img src="images/ayist-games-icon.jpg" alt="Icon Ayist Games"></div>
+                <div class="project-thumb"><img src="images/ayist-games/ayist-games-icon.jpg" alt="Icon Ayist Games"></div>
                 <div class="project-info">
                     <h3>Ayist Games</h3>
-                    <p>Технический гейм-дизайнер (Янв. 2021 — Июнь 2023). Novels и DreamChat: постановка задач командам, монетизация, DevToDev/SQL, Git и скриптинг глав в Unity/Ink.</p>
+                    <p class="project-date">Янв. 2021 — Июнь 2023</p>
+                    <p>Технический гейм-дизайнер. Novels и DreamChat: постановка задач, монетизация, DevToDev/SQL, Git и скриптинг в Unity/Ink.</p>
                 </div>
             </a>
             <a href="projects/another-world.html" class="project-tile">
-                <div class="project-thumb"><img src="images/another-world-icon.jpg" alt="Icon Another World"></div>
+                <div class="project-thumb"><img src="images/another-world/another-world-icon.jpg" alt="Icon Another World"></div>
                 <div class="project-info">
                     <h3>Another World</h3>
-                    <p>Технический гейм-дизайнер (Июнь 2019 — Апр. 2020). LBE VR на Unity: Canvas, настройка AI/оружия, поддержка релизной версии, Plastic и техдокументация.</p>
+                    <p class="project-date">Июнь 2019 — Апр. 2020</p>
+                    <p>Технический гейм-дизайнер. LBE VR на Unity: Canvas, настройка AI/оружия, Plastic и техдокументация.</p>
                 </div>
             </a>
+        </div>
+    </section>
+
+    <!-- Career Timeline -->
+    <section id="timeline">
+        <h2>Таймлайн проектов</h2>
+        <div class="timeline">
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Июль 2024 — настоящее время</p>
+                    <h3>Uga Dooga</h3>
+                    <p>Project Manager / Producer, QA, Analyst, Game Designer</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Сентябрь 2023 — Май 2024</p>
+                    <h3>Sexy Beaches</h3>
+                    <p>Game Designer, 18+ Web Idle, Nutaku</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Июнь 2023 — Январь 2024</p>
+                    <h3>Magic Solution</h3>
+                    <p>Lead Game Designer, AI Chat Рё Brain Training</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Янв. 2021 — Июнь 2023</p>
+                    <h3>Ayist Games</h3>
+                    <p>Technical Game Designer, Novels Рё DreamChat</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Июнь 2019 — Апр. 2020</p>
+                    <h3>Another World</h3>
+                    <p>Technical Game Designer, LBE VR на Unity</p>
+                </div>
+            </article>
         </div>
     </section>
 
     <!-- Личные проекты -->
     <section id="personal-projects">
         <h2>Личные проекты</h2>
-        <div class="project-grid">
-            <a href="projects/river-quest.html" class="project-tile">
-                <div class="project-thumb"><img src="images/river-quest-icon.jpg" alt="Icon River Quest"></div>
-                <div class="project-info">
-                    <h3>River Quest</h3>
-                    <p>В разработке. Разработал механику путешествия по реке с боями против монстров; реализовал систему выживания; интегрировал SDK аналитики и рекламы.</p>
-                </div>
-            </a>
-            <a href="projects/witchs-brew.html" class="project-tile">
-                <div class="project-thumb"><img src="images/witchs-brew-icon.jpg" alt="Icon Witch’s Brew"></div>
-                <div class="project-info">
-                    <h3>Witch’s Brew</h3>
-                    <p>В разработке. Продумал механики сбора урожая и варки зелий; проектировал систему прогрессии; интегрировал SDK аналитики и рекламы.</p>
-                </div>
-            </a>
-            <a href="projects/hide-seek.html" class="project-tile">
-                <div class="project-thumb"><img src="images/hide-seek-icon.jpg" alt="Icon Hide & Seek"></div>
-                <div class="project-info">
-                    <h3>Hide &amp; Seek (Roblox)</h3>
-                    <p>В разработке. Создал механику пряток и ИИ-ботов для ролей «искатель» и «прячущийся»; интегрировал SDK аналитики и рекламы.</p>
-                </div>
-            </a>
-            <a href="projects/horror-mita.html" class="project-tile">
-                <div class="project-thumb"><img src="images/horror-mita-icon.jpg" alt="Icon Horror Mita"></div>
-                <div class="project-info">
-                    <h3>Horror Mita</h3>
-                    <p>Релиз на Яндекс.Геймс. Разработал механику побега и поиска ключей; создал систему лидерборда; интегрировал SDK аналитики и рекламы.</p>
-                </div>
-            </a>
-            <a href="projects/downhill-racers.html" class="project-tile">
-                <div class="project-thumb"><img src="images/downhill-racers-icon.jpg" alt="Icon Downhill Racers"></div>
-                <div class="project-info">
-                    <h3>Downhill Racers</h3>
-                    <p>Релиз на Яндекс.Геймс. Проектировал механику спуска, тюнинг машин и систему внутриигровых покупок; интегрировал SDK аналитики и рекламы.</p>
-                </div>
-            </a>
+        <p class="section-note">Эти проекты мы делали в команде «Игродельня».</p>
+        <div class="project-group">
+            <h3 class="project-group-title">В релизе</h3>
+            <div class="project-grid">
+                <a href="projects/river-quest.html" class="project-tile">
+                    <div class="project-thumb"><img src="images/DeadRiver/DeadRiver_icon.jpg" alt="Icon Obby & Dead River"></div>
+                    <div class="project-info">
+                        <h3>Обби и Река Смерти (Obby &amp; Dead River)</h3>
+                        <p>Доступен в релизе на Яндекс Играх и CrazyGames. 3D-приключение от первого лица в стиле Roblox: река смерти, замки, бои, лут и финальный босс.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="project-group">
+            <h3 class="project-group-title">Были в релизе, но сняты</h3>
+            <div class="project-grid">
+                <a href="projects/horror-mita.html" class="project-tile">
+                    <div class="project-thumb"><img src="images/horror-mita/horror-mita-icon.jpg" alt="Icon Horror Mita"></div>
+                    <div class="project-info">
+                        <h3>Horror Mita</h3>
+                        <p>Ранее была в релизе на Яндекс.Геймс. Хоррор-проект с механикой побега, поиском ключей и системой лидерборда.</p>
+                    </div>
+                </a>
+                <a href="projects/downhill-racers.html" class="project-tile">
+                    <div class="project-thumb"><img src="images/downhill-racers/downhill-racers-icon.jpg" alt="Icon Downhill Racers"></div>
+                    <div class="project-info">
+                        <h3>Downhill Racers</h3>
+                        <p>Ранее была в релизе на Яндекс.Геймс. Аркадные гонки со спуском, тюнингом машин и внутриигровой экономикой.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="project-group">
+            <h3 class="project-group-title">Игры в разработке</h3>
+            <div class="project-grid">
+                <a href="projects/zoo-online.html" class="project-tile">
+                    <div class="project-thumb"><img src="images/ZooOnline/ZooOnline_Icon.png" alt="Icon Zoo Online"></div>
+                    <div class="project-info">
+                        <h3>Zoo Online</h3>
+                        <p>Новый онлайн-проект: выращивание животных, развитие своего зоопарка и встречи с другими игроками и их зоопарками.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="project-group">
+            <h3 class="project-group-title">Игры на джемы</h3>
+            <p class="project-group-note">Во всех jam-проектах выступал как программист и гейм-дизайнер.</p>
+            <div class="project-grid">
+                <article class="project-tile project-tile-link" data-project-url="projects/mind-alchemy.html" role="link" tabindex="0" aria-label="Mind Alchemy">
+                    <div class="project-thumb"><img src="images/Mind-alchemy/Mind-alchemy_Icon.png" alt="Icon Mind Alchemy"></div>
+                    <div class="project-info">
+                        <h3>Mind Alchemy</h3>
+                        <p>Джемовый проект с фокусом на экспериментальные механики, темп прохождения и выразительную визуальную подачу.</p>
+                        <div class="project-actions">
+                            <a href="https://melomanergames.itch.io/mind-alchemy" class="project-btn itch" target="_blank" rel="noopener noreferrer">Играть на Itch</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-tile project-tile-link" data-project-url="projects/cursed-labyrinth.html" role="link" tabindex="0" aria-label="Cursed Labyrinth">
+                    <div class="project-thumb"><img src="images/Cursed Labyrinth/CursedLabyrinth_Icon.png" alt="Icon Cursed Labyrinth"></div>
+                    <div class="project-info">
+                        <h3>Cursed Labyrinth</h3>
+                        <p>Джемовый прототип атмосферного приключения с упором на исследование локаций, риск и принятие решений под давлением.</p>
+                        <div class="project-actions">
+                            <a href="https://melomanergames.itch.io/for-ld58" class="project-btn itch" target="_blank" rel="noopener noreferrer">Играть на Itch</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="project-group">
+            <h3 class="project-group-title">Отложенные игры</h3>
+            <div class="project-grid">
+                <a href="projects/hide-seek.html" class="project-tile">
+                    <div class="project-thumb"><img src="images/hide-seek/hide-seek-icon.jpg" alt="Icon Hide & Seek"></div>
+                    <div class="project-info">
+                        <h3>Hide &amp; Seek (Roblox)</h3>
+                        <p>Проект поставлен на паузу. PvP-формат пряток с ролями «искатель/прячущийся» и ИИ-поведением для динамичных раундов.</p>
+                    </div>
+                </a>
+                <a href="projects/witchs-brew.html" class="project-tile">
+                    <div class="project-thumb"><img src="images/witchs-brew/witchs-brew-icon.jpg" alt="Icon Witch's Brew"></div>
+                    <div class="project-info">
+                        <h3>Witch's Brew</h3>
+                        <p>Проект поставлен на паузу. Система варки зелий, сбор ресурсов и цикл прогрессии вокруг магической фермы.</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -358,6 +626,35 @@
         <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:melomanergames@gmail.com">Email</a>
     </footer>
+    <script>
+        (() => {
+            const tiles = document.querySelectorAll('.project-tile-link[data-project-url]');
+            if (!tiles.length) return;
+
+            tiles.forEach((tile) => {
+                const url = tile.getAttribute('data-project-url');
+                if (!url) return;
+
+                const goToProject = () => {
+                    window.location.href = url;
+                };
+
+                tile.addEventListener('click', (event) => {
+                    if (event.target.closest('a, button')) return;
+                    goToProject();
+                });
+
+                tile.addEventListener('keydown', (event) => {
+                    if (event.target.closest('a, button')) return;
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        goToProject();
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
+
 

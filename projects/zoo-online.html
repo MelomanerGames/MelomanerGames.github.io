@@ -1,29 +1,26 @@
-﻿﻿<!-- File: projects/ayist-games.html -->
+﻿<!-- File: projects/zoo-online.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayist Games — Роман Абашин</title>
+    <title>Zoo Online — Роман Абашин</title>
     <style>
-        /* одинаковый стиль */
-
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         body {
             background: #111;
             color: #eee;
             font-family: 'Segoe UI',sans-serif;
-            line-height: 1.6;
         }
 
         a {
             color: #0af;
-            text-decoration: none;
+            text-decoration: none
         }
 
             a:hover {
@@ -33,7 +30,7 @@
         header {
             background: #000;
             padding: 1rem;
-            text-align: center;
+            text-align: center
         }
 
             header a {
@@ -58,67 +55,31 @@
                 text-decoration: none;
             }
 
-.hero {
-            height: 300px;
-            background: url('../images/ayist-games/ayist-games-icon.jpg') center/cover no-repeat;
+        .hero {
+            height: 250px;
+            background: #222 url('../images/ZooOnline/ZooOnline_TopBar.png') center/cover no-repeat
         }
 
         .content {
             max-width: 800px;
             margin: 2rem auto;
-            padding: 0 1rem;
+            padding: 0 1rem
         }
 
             .content h1 {
                 color: #0af;
-                margin-bottom: 1rem;
-                font-size: 2rem;
+                margin-bottom: 1rem
             }
 
             .content p {
-                margin-bottom: 1.5rem;
-                color: #ccc;
-            }
-
-            .content h2 {
-                margin: 1.2rem 0 0.65rem;
-                color: #8fd3ff;
-                font-size: 1.2rem;
-                font-weight: 700;
+                margin-bottom: 1rem;
+                color: #ccc
             }
 
             .content ul {
                 list-style: disc inside;
-                margin-bottom: 1.5rem;
                 color: #ccc;
-            }
-
-            .content li {
-                margin-bottom: 0.45rem;
-            }
-
-        .link-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-            .link-list li {
-                margin-bottom: 0.55rem;
-            }
-
-            .link-list a {
-                color: #8fd3ff;
-                text-decoration: underline;
-                text-underline-offset: 2px;
-            }
-
-                .link-list a:hover {
-                    color: #fff;
-                }
-
-        .note {
-            font-size: 0.9rem;
-            color: #999;
+                margin-bottom: 1.5rem
             }
 
         .menu-return-bottom {
@@ -224,13 +185,13 @@
         .screenshots {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 1rem
         }
 
             .screenshots img {
                 width: 100%;
-                border: 1px solid #222;
-                border-radius: 4px;
+                border: 1px solid #333;
+                border-radius: 4px
             }
     </style>
 </head>
@@ -238,63 +199,21 @@
     <header><a href="../index.html">Вернуться в главное меню</a></header>
     <div class="hero"></div>
     <div class="content">
-        <h1>Ayist Games</h1>
-        <p>Работал над визуальной новеллой <strong>Novels</strong> и новым проектом <strong>DreamChat</strong>. В зоне ответственности были продакшен-процессы, постановка задач, монетизация, аналитика и скриптинг контента.</p>
+        <h1>Zoo Online</h1>
+        <p><em>В активной разработке</em></p>
+        <p>Zoo Online — онлайн-игра, в которой игроки выращивают своих животных, развивают личный зоопарк и исследуют общий мир.</p>
+        <p>В процессе можно встретить другого игрока, посмотреть его зоопарк и взаимодействовать в рамках общего игрового пространства.</p>
         <ul>
-            <li><strong>Роль:</strong> Технический гейм-дизайнер</li>
-            <li><strong>Период:</strong> Янв. 2021 — Июнь 2023</li>
-            <li><strong>Проекты:</strong> Novels: Choices Do Matter, DreamChat</li>
-            <li><strong>Фокус:</strong> качество контента, монетизация, координация команд и аналитика</li>
-        </ul>
-
-        <h2>Ссылки и статус проекта</h2>
-        <ul class="link-list">
-            <li><a href="https://vk.com/novelsgame" target="_blank" rel="noopener noreferrer">Группа VK: Novels</a></li>
-            <li><a href="https://www.instagram.com/novelsgame/" target="_blank" rel="noopener noreferrer">Instagram: novelsgame</a></li>
-            <li><a href="https://novelsgame.fandom.com/wiki/Novels:_Choices_Do_Matter_Wiki" target="_blank" rel="noopener noreferrer">Fandom: Novels - Choices Do Matter Wiki</a></li>
-        </ul>
-        <p class="note">После прекращения поддержки игра была удалена из сторов.</p>
-
-        <h2>Novels: Choices Do Matter</h2>
-        <ul>
-            <li>Проверка текстов перед сборкой и финальная валидация контента.</li>
-            <li>Распределение задач между геймдизайнерами.</li>
-            <li>Разработка и корректировка монетизационных механик.</li>
-            <li>Постановка задач технической команде (программистам) и творческой команде (художникам, аниматорам, нарративным геймдизайнерам).</li>
-            <li>Аналитика продуктовых данных в DevToDev.</li>
-            <li>Работа с Git в рамках командной разработки.</li>
-            <li>Скриптинг глав в Unity (визуальный скриптинг, аналог Blueprint) и на Ink.</li>
-        </ul>
-
-        <h2>DreamChat</h2>
-        <ul>
-            <li>Участие в разработке проекта с нуля.</li>
-            <li>Подготовка тест-кейсов для QA-отдела.</li>
-            <li>Проработка игровых возможностей и базовых систем.</li>
-            <li>Подготовка продуктовой документации.</li>
-            <li>Проработка монетизационных механик.</li>
-            <li>Первичное тестирование и постановка задач программисту.</li>
-            <li>Распределение задач между геймдизайнерами.</li>
-            <li>Аналитика в DevToDev и работа с SQL.</li>
-        </ul>
-
-        <h2>Инструменты</h2>
-        <ul>
-            <li><strong>Аналитика:</strong> DevToDev, SQL</li>
-            <li><strong>Разработка:</strong> Unity, Ink, Git</li>
-            <li><strong>Процессы:</strong> постановка и декомпозиция задач для технической и креативной команд</li>
-        </ul>
-
-        <h2>Дополнительно</h2>
-        <ul>
-            <li>Помогал комьюнити-процессам и поддержке коммуникации с игроками.</li>
+            <li><strong>Роль:</strong> Гейм-дизайнер и технический разработчик</li>
+            <li><strong>Зона ответственности:</strong> проектирование и настройка серверной части проекта</li>
+            <li><strong>Фокус:</strong> core-loop, онлайн-взаимодействие игроков и ранний баланс прогрессии</li>
         </ul>
         <div class="menu-return-bottom">
             <a href="../index.html">Вернуться в главное меню</a>
         </div>
         <div class="screenshots">
-            <img src="../images/ayist-games/ayist1.jpg" alt="Скриншот Ayist Games 1">
-            <img src="../images/ayist-games/ayist2.jpg" alt="Скриншот Ayist Games 2">
+            <img src="../images/ZooOnline/ZooOnline_01.png" alt="Скриншот Zoo Online 1">
+            <img src="../images/ZooOnline/ZooOnline_01.png" alt="Скриншот Zoo Online 2">
         </div>
     </div>
 <script>
@@ -360,10 +279,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
