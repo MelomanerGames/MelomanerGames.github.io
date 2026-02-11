@@ -37,13 +37,30 @@
         }
 
             header a {
-                font-size: 0.9rem;
-                color: #ccc;
+                display: inline-block;
+                font-size: 0.95rem;
+                font-weight: 700;
+                letter-spacing: 0.01em;
+                color: #041018;
+                background: linear-gradient(135deg, #38d4ff 0%, #0aa5ff 55%, #0a84ff 100%);
+                border: 1px solid #56d8ff;
+                border-radius: 12px;
+                padding: 0.55rem 1.05rem;
+                box-shadow: 0 8px 20px rgba(10, 165, 255, 0.35);
+                transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
             }
 
-        .hero {
+            header a:hover {
+                color: #001018;
+                filter: brightness(1.06);
+                transform: translateY(-1px);
+                box-shadow: 0 10px 24px rgba(10, 165, 255, 0.45);
+                text-decoration: none;
+            }
+
+.hero {
             height: 300px;
-            background: url('../images/crossword-hero.jpg') center/cover no-repeat;
+            background: url('../images/crossword-puzzle-icon.jpg') center/cover no-repeat;
         }
 
         .content {
@@ -68,6 +85,106 @@
                 margin-bottom: 1.5rem;
             }
 
+        .menu-return-bottom {
+            margin: 1rem 0 1.2rem;
+            text-align: center;
+        }
+
+            .menu-return-bottom a {
+                display: inline-block;
+                font-size: 0.95rem;
+                font-weight: 700;
+                letter-spacing: 0.01em;
+                color: #041018;
+                background: linear-gradient(135deg, #38d4ff 0%, #0aa5ff 55%, #0a84ff 100%);
+                border: 1px solid #56d8ff;
+                border-radius: 12px;
+                padding: 0.55rem 1.05rem;
+                box-shadow: 0 8px 20px rgba(10, 165, 255, 0.35);
+                transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+                text-decoration: none;
+            }
+
+                .menu-return-bottom a:hover {
+                    color: #001018;
+                    filter: brightness(1.06);
+                    transform: translateY(-1px);
+                    box-shadow: 0 10px 24px rgba(10, 165, 255, 0.45);
+                    text-decoration: none;
+                }
+
+        .shot-wrap {
+            position: relative;
+        }
+
+            .shot-wrap img {
+                cursor: zoom-in;
+            }
+
+        .zoom-btn {
+            position: absolute;
+            right: 0.55rem;
+            bottom: 0.55rem;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(10, 12, 16, 0.72);
+            color: #fff;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.55rem;
+            border-radius: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(2px);
+        }
+
+            .zoom-btn:hover {
+                background: rgba(10, 165, 255, 0.88);
+                border-color: #8be6ff;
+            }
+
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 9999;
+            cursor: zoom-out;
+        }
+
+            .lightbox-modal.is-open {
+                display: flex;
+            }
+
+            .lightbox-modal img {
+                max-width: min(96vw, 1500px);
+                max-height: 90vh;
+                width: auto;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+                cursor: default;
+            }
+
+        .lightbox-close {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(20, 20, 20, 0.75);
+            color: #fff;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+            .lightbox-close:hover {
+                background: rgba(10, 165, 255, 0.9);
+                border-color: #8be6ff;
+            }
         .screenshots {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -82,20 +199,91 @@
     </style>
 </head>
 <body>
-    <header><a href="../index.html">← Назад к портфолио</a></header>
+    <header><a href="../index.html">Вернуться в главное меню</a></header>
     <div class="hero"></div>
     <div class="content">
         <h1>Crossword Puzzle</h1>
         <p>Создание кроссворд-головоломки с полным циклом от прототипа до релиза.</p>
         <ul>
             <li><strong>Роль:</strong> Независимый разработчик</li>
-            <li><strong>Период:</strong> Дата релиза: укажите вашу дату</li>
+            <li><strong>Период:</strong> Дата релиза уточняется</li>
+            <li><strong>Ссылка:</strong> <a href="https://melomanergames.itch.io/crossword-puzzle" target="_blank" rel="noopener noreferrer">itch.io</a></li>
             <li><strong>Задачи:</strong> дизайн уровней, программирование, публикация в магазинах</li>
         </ul>
+        <div class="menu-return-bottom">
+            <a href="../index.html">Вернуться в главное меню</a>
+        </div>
         <div class="screenshots">
             <img src="../images/cw1.jpg" alt="Скриншот Crossword Puzzle 1">
             <img src="../images/cw2.jpg" alt="Скриншот Crossword Puzzle 2">
         </div>
     </div>
+<script>
+(() => {
+    const screenshots = document.querySelector('.screenshots');
+    if (!screenshots) return;
+
+    const images = Array.from(screenshots.querySelectorAll('img'));
+    if (!images.length) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'lightbox-modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот">';
+
+    const modalImg = modal.querySelector('img');
+    const closeBtn = modal.querySelector('.lightbox-close');
+
+    function openModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || 'Увеличенный скриншот';
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        modalImg.src = '';
+        document.body.style.overflow = '';
+    }
+
+    images.forEach((img) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'shot-wrap';
+        img.parentNode.insertBefore(wrap, img);
+        wrap.appendChild(img);
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'zoom-btn';
+        btn.textContent = 'Увеличить';
+        wrap.appendChild(btn);
+
+        btn.addEventListener('click', () => openModal(img.src, img.alt));
+        img.addEventListener('click', () => openModal(img.src, img.alt));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+            closeModal();
+        }
+    });
+
+    document.body.appendChild(modal);
+})();
+</script>
 </body>
 </html>
+
+
+
+
+
+

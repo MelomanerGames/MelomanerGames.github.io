@@ -1,13 +1,11 @@
-﻿<!-- File: projects/ayist-games.html -->
+﻿<!-- File: projects/uga-dooga.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayist Games — Роман Абашин</title>
+    <title>Uga Dooga — Роман Абашин</title>
     <style>
-        /* одинаковый стиль */
-
         * {
             margin: 0;
             padding: 0;
@@ -17,7 +15,7 @@
         body {
             background: #111;
             color: #eee;
-            font-family: 'Segoe UI',sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             line-height: 1.6;
         }
 
@@ -37,13 +35,30 @@
         }
 
             header a {
-                font-size: 0.9rem;
-                color: #ccc;
+                display: inline-block;
+                font-size: 0.95rem;
+                font-weight: 700;
+                letter-spacing: 0.01em;
+                color: #041018;
+                background: linear-gradient(135deg, #38d4ff 0%, #0aa5ff 55%, #0a84ff 100%);
+                border: 1px solid #56d8ff;
+                border-radius: 12px;
+                padding: 0.55rem 1.05rem;
+                box-shadow: 0 8px 20px rgba(10, 165, 255, 0.35);
+                transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
             }
 
-        .hero {
+            header a:hover {
+                color: #001018;
+                filter: brightness(1.06);
+                transform: translateY(-1px);
+                box-shadow: 0 10px 24px rgba(10, 165, 255, 0.45);
+                text-decoration: none;
+            }
+
+.hero {
             height: 300px;
-            background: url('../images/ayist-hero.jpg') center/cover no-repeat;
+            background: #222 url('../images/UgaDooga/uga-dooga-hero.jpg') center/cover no-repeat;
         }
 
         .content {
@@ -63,11 +78,147 @@
                 color: #ccc;
             }
 
+            .content h2 {
+                margin: 1.2rem 0 0.65rem;
+                color: #8fd3ff;
+                font-size: 1.2rem;
+                font-weight: 700;
+            }
+
             .content ul {
                 list-style: disc inside;
                 margin-bottom: 1.5rem;
+                color: #ccc;
             }
 
+            .content li {
+                margin-bottom: 0.45rem;
+            }
+
+            .content ul.game-links {
+                list-style: none;
+                padding-left: 0;
+            }
+
+                .content ul.game-links li {
+                    margin-bottom: 0.5rem;
+                }
+
+                .content ul.game-links a {
+                    color: #8fd3ff;
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                }
+
+                    .content ul.game-links a:hover {
+                        color: #fff;
+                    }
+
+        .note {
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .menu-return-bottom {
+            margin: 1rem 0 1.2rem;
+            text-align: center;
+        }
+
+            .menu-return-bottom a {
+                display: inline-block;
+                font-size: 0.95rem;
+                font-weight: 700;
+                letter-spacing: 0.01em;
+                color: #041018;
+                background: linear-gradient(135deg, #38d4ff 0%, #0aa5ff 55%, #0a84ff 100%);
+                border: 1px solid #56d8ff;
+                border-radius: 12px;
+                padding: 0.55rem 1.05rem;
+                box-shadow: 0 8px 20px rgba(10, 165, 255, 0.35);
+                transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+                text-decoration: none;
+            }
+
+                .menu-return-bottom a:hover {
+                    color: #001018;
+                    filter: brightness(1.06);
+                    transform: translateY(-1px);
+                    box-shadow: 0 10px 24px rgba(10, 165, 255, 0.45);
+                    text-decoration: none;
+                }
+
+        .shot-wrap {
+            position: relative;
+        }
+
+            .shot-wrap img {
+                cursor: zoom-in;
+            }
+
+        .zoom-btn {
+            position: absolute;
+            right: 0.55rem;
+            bottom: 0.55rem;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(10, 12, 16, 0.72);
+            color: #fff;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.55rem;
+            border-radius: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(2px);
+        }
+
+            .zoom-btn:hover {
+                background: rgba(10, 165, 255, 0.88);
+                border-color: #8be6ff;
+            }
+
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 9999;
+            cursor: zoom-out;
+        }
+
+            .lightbox-modal.is-open {
+                display: flex;
+            }
+
+            .lightbox-modal img {
+                max-width: min(96vw, 1500px);
+                max-height: 90vh;
+                width: auto;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+                cursor: default;
+            }
+
+        .lightbox-close {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(20, 20, 20, 0.75);
+            color: #fff;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+            .lightbox-close:hover {
+                background: rgba(10, 165, 255, 0.9);
+                border-color: #8be6ff;
+            }
         .screenshots {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -82,25 +233,144 @@
     </style>
 </head>
 <body>
-    <header><a href="../index.html">← Назад к портфолио</a></header>
+    <header><a href="../index.html">Вернуться в главное меню</a></header>
     <div class="hero"></div>
     <div class="content">
         <h1>Uga Dooga</h1>
-        <p>
-            "Слова из Слов", "Филворды: Ловец Слов", "Мини-игры на двоих 2 3 4 игрок
-            4,3", "Поиск предметов: Find It All", "Pocket Ships Tap Tycoon: Idle","Pocket Farming Tycoon: Idle",
-            "Block Puzzle: Блок Пазл Игра", "Город Слов: Слова и Кроссворд","Филворды: Слова Вокруг Света",
-            "Слова Дзен: Кроссворд","Сапер GG: классический".
-        </p>
+        <p>В Uga Dooga я совмещаю несколько продуктовых ролей: <strong>Project Manager / Producer</strong>, <strong>QA</strong>, <strong>Аналитик</strong> и <strong>Геймдизайнер</strong>. Основной фокус работы: стабильный релизный процесс, рост продуктовых метрик и развитие игр на основе данных, а не интуитивных решений.</p>
         <ul>
-            <li><strong>Роль:</strong> Продюсер</li>
-            <li><strong>Период:</strong> Июль 2024 — Настоящее время </li>
-            <li><strong>Задачи:</strong> Продвижение и работа уже готовыми играми. а также создание и ведение новых игр.</li>
+            <li><strong>Роль:</strong> Project Manager / Producer, QA, Analyst, Game Designer</li>
+            <li><strong>Период:</strong> Июль 2024 — настоящее время</li>
+            <li><strong>Фокус:</strong> рост продуктовых метрик, стабильность релизов и развитие фич</li>
+            <li><strong>Тип проектов:</strong> mobile casual, word games, mini-games, idle</li>
         </ul>
+
+        <h2>Что делал в проектах</h2>
+        <ul>
+            <li><strong>Project Manager / Producer:</strong> планирование и ведение спринтов, формирование релизного объема, декомпозиция задач и распределение по приоритетам, синхронизация команды по срокам и рискам.</li>
+            <li><strong>QA:</strong> функциональное и регрессионное тестирование, проверка критичных сценариев перед релизом, формирование баг-листов с приоритетами и контроль исправлений.</li>
+            <li><strong>Аналитик:</strong> формирование гипотез, запуск и разбор A/B тестов, анализ метрик после обновлений, подготовка выводов и предложений по следующим итерациям.</li>
+            <li><strong>Геймдизайнер:</strong> поиск и проработка новых механик, баланс игровых систем, проектирование монетизации, подготовка и поддержка документации.</li>
+            <li><strong>Research:</strong> сбор, анализ и документация референсов по UX, визуалу, прогрессии и LiveOps-практикам конкурентов.</li>
+        </ul>
+
+        <h2>Как выглядел рабочий цикл</h2>
+        <ul>
+            <li><strong>1. Discovery:</strong> анализ текущих проблем продукта, поиск референсов и формулирование гипотез.</li>
+            <li><strong>2. Planning:</strong> приоритизация задач, подготовка спринта и релизного плана в Jira.</li>
+            <li><strong>3. Production:</strong> сопровождение разработки, уточнение требований и контроль статусов.</li>
+            <li><strong>4. QA & Release:</strong> предрелизные проверки, фиксация критичных багов, подготовка финального релиз-кандидата.</li>
+            <li><strong>5. Analytics:</strong> пострелизная оценка результатов, разбор A/B тестов и подготовка следующей итерации.</li>
+        </ul>
+
+        <h2>Достижения и вклад</h2>
+        <ul>
+            <li>Систематизировал релизный цикл: прозрачная структура задач, единые статусы и контроль качества перед публикацией.</li>
+            <li>Выстроил регулярный процесс A/B тестирования игровых и монетизационных гипотез с последующей аналитической оценкой.</li>
+            <li>Сократил время на согласование фич за счет понятной визуальной документации и структурированных референсов.</li>
+            <li>Поддерживал баланс между скоростью поставки и качеством сборок через дисциплинированный QA-подход.</li>
+        </ul>
+
+        <h2>Инструменты и практики</h2>
+        <ul>
+            <li><strong>Аналитика:</strong> SQL, Firebase, AppMetrica</li>
+            <li><strong>Продакшен:</strong> Jira</li>
+            <li><strong>Документация:</strong> перевел компанию на ведение визуальной документации в FigJam</li>
+            <li><strong>Геймдизайн:</strong> ведение баланса и монетизации в Google Таблицах</li>
+        </ul>
+
+        <h2>Игры, над которыми работал</h2>
+        <ul class="game-links">
+            <li><a href="https://play.google.com/store/apps/details?id=com.games.makewords2" target="_blank" rel="noopener noreferrer">Слова из Слов (Words in Word)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.wordscatcher" target="_blank" rel="noopener noreferrer">Филворды: Ловец Слов (Word Catcher)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.ud.two.player.mini.games.challenge" target="_blank" rel="noopener noreferrer">Мини-игры на двоих 2 3 4 игрока (2 3 4 Player Mini Games Party)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.find.hidden.objects.g1.ud" target="_blank" rel="noopener noreferrer">Поиск предметов: Find It All (Hidden Objects)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.titanarrow.seaport.ships.idle.click.tycoon.unity" target="_blank" rel="noopener noreferrer">Pocket Ships Tap Tycoon: Idle</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.titanarrow.idle.farm.tycoon.farming.empire" target="_blank" rel="noopener noreferrer">Pocket Farming Tycoon: Idle</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.ud.block.puzzle.bricks.blast" target="_blank" rel="noopener noreferrer">Block Puzzle: Блок Пазл Игра (Block Puzzle: Bricks Blast)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.word.connect.wows.scapes.crossword" target="_blank" rel="noopener noreferrer">Город Слов: Слова и Кроссворд (Words of Cities Word Crossword)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.won.fillwords.word.lanes.findwords.nature" target="_blank" rel="noopener noreferrer">Филворды: Слова вокруг света (Word Search World Traveler)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.ud.zen.crossword.word" target="_blank" rel="noopener noreferrer">Слова Дзен: Кроссворд (Words of Zen: Crossword)</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.minesweeper.classic.ud.go" target="_blank" rel="noopener noreferrer">Сапер GG: классический (Minesweeper GG)</a></li>
+        </ul>
+        <p class="note">Часть игр в Google Play доступна под англоязычными названиями.</p>
+        <div class="menu-return-bottom">
+            <a href="../index.html">Вернуться в главное меню</a>
+        </div>
         <div class="screenshots">
-            <img src="../images/uga1.jpg" alt="Скриншот Uga Dooga 1">
-            <img src="../images/uga2.jpg" alt="Скриншот Uga Dooga 2">
+            <img src="../images/UgaDooga/uga-dooga-1.jpg" alt="Скриншот Uga Dooga 1">
+            <img src="../images/UgaDooga/uga-dooga-2.jpg" alt="Скриншот Uga Dooga 2">
+            <img src="../images/UgaDooga/uga-dooga-3.png" alt="Скриншот Uga Dooga 3">
+            <img src="../images/UgaDooga/uga-dooga-4.png" alt="Скриншот Uga Dooga 4">
+            <img src="../images/UgaDooga/uga-dooga-5.png" alt="Скриншот Uga Dooga 5">
+            <img src="../images/UgaDooga/uga-dooga-6.png" alt="Скриншот Uga Dooga 6">
         </div>
     </div>
+<script>
+(() => {
+    const screenshots = document.querySelector('.screenshots');
+    if (!screenshots) return;
+
+    const images = Array.from(screenshots.querySelectorAll('img'));
+    if (!images.length) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'lightbox-modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот">';
+
+    const modalImg = modal.querySelector('img');
+    const closeBtn = modal.querySelector('.lightbox-close');
+
+    function openModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || 'Увеличенный скриншот';
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        modalImg.src = '';
+        document.body.style.overflow = '';
+    }
+
+    images.forEach((img) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'shot-wrap';
+        img.parentNode.insertBefore(wrap, img);
+        wrap.appendChild(img);
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'zoom-btn';
+        btn.textContent = 'Увеличить';
+        wrap.appendChild(btn);
+
+        btn.addEventListener('click', () => openModal(img.src, img.alt));
+        img.addEventListener('click', () => openModal(img.src, img.alt));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+            closeModal();
+        }
+    });
+
+    document.body.appendChild(modal);
+})();
+</script>
 </body>
 </html>
+
+
+
+
+

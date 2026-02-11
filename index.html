@@ -44,6 +44,18 @@
                 color: #ccc;
             }
 
+            .role-highlight {
+                display: inline-block;
+                color: #bfeeff;
+                background: rgba(10, 170, 255, 0.14);
+                border: 1px solid rgba(90, 210, 255, 0.38);
+                border-radius: 8px;
+                padding: 0.08rem 0.45rem;
+                margin: 0 0.08rem;
+                font-weight: 700;
+                line-height: 1.35;
+            }
+
         .contact-short {
             background: #111;
             padding: 1rem;
@@ -81,7 +93,7 @@
             gap: 1.5rem;
         }
 
-        a.project-tile {
+        .project-tile {
             display: block;
             background: #1a1a1a;
             border: 1px solid #222;
@@ -91,7 +103,7 @@
             cursor: pointer;
         }
 
-            a.project-tile:hover {
+        .project-tile:hover {
                 transform: translateY(-5px);
                 border-color: #0af;
             }
@@ -159,9 +171,34 @@
                     margin-bottom: 0.5rem;
                 }
 
-            .info-box strong {
-                color: #0af;
+        .info-box strong {
+            color: #0af;
+        }
+
+        .info-box ul.external-links {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            .info-box ul.external-links li {
+                margin-bottom: 0.55rem;
             }
+
+            .info-box ul.external-links a {
+                color: #8fd3ff;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+            }
+
+                .info-box ul.external-links a:hover {
+                    color: #fff;
+                }
+
+        .muted-note {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
 
         footer {
             background: #000;
@@ -183,13 +220,13 @@
 <body>
     <header>
         <h1>Роман Абашин</h1>
-        <p>Game Designer & Developer — разрабатываю игры с нуля и веду готовые проекты</p>
+        <p><span class="role-highlight">Game Designer</span>, <span class="role-highlight">Developer</span> и <span class="role-highlight">Project Manager</span> — делаю игры с нуля и развиваю действующие продукты</p>
     </header>
 
     <div class="contact-short">
         <a href="mailto:melomanergames@gmail.com">melomanergames@gmail.com</a>
-        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank">LinkedIn</a>
-        <a href="https://t.me/MelomanerL" target="_blank">Telegram</a>
+        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer">Telegram</a>
     </div>
 
     <!-- Обо мне -->
@@ -207,52 +244,38 @@
         <h2>Ключевые проекты</h2>
         <div class="project-grid">
             <a href="projects/uga-dooga.html" class="project-tile">
-                <div class="project-thumb"><img src="images/uga-dooga.jpg" alt="Icon Sexy Beaches"></div>
+                <div class="project-thumb"><img src="images/uga-dooga.jpg" alt="Icon Uga Dooga"></div>
                 <div class="project-info">
                     <h3>Uga Dooga</h3>
-                    <p>Продюсер (Июль 2024 — Настоящее время). Работа с словесными играми, игр на 4х человек, Idler.</p>
+                    <p>Project Manager / Producer, QA, Analyst, Game Designer (Июль 2024 — настоящее время). Спринты и релизы, A/B тесты, аналитика (SQL/Firebase/AppMetrica), баланс и монетизация.</p>
                 </div>
             </a>
             <a href="projects/sexy-beaches.html" class="project-tile">
                 <div class="project-thumb"><img src="images/sexy-beaches-icon.jpg" alt="Icon Sexy Beaches"></div>
                 <div class="project-info">
-                    <h3>Sexy Beaches</h3>
-                    <p>Гейм-дизайнер (Сентябрь 2023 — май 2024). Баланс игры, настройка конфигов, монетизационные механики, аналитика.</p>
+                    <h3>Sexy Beaches (18+)</h3>
+                    <p>Game Designer (Сентябрь 2023 — Май 2024). 18+ Web Idle-игра на Nutaku: баланс экономики, настройка конфигов, монетизация и пострелизная аналитика.</p>
                 </div>
             </a>
             <a href="projects/magic-solution.html" class="project-tile">
                 <div class="project-thumb"><img src="images/magic-solution-icon.jpg" alt="Icon Magic Solution"></div>
                 <div class="project-info">
                     <h3>Magic Solution</h3>
-                    <p>Лид гейм-дизайнер (Июнь 2023 — Январь 2024). Управление командой, разработка с 0 до релиза, документация.</p>
+                    <p>Лид гейм-дизайнер (Июнь 2023 — Январь 2024). AI Chat и Brain Training: команда 6 человек, проекты с 0 до релиза, скрипты и документация.</p>
                 </div>
             </a>
             <a href="projects/ayist-games.html" class="project-tile">
                 <div class="project-thumb"><img src="images/ayist-games-icon.jpg" alt="Icon Ayist Games"></div>
                 <div class="project-info">
                     <h3>Ayist Games</h3>
-                    <p>Технический гейм-дизайнер (Янв. 2021 — Июнь 2023). Разработка движка новелл, аналитика DevToDev, скриптинг INK.</p>
+                    <p>Технический гейм-дизайнер (Янв. 2021 — Июнь 2023). Novels и DreamChat: постановка задач командам, монетизация, DevToDev/SQL, Git и скриптинг глав в Unity/Ink.</p>
                 </div>
             </a>
             <a href="projects/another-world.html" class="project-tile">
                 <div class="project-thumb"><img src="images/another-world-icon.jpg" alt="Icon Another World"></div>
                 <div class="project-info">
                     <h3>Another World</h3>
-                    <p>Технический гейм-дизайнер (Июнь 2019 — Апр. 2020). Создание LBE VR игры, баланс AI и оружия, техническая документация.</p>
-                </div>
-            </a>
-            <a href="projects/tetris-puzzle.html" class="project-tile">
-                <div class="project-thumb"><img src="images/tetris-puzzle-icon.jpg" alt="Icon Tetris Puzzle"></div>
-                <div class="project-info">
-                    <h3>Tetris Puzzle</h3>
-                    <p>Соло-разработка проекта с 0 до релиза. Полный цикл разработки и публикация.</p>
-                </div>
-            </a>
-            <a href="projects/crossword-puzzle.html" class="project-tile">
-                <div class="project-thumb"><img src="images/crossword-puzzle-icon.jpg" alt="Icon Crossword Puzzle"></div>
-                <div class="project-info">
-                    <h3>Crossword Puzzle</h3>
-                    <p>Соло-разработка проекта из исходника до релиза. Гейм-дизайн и баланс.</p>
+                    <p>Технический гейм-дизайнер (Июнь 2019 — Апр. 2020). LBE VR на Unity: Canvas, настройка AI/оружия, поддержка релизной версии, Plastic и техдокументация.</p>
                 </div>
             </a>
         </div>
@@ -262,6 +285,13 @@
     <section id="personal-projects">
         <h2>Личные проекты</h2>
         <div class="project-grid">
+            <a href="projects/river-quest.html" class="project-tile">
+                <div class="project-thumb"><img src="images/river-quest-icon.jpg" alt="Icon River Quest"></div>
+                <div class="project-info">
+                    <h3>River Quest</h3>
+                    <p>В разработке. Разработал механику путешествия по реке с боями против монстров; реализовал систему выживания; интегрировал SDK аналитики и рекламы.</p>
+                </div>
+            </a>
             <a href="projects/witchs-brew.html" class="project-tile">
                 <div class="project-thumb"><img src="images/witchs-brew-icon.jpg" alt="Icon Witch’s Brew"></div>
                 <div class="project-info">
@@ -290,13 +320,6 @@
                     <p>Релиз на Яндекс.Геймс. Проектировал механику спуска, тюнинг машин и систему внутриигровых покупок; интегрировал SDK аналитики и рекламы.</p>
                 </div>
             </a>
-            <a href="projects/river-quest.html" class="project-tile">
-                <div class="project-thumb"><img src="images/river-quest-icon.jpg" alt="Icon River Quest"></div>
-                <div class="project-info">
-                    <h3>River Quest</h3>
-                    <p>В разработке. Разработал механику путешествия по реке с боями против монстров; реализовал систему выживания; интегрировал SDK аналитики и рекламы.</p>
-                </div>
-            </a>
         </div>
     </section>
 
@@ -320,20 +343,21 @@
             <div class="info-box">
                 <h3>Дополнительные проекты</h3>
                 <ul>
-                    <li><strong>Game Dev Club</strong> — наставник, мастер-классы по аналитике и балансу</li>
-                    <li><strong>Tetris Puzzle</strong> — полная соло-разработка (гейм-дизайн, код)</li>
-                    <li><strong>Crossword Puzzle</strong> — самостоятельная разработка и публикация</li>
-                    <li><strong>Pocket Survivor AI</strong> — консультации по балансировке</li>
-                    <li><strong>Puzzle в Steam</strong> — гейм-дизайн и UX-консультации</li>
+                    <li><strong>Game Dev Club</strong> — наставник и ведущий мастер-классов по аналитике, балансу и продуктовым решениям</li>
+                    <li><strong>Pocket Survivor AI</strong> — консультации по балансу, прогрессии и удержанию</li>
+                    <li><strong>Puzzle в Steam</strong> — гейм-дизайн и UX-консультации на этапе проработки механик</li>
+                    <li><strong>Командное менторство</strong> — ревью ТЗ, декомпозиция задач и помощь junior/middle гейм-дизайнерам</li>
+                    <li><strong>Прототипы на Unity</strong> — быстрые MVP для проверки механик и монетизационных гипотез</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <footer>
-        <a href="https://github.com/MelomanerGames" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/MelomanerGames" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:melomanergames@gmail.com">Email</a>
     </footer>
 </body>
 </html>
+
