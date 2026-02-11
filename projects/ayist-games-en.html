@@ -1,26 +1,29 @@
-<!-- File: projects/river-quest.html -->
+<!-- File: projects/ayist-games.html -->
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обби и Река Смерти (Obby & Dead River) — Роман Абашин</title>
+    <title>Ayist Games — Roman Abashin</title>
     <style>
+        /* same style */
+
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
         body {
             background: #111;
             color: #eee;
             font-family: 'Segoe UI',sans-serif;
+            line-height: 1.6;
         }
 
         a {
             color: #0af;
-            text-decoration: none
+            text-decoration: none;
         }
 
             a:hover {
@@ -30,7 +33,7 @@
         header {
             background: #000;
             padding: 1rem;
-            text-align: center
+            text-align: center;
         }
 
             header a {
@@ -56,36 +59,66 @@
             }
 
 .hero {
-            height: 250px;
-            background: #222 url('../images/DeadRiver/DeadRiver_TopBar.png') center/cover no-repeat
+            height: 300px;
+            background: url('../images/ayist-games/ayist-games-icon.jpg') center/cover no-repeat;
         }
 
         .content {
             max-width: 800px;
             margin: 2rem auto;
-            padding: 0 1rem
+            padding: 0 1rem;
         }
 
             .content h1 {
                 color: #0af;
-                margin-bottom: 1rem
-            }
-
-            .content h2 {
-                color: #9ddcff;
-                font-size: 1.15rem;
-                margin: 1.15rem 0 0.75rem;
+                margin-bottom: 1rem;
+                font-size: 2rem;
             }
 
             .content p {
-                margin-bottom: 1rem;
-                color: #ccc
+                margin-bottom: 1.5rem;
+                color: #ccc;
+            }
+
+            .content h2 {
+                margin: 1.2rem 0 0.65rem;
+                color: #8fd3ff;
+                font-size: 1.2rem;
+                font-weight: 700;
             }
 
             .content ul {
                 list-style: disc inside;
+                margin-bottom: 1.5rem;
                 color: #ccc;
-                margin-bottom: 1.5rem
+            }
+
+            .content li {
+                margin-bottom: 0.45rem;
+            }
+
+        .link-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+            .link-list li {
+                margin-bottom: 0.55rem;
+            }
+
+            .link-list a {
+                color: #8fd3ff;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+            }
+
+                .link-list a:hover {
+                    color: #fff;
+                }
+
+        .note {
+            font-size: 0.9rem;
+            color: #999;
             }
 
         .menu-return-bottom {
@@ -191,13 +224,13 @@
         .screenshots {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem
+            gap: 1rem;
         }
 
             .screenshots img {
                 width: 100%;
-                border: 1px solid #333;
-                border-radius: 4px
+                border: 1px solid #222;
+                border-radius: 4px;
             }
     
 
@@ -282,41 +315,67 @@
     </style>
 </head>
 <body>
-    <div class="lang-switch"><a href="river-quest-en.html" aria-label="Switch to English version">🇺🇸 EN</a></div>
-    <header><a href="../index.html">Вернуться в главное меню</a></header>
+        <div class="lang-switch"><a href="ayist-games.html" aria-label="Switch to Russian version">🇷🇺 RU</a></div>
+    <header><a href="../index-en.html">Back to main menu</a></header>
     <div class="hero"></div>
     <div class="content">
-        <h1>Обби и Река Смерти (Obby &amp; Dead River)</h1>
-        <p><strong>Статус:</strong> В релизе</p>
-        <p><strong>Платформы:</strong> <a href="https://yandex.ru/games/app/444817?lang=ru" target="_blank" rel="noopener noreferrer">Яндекс Игры</a> | <a href="https://www.crazygames.com/ru/game/obby-dead-river" target="_blank" rel="noopener noreferrer">CrazyGames</a></p>
-        <p>3D-игра от первого лица в стиле Roblox: сражения с монстрами, путешествие по реке смерти, исследование замков и деревень, сбор добычи и бой с финальным боссом.</p>
-        <h2>Об игре</h2>
-        <p>Игрок проходит опасный путь по легендарной реке смерти, которая соединяет крупные замки. По ходу путешествия нужно побеждать монстров, пиратов и драконов, чтобы добраться до финального босса.</p>
-        <p>В деревнях можно торговать, собирать сокровища, улучшать вооружение и готовиться к следующему отрезку маршрута. С каждым новым замком сложность повышается, но и награды становятся ценнее.</p>
-        <h2>Что делал в проекте</h2>
+        <h1>Ayist Games</h1>
+        <p>Worked on the visual novel <strong>Novels</strong> and the new project <strong>DreamChat</strong>. Responsibilities included production workflows, task management, monetization, analytics, and content scripting.</p>
         <ul>
-            <li><strong>Монетизация:</strong> продумывал и внедрял игровые механики монетизации</li>
-            <li><strong>Сохранения:</strong> настраивал систему сохранения прогресса</li>
-            <li><strong>Прогрессия:</strong> реализовывал механику улучшений игрока</li>
-            <li><strong>Реклама:</strong> настраивал показы рекламных форматов</li>
-            <li><strong>Баланс:</strong> балансировал экономику и боевые параметры</li>
+            <li><strong>Role:</strong> Technical Game Designer</li>
+            <li><strong>Period:</strong> Jan 2021 — June 2023</li>
+            <li><strong>Projects:</strong> Novels: Choices Do Matter, DreamChat</li>
+            <li><strong>Focus:</strong> content quality, monetization, team coordination, and analytics</li>
         </ul>
-        <h2>Ключевые особенности</h2>
+
+        <h2>Links and Project Status</h2>
+        <ul class="link-list">
+            <li><a href="https://vk.com/novelsgame" target="_blank" rel="noopener noreferrer">VK Group: Novels</a></li>
+            <li><a href="https://www.instagram.com/novelsgame/" target="_blank" rel="noopener noreferrer">Instagram: novelsgame</a></li>
+            <li><a href="https://novelsgame.fandom.com/wiki/Novels:_Choices_Do_Matter_Wiki" target="_blank" rel="noopener noreferrer">Fandom: Novels - Choices Do Matter Wiki</a></li>
+        </ul>
+        <p class="note">After support ended, the game was removed from app stores.</p>
+
+        <h2>Novels: Choices Do Matter</h2>
         <ul>
-            <li>Путешествие по реке смерти через цепочку замков</li>
-            <li>Бои с монстрами, пиратами, драконами и финальным боссом</li>
-            <li>Сбор добычи, сокровищ и торговля в деревнях</li>
-            <li>Улучшение оружия, покупка аптечек и подготовка к новым рейсам</li>
-            <li>Вид от первого лица и визуальный стиль Roblox</li>
+            <li>Checked texts before builds and performed final content validation.</li>
+            <li>Distributed tasks among game designers.</li>
+            <li>Designed and adjusted monetization mechanics.</li>
+            <li>Assigned tasks to the technical team (programmers) and creative team (artists, animators, narrative designers).</li>
+            <li>Analyzed product data in DevToDev.</li>
+            <li>Worked with Git in a team development workflow.</li>
+            <li>Scripted chapters in Unity (visual scripting, Blueprint-like) and Ink.</li>
+        </ul>
+
+        <h2>DreamChat</h2>
+        <ul>
+            <li>Participated in building the project from scratch.</li>
+            <li>Prepared QA test cases.</li>
+            <li>Designed gameplay capabilities and core systems.</li>
+            <li>Prepared product documentation.</li>
+            <li>Developed monetization mechanics.</li>
+            <li>Ran initial testing and assigned tasks to programmers.</li>
+            <li>Distributed tasks among game designers.</li>
+            <li>Performed DevToDev analytics and worked with SQL.</li>
+        </ul>
+
+        <h2>Tools</h2>
+        <ul>
+            <li><strong>Analytics:</strong> DevToDev, SQL</li>
+            <li><strong>Development:</strong> Unity, Ink, Git</li>
+            <li><strong>Processes:</strong> task assignment and decomposition for technical and creative teams</li>
+        </ul>
+
+        <h2>Additionally</h2>
+        <ul>
+            <li>Contributed to community workflows and player communication support.</li>
         </ul>
         <div class="menu-return-bottom">
-            <a href="../index.html">Вернуться в главное меню</a>
+            <a href="../index-en.html">Back to main menu</a>
         </div>
         <div class="screenshots">
-            <img src="../images/DeadRiver/DeadRiver_01.png" alt="Скриншот Обби и Река Смерти 1">
-            <img src="../images/DeadRiver/DeadRiver_02.png" alt="Скриншот Обби и Река Смерти 2">
-            <img src="../images/DeadRiver/DeadRiver_03.jpg" alt="Скриншот Обби и Река Смерти 3">
-            <img src="../images/DeadRiver/DeadRiver_04.jpg" alt="Скриншот Обби и Река Смерти 4">
+            <img src="../images/ayist-games/ayist1.jpg" alt="Screenshot Ayist Games 1">
+            <img src="../images/ayist-games/ayist2.jpg" alt="Screenshot Ayist Games 2">
         </div>
     </div>
 <script>
@@ -330,14 +389,14 @@
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';
     modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот">';
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">\u00d7</button><img alt="Enlarged screenshot">';
 
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.lightbox-close');
 
     function openModal(src, alt) {
         modalImg.src = src;
-        modalImg.alt = alt || 'Увеличенный скриншот';
+        modalImg.alt = alt || 'Enlarged screenshot';
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -359,7 +418,7 @@
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'zoom-btn';
-        btn.textContent = 'Увеличить';
+        btn.textContent = 'Zoom';
         wrap.appendChild(btn);
 
         btn.addEventListener('click', () => openModal(img.src, img.alt));
@@ -382,6 +441,7 @@
 </script>
 </body>
 </html>
+
 
 
 

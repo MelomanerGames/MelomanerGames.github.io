@@ -1,4 +1,4 @@
-﻿﻿<!-- File: projects/hide-seek.html -->
+<!-- File: projects/hide-seek.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -193,9 +193,90 @@
                 border: 1px solid #333;
                 border-radius: 4px
             }
+    
+
+        @media (max-width: 780px) {
+            header {
+                padding-top: 2.8rem;
+            }
+
+            .hero {
+                height: 220px;
+            }
+
+            .content {
+                margin: 1.4rem auto;
+            }
+
+            .content h1 {
+                font-size: 1.65rem;
+            }
+
+            .screenshots {
+                grid-template-columns: 1fr;
+                gap: 0.85rem;
+            }
+
+            .lightbox-modal {
+                padding: 1rem;
+            }
+
+            .lightbox-close {
+                top: 0.65rem;
+                right: 0.65rem;
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .zoom-btn {
+                font-size: 0.72rem;
+                padding: 0.24rem 0.45rem;
+            }
+
+            .lang-switch {
+                top: 0.55rem;
+                right: 0.55rem;
+            }
+
+            .lang-switch a {
+                font-size: 0.74rem;
+                padding: 0.34rem 0.52rem;
+            }
+        }
+        .lang-switch {
+            position: fixed;
+            top: 0.9rem;
+            right: 0.9rem;
+            z-index: 12000;
+        }
+
+        .lang-switch a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #e8f6ff;
+            background: rgba(5, 16, 25, 0.88);
+            border: 1px solid rgba(110, 210, 255, 0.55);
+            border-radius: 999px;
+            padding: 0.42rem 0.62rem;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+            backdrop-filter: blur(2px);
+        }
+
+        .lang-switch a:hover {
+            color: #fff;
+            border-color: #9be8ff;
+            background: rgba(10, 135, 205, 0.85);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+    <div class="lang-switch"><a href="hide-seek-en.html" aria-label="Switch to English version">🇺🇸 EN</a></div>
     <header><a href="../index.html">Вернуться в главное меню</a></header>
     <div class="hero"></div>
     <div class="content">

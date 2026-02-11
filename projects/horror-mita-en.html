@@ -1,10 +1,10 @@
-<!-- File: projects/river-quest.html -->
+<!-- File: projects/horror-mita.html -->
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обби и Река Смерти (Obby & Dead River) — Роман Абашин</title>
+    <title>Horror Mita — Roman Abashin</title>
     <style>
         * {
             margin: 0;
@@ -57,7 +57,7 @@
 
 .hero {
             height: 250px;
-            background: #222 url('../images/DeadRiver/DeadRiver_TopBar.png') center/cover no-repeat
+            background: #222 url('../images/horror-mita/horror-mita-icon.jpg') center/cover no-repeat
         }
 
         .content {
@@ -69,12 +69,6 @@
             .content h1 {
                 color: #0af;
                 margin-bottom: 1rem
-            }
-
-            .content h2 {
-                color: #9ddcff;
-                font-size: 1.15rem;
-                margin: 1.15rem 0 0.75rem;
             }
 
             .content p {
@@ -282,41 +276,23 @@
     </style>
 </head>
 <body>
-    <div class="lang-switch"><a href="river-quest-en.html" aria-label="Switch to English version">🇺🇸 EN</a></div>
-    <header><a href="../index.html">Вернуться в главное меню</a></header>
+        <div class="lang-switch"><a href="horror-mita.html" aria-label="Switch to Russian version">🇷🇺 RU</a></div>
+    <header><a href="../index-en.html">Back to main menu</a></header>
     <div class="hero"></div>
     <div class="content">
-        <h1>Обби и Река Смерти (Obby &amp; Dead River)</h1>
-        <p><strong>Статус:</strong> В релизе</p>
-        <p><strong>Платформы:</strong> <a href="https://yandex.ru/games/app/444817?lang=ru" target="_blank" rel="noopener noreferrer">Яндекс Игры</a> | <a href="https://www.crazygames.com/ru/game/obby-dead-river" target="_blank" rel="noopener noreferrer">CrazyGames</a></p>
-        <p>3D-игра от первого лица в стиле Roblox: сражения с монстрами, путешествие по реке смерти, исследование замков и деревень, сбор добычи и бой с финальным боссом.</p>
-        <h2>Об игре</h2>
-        <p>Игрок проходит опасный путь по легендарной реке смерти, которая соединяет крупные замки. По ходу путешествия нужно побеждать монстров, пиратов и драконов, чтобы добраться до финального босса.</p>
-        <p>В деревнях можно торговать, собирать сокровища, улучшать вооружение и готовиться к следующему отрезку маршрута. С каждым новым замком сложность повышается, но и награды становятся ценнее.</p>
-        <h2>Что делал в проекте</h2>
+        <h1>Horror Mita</h1>
+        <p><strong>Status:</strong> Previously released on Yandex Games (delisted)</p>
         <ul>
-            <li><strong>Монетизация:</strong> продумывал и внедрял игровые механики монетизации</li>
-            <li><strong>Сохранения:</strong> настраивал систему сохранения прогресса</li>
-            <li><strong>Прогрессия:</strong> реализовывал механику улучшений игрока</li>
-            <li><strong>Реклама:</strong> настраивал показы рекламных форматов</li>
-            <li><strong>Баланс:</strong> балансировал экономику и боевые параметры</li>
-        </ul>
-        <h2>Ключевые особенности</h2>
-        <ul>
-            <li>Путешествие по реке смерти через цепочку замков</li>
-            <li>Бои с монстрами, пиратами, драконами и финальным боссом</li>
-            <li>Сбор добычи, сокровищ и торговля в деревнях</li>
-            <li>Улучшение оружия, покупка аптечек и подготовка к новым рейсам</li>
-            <li>Вид от первого лица и визуальный стиль Roblox</li>
+            <li><strong>Role:</strong> Developed escape and key-search mechanics</li>
+            <li><strong>Feature:</strong> Leaderboard for competitive runs</li>
+            <li><strong>Integration:</strong> Analytics and advertising SDKs</li>
         </ul>
         <div class="menu-return-bottom">
-            <a href="../index.html">Вернуться в главное меню</a>
+            <a href="../index-en.html">Back to main menu</a>
         </div>
         <div class="screenshots">
-            <img src="../images/DeadRiver/DeadRiver_01.png" alt="Скриншот Обби и Река Смерти 1">
-            <img src="../images/DeadRiver/DeadRiver_02.png" alt="Скриншот Обби и Река Смерти 2">
-            <img src="../images/DeadRiver/DeadRiver_03.jpg" alt="Скриншот Обби и Река Смерти 3">
-            <img src="../images/DeadRiver/DeadRiver_04.jpg" alt="Скриншот Обби и Река Смерти 4">
+            <img src="../images/horror-mita/mita1.png" alt="Screenshot Horror Mita 1">
+            <img src="../images/horror-mita/mita2.jpg" alt="Screenshot Horror Mita 2">
         </div>
     </div>
 <script>
@@ -330,14 +306,14 @@
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';
     modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот">';
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">\u00d7</button><img alt="Enlarged screenshot">';
 
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.lightbox-close');
 
     function openModal(src, alt) {
         modalImg.src = src;
-        modalImg.alt = alt || 'Увеличенный скриншот';
+        modalImg.alt = alt || 'Enlarged screenshot';
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
@@ -359,7 +335,7 @@
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'zoom-btn';
-        btn.textContent = 'Увеличить';
+        btn.textContent = 'Zoom';
         wrap.appendChild(btn);
 
         btn.addEventListener('click', () => openModal(img.src, img.alt));
@@ -382,6 +358,7 @@
 </script>
 </body>
 </html>
+
 
 
 
