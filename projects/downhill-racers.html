@@ -267,6 +267,45 @@
             backdrop-filter: blur(2px);
         }
 
+
+        .flag-icon {
+            display: inline-block;
+            width: 18px;
+            height: 12px;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+            flex: 0 0 auto;
+        }
+
+        .flag-us {
+            position: relative;
+            background: repeating-linear-gradient(
+                to bottom,
+                #b22234 0 1.2px,
+                #ffffff 1.2px 2.4px
+            );
+            background-size: 100% 2.4px;
+        }
+
+        .flag-us::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40%;
+            height: 54%;
+            background: #3c3b6e;
+        }
+
+        .flag-ru {
+            background: linear-gradient(
+                to bottom,
+                #ffffff 0 33.333%,
+                #1f4fbf 33.333% 66.666%,
+                #d62f2f 66.666% 100%
+            );
+        }
         .lang-switch a:hover {
             color: #fff;
             border-color: #9be8ff;
@@ -276,12 +315,12 @@
     </style>
 </head>
 <body>
-    <div class="lang-switch"><a href="downhill-racers-en.html" aria-label="Switch to English version">🇺🇸 EN</a></div>
+    <div class="lang-switch"><a href="downhill-racers-en.html" aria-label="Switch to English version"><span class="flag-icon flag-us" aria-hidden="true"></span><span>EN</span></a></div>
     <header><a href="../index.html">Вернуться в главное меню</a></header>
     <div class="hero"></div>
     <div class="content">
         <h1>Downhill Racers</h1>
-        <p><strong>Статус:</strong> Была в релизе на Яндекс.Геймс (снята)</p>
+        <p><strong>Статус:</strong> Была в релизе на Яндекс Играх (снята)</p>
         <ul>
             <li><strong>Роль:</strong> Проектирование трасс и механики спуска</li>
             <li><strong>Фича:</strong> Тюнинг машин, внутриигровые покупки, лидерборд</li>

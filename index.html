@@ -65,10 +65,22 @@
         }
 
             .contact-short a {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
                 margin: 0 0.5rem;
+                padding: 0.18rem 0.24rem;
                 color: #aaa;
                 font-size: 0.9rem;
             }
+
+                .contact-short a svg {
+                    width: 14px;
+                    height: 14px;
+                    fill: currentColor;
+                    opacity: 0.9;
+                    flex: 0 0 auto;
+                }
 
                 .contact-short a:hover {
                     color: #0af;
@@ -310,7 +322,8 @@
 
         @media (max-width: 420px) {
             .contact-short a {
-                display: inline-block;
+                display: inline-flex;
+                align-items: center;
                 margin: 0.15rem 0.28rem;
             }
         }
@@ -602,6 +615,45 @@
             backdrop-filter: blur(2px);
         }
 
+
+        .flag-icon {
+            display: inline-block;
+            width: 18px;
+            height: 12px;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+            flex: 0 0 auto;
+        }
+
+        .flag-us {
+            position: relative;
+            background: repeating-linear-gradient(
+                to bottom,
+                #b22234 0 1.2px,
+                #ffffff 1.2px 2.4px
+            );
+            background-size: 100% 2.4px;
+        }
+
+        .flag-us::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40%;
+            height: 54%;
+            background: #3c3b6e;
+        }
+
+        .flag-ru {
+            background: linear-gradient(
+                to bottom,
+                #ffffff 0 33.333%,
+                #1f4fbf 33.333% 66.666%,
+                #d62f2f 66.666% 100%
+            );
+        }
         .lang-switch a:hover {
             color: #fff;
             border-color: #9be8ff;
@@ -611,17 +663,17 @@
     </style>
 </head>
 <body>
-    <div class="lang-switch"><a href="index-en.html" aria-label="Switch to English version">🇺🇸 EN</a></div>
+    <div class="lang-switch"><a href="index-en.html" aria-label="Switch to English version"><span class="flag-icon flag-us" aria-hidden="true"></span><span>EN</span></a></div>
     <header>
         <h1>Роман Абашин</h1>
         <p><span class="role-highlight">Game Designer</span>, <span class="role-highlight">Developer</span> и <span class="role-highlight">Project Manager</span> — делаю игры с нуля и развиваю действующие продукты</p>
     </header>
 
     <div class="contact-short">
-        <a href="mailto:melomanergames@gmail.com">melomanergames@gmail.com</a>
-        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer">Блог команды</a>
+        <a href="mailto:melomanergames@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2 8 5 8-5H4zm16 10V9l-8 5-8-5v8h16z"/></svg><span>melomanergames@gmail.com</span></a>
+        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5a1.53 1.53 0 1 1 0-3.06 1.53 1.53 0 0 1 0 3.06zM5.6 9.76h2.68v8.64H5.6V9.76zm4.36 0h2.57v1.18h.04c.36-.68 1.24-1.4 2.55-1.4 2.72 0 3.22 1.79 3.22 4.12v4.74h-2.68v-4.2c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.27H9.96V9.76z"/></svg><span>LinkedIn</span></a>
+        <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.86 6.85-1.64 7.73c-.12.55-.45.68-.91.42l-2.52-1.86-1.22 1.17c-.13.13-.25.25-.51.25l.18-2.58 4.7-4.24c.2-.18-.04-.28-.31-.1l-5.8 3.65-2.5-.78c-.54-.17-.55-.54.11-.8l9.77-3.77c.45-.17.84.1.69.91z"/></svg><span>Telegram</span></a>
+        <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h8l4 4v12H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm7 1.5V9h3.5L13 5.5zM8 11h8v1.6H8V11zm0 3h8v1.6H8V14z"/></svg><span>Блог команды</span></a>
     </div>
 
     <!-- Обо мне -->
@@ -629,13 +681,13 @@
         <h2>Обо мне</h2>
         <div class="info-section">
             <div class="info-box">
-                <p>Я <strong>Game Designer</strong>, <strong>Developer</strong> и <strong>Project Manager</strong> с опытом полного цикла: от идеи и прототипа до релиза и пострелизной аналитики. Работал с mobile, web, VR/LBE VR и online-проектами, в том числе в ролях продюсера, QA и аналитика. Отвечал за баланс, монетизацию, A/B тесты, настройку рекламных показов и сохранений, а также за проектирование и настройку серверной части. В работе опираюсь на структурные процессы и метрики продукта.</p>
+                <p>Я <strong>Game Designer</strong>, <strong>Developer</strong> и <strong>Project Manager</strong> с опытом полного цикла: от идеи и прототипа до релиза и пострелизной аналитики. Работал с mobile, web, VR/LBE VR и online-проектами, в том числе в ролях продюсера, QA и аналитика. Занимался балансом, монетизацией, A/B тестами, настройкой рекламных показов и сохранений, а также проектированием и настройкой серверной части. В работе опираюсь на структурные процессы и метрики продукта.</p>
             </div>
         </div>
     </section>
 
     <section id="about-profile">
-        <h2>Компетенции</h2>
+        <h2>Компетенции и навыки</h2>
         <div class="about-blocks">
             <div class="about-block roles">
                 <span class="about-label">Роли в проектах</span>
@@ -710,7 +762,7 @@
                 <div class="project-info">
                     <h3>Magic Solution</h3>
                     <p class="project-date">Июнь 2023 — Январь 2024</p>
-                    <p>Лид гейм-дизайнер. AI Chat и Brain Training: команда 6 человек, проекты с 0 до релиза, скрипты и документация.</p>
+                    <p>Лид гейм-дизайнер. AI Chat и Brain Training: команда 6 человек, проекты с нуля до релиза, скрипты и документация.</p>
                 </div>
             </a>
             <a href="projects/ayist-games.html" class="project-tile">
@@ -803,14 +855,14 @@
                     <div class="project-thumb"><img src="images/horror-mita/horror-mita-icon.jpg" alt="Icon Horror Mita"></div>
                     <div class="project-info">
                         <h3>Horror Mita</h3>
-                        <p>Ранее была в релизе на Яндекс.Геймс. Хоррор-проект с механикой побега, поиском ключей и системой лидерборда.</p>
+                        <p>Ранее была в релизе на Яндекс Играх. Хоррор-проект с механикой побега, поиском ключей и системой лидерборда.</p>
                     </div>
                 </a>
                 <a href="projects/downhill-racers.html" class="project-tile">
                     <div class="project-thumb"><img src="images/downhill-racers/downhill-racers-icon.jpg" alt="Icon Downhill Racers"></div>
                     <div class="project-info">
                         <h3>Downhill Racers</h3>
-                        <p>Ранее была в релизе на Яндекс.Геймс. Аркадные гонки со спуском, тюнингом машин и внутриигровой экономикой.</p>
+                        <p>Ранее была в релизе на Яндекс Играх. Аркадные гонки со спуском, тюнингом машин и внутриигровой экономикой.</p>
                     </div>
                 </a>
             </div>
@@ -877,26 +929,10 @@
         </div>
     </section>
 
-    <!-- Навыки и Дополнительные проекты -->
+    <!-- Дополнительные проекты -->
     <section id="info">
-        <h2>Навыки и Дополнительные проекты</h2>
+        <h2>Дополнительные проекты</h2>
         <div class="info-section">
-            <div class="info-box">
-                <h3>Навыки</h3>
-                <ul>
-                    <li><strong>Гейм-дизайн:</strong> core-loop, баланс, прогрессия и монетизация</li>
-                    <li><strong>Продакшен:</strong> спринты, релизное планирование, декомпозиция задач (Jira)</li>
-                    <li><strong>Аналитика:</strong> SQL, DevToDev, Firebase, AppMetrica, A/B тесты</li>
-                    <li><strong>QA:</strong> функциональное и регрессионное тестирование, предрелизная валидация</li>
-                    <li><strong>Разработка:</strong> Unity (C#), визуальный скриптинг (Canvas/Blueprint), Ink</li>
-                    <li><strong>UI/UX:</strong> Adaptive/Responsive UI под разные разрешения и соотношения сторон</li>
-                    <li><strong>Онлайн-системы:</strong> проектирование и настройка серверной части</li>
-                    <li><strong>Интеграции:</strong> SDK аналитики/рекламы, настройки сохранений и рекламных показов</li>
-                    <li><strong>Version Control:</strong> Git, Plastic SCM (merge и командные процессы)</li>
-                    <li><strong>Документация:</strong> FigJam, Google Docs/Sheets, ТЗ и продуктовые спецификации</li>
-                    <li><strong>Лидерство:</strong> координация кросс-функциональной команды и менторство</li>
-                </ul>
-            </div>
             <div class="info-box">
                 <h3>Дополнительные проекты</h3>
                 <ul>

@@ -65,10 +65,22 @@
         }
 
             .contact-short a {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
                 margin: 0 0.5rem;
+                padding: 0.18rem 0.24rem;
                 color: #aaa;
                 font-size: 0.9rem;
             }
+
+                .contact-short a svg {
+                    width: 14px;
+                    height: 14px;
+                    fill: currentColor;
+                    opacity: 0.9;
+                    flex: 0 0 auto;
+                }
 
                 .contact-short a:hover {
                     color: #0af;
@@ -310,7 +322,8 @@
 
         @media (max-width: 420px) {
             .contact-short a {
-                display: inline-block;
+                display: inline-flex;
+                align-items: center;
                 margin: 0.15rem 0.28rem;
             }
         }
@@ -602,6 +615,45 @@
             backdrop-filter: blur(2px);
         }
 
+
+        .flag-icon {
+            display: inline-block;
+            width: 18px;
+            height: 12px;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+            flex: 0 0 auto;
+        }
+
+        .flag-us {
+            position: relative;
+            background: repeating-linear-gradient(
+                to bottom,
+                #b22234 0 1.2px,
+                #ffffff 1.2px 2.4px
+            );
+            background-size: 100% 2.4px;
+        }
+
+        .flag-us::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40%;
+            height: 54%;
+            background: #3c3b6e;
+        }
+
+        .flag-ru {
+            background: linear-gradient(
+                to bottom,
+                #ffffff 0 33.333%,
+                #1f4fbf 33.333% 66.666%,
+                #d62f2f 66.666% 100%
+            );
+        }
         .lang-switch a:hover {
             color: #fff;
             border-color: #9be8ff;
@@ -611,17 +663,17 @@
     </style>
 </head>
 <body>
-        <div class="lang-switch"><a href="index.html" aria-label="Switch to Russian version">🇷🇺 RU</a></div>
+        <div class="lang-switch"><a href="index.html" aria-label="Switch to Russian version"><span class="flag-icon flag-ru" aria-hidden="true"></span><span>RU</span></a></div>
     <header>
         <h1>Roman Abashin</h1>
         <p><span class="role-highlight">Game Designer</span>, <span class="role-highlight">Developer</span>, and <span class="role-highlight">Project Manager</span> — I build games from scratch and grow live products.</p>
     </header>
 
     <div class="contact-short">
-        <a href="mailto:melomanergames@gmail.com">melomanergames@gmail.com</a>
-        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer">Team Blog</a>
+        <a href="mailto:melomanergames@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2 8 5 8-5H4zm16 10V9l-8 5-8-5v8h16z"/></svg><span>melomanergames@gmail.com</span></a>
+        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5a1.53 1.53 0 1 1 0-3.06 1.53 1.53 0 0 1 0 3.06zM5.6 9.76h2.68v8.64H5.6V9.76zm4.36 0h2.57v1.18h.04c.36-.68 1.24-1.4 2.55-1.4 2.72 0 3.22 1.79 3.22 4.12v4.74h-2.68v-4.2c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.27H9.96V9.76z"/></svg><span>LinkedIn</span></a>
+        <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.86 6.85-1.64 7.73c-.12.55-.45.68-.91.42l-2.52-1.86-1.22 1.17c-.13.13-.25.25-.51.25l.18-2.58 4.7-4.24c.2-.18-.04-.28-.31-.1l-5.8 3.65-2.5-.78c-.54-.17-.55-.54.11-.8l9.77-3.77c.45-.17.84.1.69.91z"/></svg><span>Telegram</span></a>
+        <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h8l4 4v12H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm7 1.5V9h3.5L13 5.5zM8 11h8v1.6H8V11zm0 3h8v1.6H8V14z"/></svg><span>Team Blog</span></a>
     </div>
 
     <!-- About Me -->
@@ -629,13 +681,13 @@
         <h2>About Me</h2>
         <div class="info-section">
             <div class="info-box">
-                <p>I am a <strong>Game Designer</strong>, <strong>Developer</strong>, and <strong>Project Manager</strong> with full-cycle experience: from idea and prototype to release and post-release analytics. I have worked on mobile, web, VR/LBE VR, and online projects, including producer, QA, and analyst responsibilities. I handled balance, monetization, A/B testing, ad setup, save systems, and server-side design and configuration. My work is grounded in structured processes and product metrics.</p>
+                <p>I am a <strong>Game Designer</strong>, <strong>Developer</strong>, and <strong>Project Manager</strong> with full-cycle experience: from idea and prototype to release and post-release analytics. I have worked on mobile, web, VR/LBE VR, and online projects, including producer, QA, and analyst responsibilities. I worked on balance, monetization, A/B testing, ad setup, save systems, and server-side design and configuration. My work is grounded in structured processes and product metrics.</p>
             </div>
         </div>
     </section>
 
     <section id="about-profile">
-        <h2>Competencies</h2>
+        <h2>Competencies & Skills</h2>
         <div class="about-blocks">
             <div class="about-block roles">
                 <span class="about-label">Project Roles</span>
@@ -877,26 +929,10 @@
         </div>
     </section>
 
-    <!-- Skills and Additional Projects -->
+    <!-- Additional Projects -->
     <section id="info">
-        <h2>Skills and Additional Projects</h2>
+        <h2>Additional Projects</h2>
         <div class="info-section">
-            <div class="info-box">
-                <h3>Skills</h3>
-                <ul>
-                    <li><strong>Game Design:</strong> core loop, balance, progression, and monetization</li>
-                    <li><strong>Production:</strong> sprints, release planning, and task decomposition (Jira)</li>
-                    <li><strong>Analytics:</strong> SQL, DevToDev, Firebase, AppMetrica, A/B tests</li>
-                    <li><strong>QA:</strong> functional and regression testing, pre-release validation</li>
-                    <li><strong>Development:</strong> Unity (C#), visual scripting (Canvas/Blueprint), Ink</li>
-                    <li><strong>UI/UX:</strong> Adaptive/Responsive UI for multiple resolutions and aspect ratios</li>
-                    <li><strong>Online Systems:</strong> server-side design and configuration</li>
-                    <li><strong>Integrations:</strong> analytics/ad SDKs, save systems, and ad display configuration</li>
-                    <li><strong>Version Control:</strong> Git, Plastic SCM (merge and team workflows)</li>
-                    <li><strong>Documentation:</strong> FigJam, Google Docs/Sheets, task specs, and product documentation</li>
-                    <li><strong>Leadership:</strong> cross-functional coordination and mentoring</li>
-                </ul>
-            </div>
             <div class="info-box">
                 <h3>Additional Projects</h3>
                 <ul>
