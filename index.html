@@ -87,23 +87,52 @@
                 }
 
         .role-summary {
-            max-width: 900px;
-            margin: 0.55rem auto 0;
-            padding: 0 1rem;
-            text-align: center;
-            color: #a8b7c5;
-            font-size: 0.84rem;
-            line-height: 1.45;
+            width: fit-content;
+            max-width: calc(100% - 2rem);
+            margin: 0.92rem auto 0.92rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.34rem;
         }
 
-        .role-summary strong {
-            color: #d6ebff;
-            font-weight: 700;
+        .role-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.24rem;
         }
 
-        .role-summary .role-accent {
-            color: #c3e9ff;
+        .role-tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: max-content;
+            max-width: 100%;
+            padding: 0.38rem 0.86rem;
+            border-radius: 999px;
+            border: 1.5px solid #2f5c7d;
+            background: #112536;
+            color: #d8ecff;
+            font-size: 1.38rem;
             font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: 0;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+        }
+
+        .role-tag.role-tag-primary {
+            margin: 0;
+            inline-size: min(620px, calc(100vw - 2rem));
+            max-inline-size: 100%;
+            padding: 0.56rem 1.4rem;
+            font-size: 2.3rem;
+            border-color: #3e8dc1;
+            background: #12334a;
+            color: #e8f6ff;
         }
 
         section {
@@ -291,6 +320,21 @@
                 max-width: 100%;
             }
 
+            .role-summary {
+                margin: 0.82rem auto 0.84rem;
+            }
+
+            .role-tag {
+                font-size: 1.2rem;
+                padding: 0.34rem 0.76rem;
+            }
+
+            .role-tag.role-tag-primary {
+                inline-size: min(540px, calc(100vw - 2rem));
+                font-size: 1.88rem;
+                padding: 0.48rem 1.18rem;
+            }
+
             header h1 {
                 font-size: 2.35rem;
             }
@@ -310,6 +354,22 @@
         @media (max-width: 680px) {
             .about-blocks {
                 grid-template-columns: 1fr;
+            }
+
+            .role-summary {
+                max-width: calc(100% - 1.35rem);
+                margin: 0.74rem auto 0.78rem;
+            }
+
+            .role-tag {
+                font-size: 1.08rem;
+                padding: 0.32rem 0.68rem;
+            }
+
+            .role-tag.role-tag-primary {
+                inline-size: min(460px, calc(100vw - 1.35rem));
+                font-size: 1.62rem;
+                padding: 0.42rem 0.95rem;
             }
 
             header {
@@ -378,7 +438,24 @@
             }
 
             .role-summary {
-                font-size: 0.78rem;
+                gap: 0.32rem;
+                max-width: calc(100% - 1.1rem);
+            }
+
+            .role-secondary {
+                gap: 0.18rem;
+            }
+
+            .role-tag {
+                font-size: 1rem;
+                padding: 0.3rem 0.62rem;
+                border-width: 1.2px;
+            }
+
+            .role-tag.role-tag-primary {
+                inline-size: min(360px, calc(100vw - 1.1rem));
+                font-size: 1.5rem;
+                padding: 0.4rem 1rem;
             }
         }
 
@@ -807,7 +884,13 @@
         <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.86 6.85-1.64 7.73c-.12.55-.45.68-.91.42l-2.52-1.86-1.22 1.17c-.13.13-.25.25-.51.25l.18-2.58 4.7-4.24c.2-.18-.04-.28-.31-.1l-5.8 3.65-2.5-.78c-.54-.17-.55-.54.11-.8l9.77-3.77c.45-.17.84.1.69.91z"/></svg><span>Telegram</span></a>
         <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h8l4 4v12H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm7 1.5V9h3.5L13 5.5zM8 11h8v1.6H8V11zm0 3h8v1.6H8V14z"/></svg><span>Блог команды</span></a>
     </div>
-    <div class="role-summary"><strong>Producer</strong> · <span class="role-accent">Project Manager</span> · <span class="role-accent">Game Designer</span></div>
+    <div class="role-summary">
+        <span class="role-tag role-tag-primary">Producer</span>
+        <div class="role-secondary">
+            <span class="role-tag">Project Manager</span>
+            <span class="role-tag">Game Designer</span>
+        </div>
+    </div>
 
     <section id="about-profile" class="section-dark">
         <h2>Компетенции и навыки</h2>
