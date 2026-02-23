@@ -141,11 +141,11 @@
 
         .about-blocks {
             display: grid;
-            grid-template-columns: repeat(4, minmax(160px, 220px));
-            justify-content: center;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 0.85rem;
-            max-width: 940px;
+            max-width: 1040px;
             margin: 0 auto;
+            align-items: start;
         }
 
         .about-block {
@@ -223,18 +223,21 @@
             color: #ffd4a8;
         }
 
+        .about-block.tasks {
+            grid-column: 1 / -1;
+        }
+
         .about-block.tasks .about-items {
-            flex-direction: column;
-            flex-wrap: nowrap;
-            align-items: stretch;
-            gap: 0.38rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.34rem;
+            align-content: flex-start;
         }
 
         .about-block.tasks .about-chip.task {
-            display: block;
-            width: 100%;
-            border-radius: 8px;
-            padding: 0.3rem 0.55rem;
+            display: inline-block;
+            border-radius: 999px;
+            padding: 0.2rem 0.5rem;
         }
 
         .about-block.tools .about-label {
@@ -723,6 +726,17 @@
                     <span class="about-chip platform">Narrative Games</span>
                 </div>
             </div>
+            <div class="about-block tools">
+                <span class="about-label">Tools</span>
+                <div class="about-items">
+                    <span class="about-chip tool">Unity (C#)</span>
+                    <span class="about-chip tool">Canvas / Ink</span>
+                    <span class="about-chip tool">SQL / DevToDev</span>
+                    <span class="about-chip tool">Firebase / AppMetrica</span>
+                    <span class="about-chip tool">Jira / FigJam</span>
+                    <span class="about-chip tool">Git / Plastic SCM</span>
+                </div>
+            </div>
             <div class="about-block tasks">
                 <span class="about-label">Responsibilities</span>
                 <div class="about-items">
@@ -738,17 +752,6 @@
                     <span class="about-chip task">A/B experiments</span>
                     <span class="about-chip task">Pre-release checks</span>
                     <span class="about-chip task">Cross-device UI checks</span>
-                </div>
-            </div>
-            <div class="about-block tools">
-                <span class="about-label">Tools</span>
-                <div class="about-items">
-                    <span class="about-chip tool">Unity (C#)</span>
-                    <span class="about-chip tool">Canvas / Ink</span>
-                    <span class="about-chip tool">SQL / DevToDev</span>
-                    <span class="about-chip tool">Firebase / AppMetrica</span>
-                    <span class="about-chip tool">Jira / FigJam</span>
-                    <span class="about-chip tool">Git / Plastic SCM</span>
                 </div>
             </div>
         </div>
