@@ -29,14 +29,14 @@
 
         header {
             background: #000;
-            padding: 3rem 1rem;
+            padding: 2.1rem 1rem 0.65rem;
             text-align: center;
         }
 
             header h1 {
                 font-size: 3rem;
                 color: #0af;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0;
             }
 
             header p {
@@ -86,10 +86,56 @@
                     color: #0af;
                 }
 
+        .role-summary {
+            max-width: 900px;
+            margin: 0.55rem auto 0;
+            padding: 0 1rem;
+            text-align: center;
+            color: #a8b7c5;
+            font-size: 0.84rem;
+            line-height: 1.45;
+        }
+
+        .role-summary strong {
+            color: #d6ebff;
+            font-weight: 700;
+        }
+
+        .role-summary .role-accent {
+            color: #c3e9ff;
+            font-weight: 700;
+        }
+
         section {
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 1rem;
+        }
+
+        section.section-dark,
+        section.section-light {
+            border-radius: 16px;
+            padding: 1.35rem 1.2rem;
+        }
+
+        section.section-dark {
+            background: #0f141a;
+            border: 1px solid #1e2933;
+        }
+
+        section.section-light {
+            background: rgba(138, 151, 164, 0.18);
+            border: 1.5px solid rgba(255, 255, 255, 0.24);
+            color: #d7e3ee;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+        }
+
+        section.section-light h2 {
+            color: #6fc6ff;
+        }
+
+        section.section-light .section-note {
+            color: #adbece;
         }
 
             section h2 {
@@ -141,9 +187,9 @@
 
         .about-blocks {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(220px, 1fr));
             gap: 0.85rem;
-            max-width: 1040px;
+            max-width: 1120px;
             margin: 0 auto;
             align-items: start;
         }
@@ -223,27 +269,14 @@
             color: #ffd4a8;
         }
 
-        .about-block.tasks {
-            grid-column: 1 / -1;
-        }
-
-        .about-block.tasks .about-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.34rem;
-            align-content: flex-start;
-        }
-
-        .about-block.tasks .about-chip.task {
-            display: inline-block;
-            border-radius: 999px;
-            padding: 0.2rem 0.5rem;
-        }
-
         .about-block.tools .about-label {
             background: #2a1b32;
             color: #e3b8ff;
             border: 1px solid #654178;
+        }
+
+        .about-block.tools {
+            grid-column: 1 / -1;
         }
 
         .about-chip.tool {
@@ -280,7 +313,7 @@
             }
 
             header {
-                padding: 2.1rem 1rem 1.5rem;
+                padding: 1.45rem 1rem 0.55rem;
             }
 
             header h1 {
@@ -342,6 +375,10 @@
                 display: inline-flex;
                 align-items: center;
                 margin: 0.15rem 0.28rem;
+            }
+
+            .role-summary {
+                font-size: 0.78rem;
             }
         }
 
@@ -456,6 +493,29 @@
                 box-shadow: 0 8px 22px rgba(246, 167, 63, 0.38);
             }
 
+        section.section-light .project-tile {
+            background: #1a1a1a;
+            border: 1.5px solid rgba(255, 255, 255, 0.32);
+        }
+
+        section.section-light .project-thumb {
+            background: #222;
+        }
+
+        section.section-light .project-info h3 {
+            color: #eee;
+        }
+
+        section.section-light .project-info p {
+            color: #ccc;
+        }
+
+        section.section-light .project-info .project-date {
+            background: #122330;
+            border: 1.5px solid rgba(255, 255, 255, 0.32);
+            color: #9ddcff;
+        }
+
         .timeline {
             max-width: 980px;
             margin: 0 auto;
@@ -519,6 +579,32 @@
                 font-size: 0.9rem;
             }
 
+        section.section-light .timeline::before {
+            background: linear-gradient(180deg, #2292da 0%, #5d7083 100%);
+        }
+
+        section.section-light .timeline-dot {
+            background: #2292da;
+            box-shadow: 0 0 0 4px rgba(34, 146, 218, 0.18);
+        }
+
+        section.section-light .timeline-card {
+            background: #1a1a1a;
+            border: 1.5px solid rgba(255, 255, 255, 0.32);
+        }
+
+        section.section-light .timeline-card h3 {
+            color: #eee;
+        }
+
+        section.section-light .timeline-card .timeline-date {
+            color: #9ddcff;
+        }
+
+        section.section-light .timeline-card p {
+            color: #c9d2d9;
+        }
+
         .info-section {
             display: grid;
             justify-content: center;
@@ -557,6 +643,32 @@
             color: #0af;
         }
 
+        section.section-light .info-box {
+            background: #1a1a1a;
+            border: 1.5px solid rgba(255, 255, 255, 0.32);
+        }
+
+        section.section-light .info-box h3 {
+            color: #0af;
+        }
+
+        section.section-light .info-box p,
+        section.section-light .info-box ul {
+            color: #ccc;
+        }
+
+        section.section-light .info-box strong {
+            color: #9ddcff;
+        }
+
+        section.section-light .project-group-title {
+            color: #71c6ff;
+        }
+
+        section.section-light .project-group-note {
+            color: #adbece;
+        }
+
             .info-box strong a {
                 color: inherit;
                 text-decoration: underline;
@@ -566,6 +678,10 @@
             .info-box strong a:hover {
                 color: #fff;
             }
+
+        section.section-light .info-box strong a:hover {
+            color: #fff;
+        }
 
         .info-box ul.external-links {
             list-style: none;
@@ -683,7 +799,6 @@
     <div class="lang-switch"><a href="index-en.html" aria-label="Switch to English version"><span class="flag-icon flag-us" aria-hidden="true"></span><span>EN</span></a></div>
     <header>
         <h1>Роман Абашин</h1>
-        <p><span class="role-highlight">Producer</span> с опытом в <span class="role-highlight">Project Manager</span> и <span class="role-highlight">Game Designer</span> — веду игры от гипотез и продакшена до релизов, A/B тестов и развития проекта</p>
     </header>
 
     <div class="contact-short">
@@ -692,73 +807,65 @@
         <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.86 6.85-1.64 7.73c-.12.55-.45.68-.91.42l-2.52-1.86-1.22 1.17c-.13.13-.25.25-.51.25l.18-2.58 4.7-4.24c.2-.18-.04-.28-.31-.1l-5.8 3.65-2.5-.78c-.54-.17-.55-.54.11-.8l9.77-3.77c.45-.17.84.1.69.91z"/></svg><span>Telegram</span></a>
         <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h8l4 4v12H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm7 1.5V9h3.5L13 5.5zM8 11h8v1.6H8V11zm0 3h8v1.6H8V14z"/></svg><span>Блог команды</span></a>
     </div>
+    <div class="role-summary"><strong>Producer</strong> · <span class="role-accent">Project Manager</span> · <span class="role-accent">Game Designer</span></div>
 
-    <!-- Обо мне -->
-    <section id="about">
-        <h2>Обо мне</h2>
-        <div class="info-section">
-            <div class="info-box">
-                <p>Я <strong>Producer</strong> в геймдеве: веду проект от идеи и прототипа до релиза и дальнейшей поддержки. Работал с mobile, web, VR/LBE VR и online-проектами. На практике также закрываю задачи <strong>Project Manager</strong> и <strong>Game Designer</strong>: приоритизирую бэклог, планирую roadmap и спринты, координирую команду. В продуктовых решениях опираюсь на данные: анализирую воронки, формирую и проверяю гипотезы, тестирую монетизацию и баланс, провожу A/B эксперименты и предрелизные проверки сборок.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about-profile">
+    <section id="about-profile" class="section-dark">
         <h2>Компетенции и навыки</h2>
         <div class="about-blocks">
-            <div class="about-block roles">
-                <span class="about-label">Роли в проектах</span>
-                <div class="about-items">
-                    <span class="about-chip role">Producer</span>
-                    <span class="about-chip role">Project Manager</span>
-                    <span class="about-chip role">Game Designer</span>
-                    <span class="about-chip role">Analyst</span>
-                    <span class="about-chip role">Technical Game Design</span>
-                </div>
-            </div>
-            <div class="about-block platforms">
-                <span class="about-label">Платформы</span>
-                <div class="about-items">
-                    <span class="about-chip platform">Mobile</span>
-                    <span class="about-chip platform">Web</span>
-                    <span class="about-chip platform">VR / LBE VR</span>
-                    <span class="about-chip platform">Online Multiplayer</span>
-                    <span class="about-chip platform">Narrative Games</span>
-                </div>
-            </div>
-            <div class="about-block tools">
-                <span class="about-label">Инструменты</span>
-                <div class="about-items">
-                    <span class="about-chip tool">Unity (C#)</span>
-                    <span class="about-chip tool">Canvas / Ink</span>
-                    <span class="about-chip tool">SQL / DevToDev</span>
-                    <span class="about-chip tool">Firebase / AppMetrica</span>
-                    <span class="about-chip tool">Jira / FigJam</span>
-                    <span class="about-chip tool">Git / Plastic SCM</span>
-                </div>
-            </div>
             <div class="about-block tasks">
-                <span class="about-label">Задачи</span>
+                <span class="about-label">Producer</span>
                 <div class="about-items">
                     <span class="about-chip task">Сопровождение релизов</span>
                     <span class="about-chip task">Приоритизация бэклога</span>
-                    <span class="about-chip task">Планирование roadmap</span>
-                    <span class="about-chip task">Управление спринтами</span>
-                    <span class="about-chip task">Координация команды</span>
-                    <span class="about-chip task">Анализ данных и воронок</span>
-                    <span class="about-chip task">Построение гипотез</span>
-                    <span class="about-chip task">Тестирование монетизации</span>
-                    <span class="about-chip task">Баланс и прогрессия</span>
+                    <span class="about-chip task">Roadmap и релизные планы</span>
                     <span class="about-chip task">A/B эксперименты</span>
-                    <span class="about-chip task">Предрелизные проверки</span>
-                    <span class="about-chip task">Проверка UI под устройства</span>
+                    <span class="about-chip task">Анализ воронок и метрик</span>
+                    <span class="about-chip task">Тестирование монетизации</span>
+                </div>
+            </div>
+            <div class="about-block roles">
+                <span class="about-label">Project Manager</span>
+                <div class="about-items">
+                    <span class="about-chip role">Управление спринтами</span>
+                    <span class="about-chip role">Постановка и декомпозиция задач</span>
+                    <span class="about-chip role">Координация команд</span>
+                    <span class="about-chip role">Контроль сроков и рисков</span>
+                    <span class="about-chip role">Подготовка релизов</span>
+                </div>
+            </div>
+            <div class="about-block platforms">
+                <span class="about-label">Game Designer</span>
+                <div class="about-items">
+                    <span class="about-chip platform">Баланс и прогрессия</span>
+                    <span class="about-chip platform">Монетизационные механики</span>
+                    <span class="about-chip platform">Экономика и retention-циклы</span>
+                    <span class="about-chip platform">Проверка UI под устройства</span>
+                    <span class="about-chip platform">Предрелизные проверки сборок</span>
+                </div>
+            </div>
+            <div class="about-block tools">
+                <span class="about-label">Инструменты и аналитика</span>
+                <div class="about-items">
+                    <span class="about-chip tool">SQL</span>
+                    <span class="about-chip tool">DevToDev</span>
+                    <span class="about-chip tool">Firebase</span>
+                    <span class="about-chip tool">AppMetrica</span>
+                    <span class="about-chip tool">Jira</span>
+                    <span class="about-chip tool">FigJam</span>
+                    <span class="about-chip tool">Google Sheets</span>
+                    <span class="about-chip tool">Google Docs</span>
+                    <span class="about-chip tool">Google Play Console</span>
+                    <span class="about-chip tool">Yandex Games Console</span>
+                    <span class="about-chip tool">Unity (C#)</span>
+                    <span class="about-chip tool">Canvas / Ink</span>
+                    <span class="about-chip tool">Git / Plastic SCM</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Ключевые проекты -->
-    <section id="projects">
+    <section id="projects" class="section-light">
         <h2>Ключевые проекты</h2>
         <div class="project-grid">
             <a href="projects/uga-dooga.html" class="project-tile">
@@ -804,55 +911,8 @@
         </div>
     </section>
 
-    <!-- Career Timeline -->
-    <section id="timeline">
-        <h2>Таймлайн проектов</h2>
-        <div class="timeline">
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Июль 2024 — настоящее время</p>
-                    <h3>Uga Dooga</h3>
-                    <p>Producer / Project Manager, Analyst, Game Designer (предрелизные проверки качества)</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Сентябрь 2023 — Май 2024</p>
-                    <h3>Sexy Beaches</h3>
-                    <p>Game Designer, 18+ Web Idle, Nutaku</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Июнь 2023 — Январь 2024</p>
-                    <h3>Magic Solution</h3>
-                    <p>Lead Game Designer, AI Chat и Brain Training</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Янв. 2021 — Июнь 2023</p>
-                    <h3>Ayist Games</h3>
-                    <p>Technical Game Designer, Novels и DreamChat</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Июнь 2019 — Апр. 2020</p>
-                    <h3>Another World</h3>
-                    <p>Technical Game Designer, LBE VR на Unity</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
     <!-- Личные проекты -->
-    <section id="personal-projects">
+    <section id="personal-projects" class="section-dark">
         <h2>Личные проекты</h2>
         <p class="section-note">Эти проекты мы делали в команде «Игродельня».</p>
         <div class="project-group">
@@ -862,40 +922,7 @@
                     <div class="project-thumb"><img src="images/DeadRiver/DeadRiver_icon.jpg" alt="Icon Obby & Dead River"></div>
                     <div class="project-info">
                         <h3>Обби и Река Смерти (Obby &amp; Dead River)</h3>
-                        <p>Доступен в релизе на Яндекс Играх и CrazyGames. 3D-приключение от первого лица в стиле Roblox: река смерти, замки, бои, лут и финальный босс.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="project-group">
-            <h3 class="project-group-title">Были в релизе, но сняты</h3>
-            <div class="project-grid">
-                <a href="projects/horror-mita.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/horror-mita/horror-mita-icon.jpg" alt="Icon Horror Mita"></div>
-                    <div class="project-info">
-                        <h3>Horror Mita</h3>
-                        <p>Ранее была в релизе на Яндекс Играх. Хоррор-проект с механикой побега, поиском ключей и системой лидерборда.</p>
-                    </div>
-                </a>
-                <a href="projects/downhill-racers.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/downhill-racers/downhill-racers-icon.jpg" alt="Icon Downhill Racers"></div>
-                    <div class="project-info">
-                        <h3>Downhill Racers</h3>
-                        <p>Ранее была в релизе на Яндекс Играх. Аркадные гонки со спуском, тюнингом машин и внутриигровой экономикой.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="project-group">
-            <h3 class="project-group-title">Игры в разработке</h3>
-            <div class="project-grid">
-                <a href="projects/zoo-online.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/ZooOnline/ZooOnline_Icon.png" alt="Icon Zoo Online"></div>
-                    <div class="project-info">
-                        <h3>Zoo Online</h3>
-                        <p>Новый онлайн-проект: выращивание животных, развитие своего зоопарка и встречи с другими игроками и их зоопарками.</p>
+                        <p>Разработка: с 3 мая. Релиз: 10 июля. Доступен на Яндекс Играх и CrazyGames. 3D-приключение от первого лица в стиле Roblox: река смерти, замки, бои, лут и финальный босс.</p>
                     </div>
                 </a>
             </div>
@@ -909,7 +936,7 @@
                     <div class="project-thumb"><img src="images/Mind-alchemy/Mind-alchemy_Icon.png" alt="Icon Mind Alchemy"></div>
                     <div class="project-info">
                         <h3>Mind Alchemy</h3>
-                        <p>Джемовый проект с фокусом на экспериментальные механики, темп прохождения и выразительную визуальную подачу.</p>
+                        <p>Ludum Dare 58: разработка с 4 октября по 6 октября. Джемовый проект с фокусом на экспериментальные механики, темп прохождения и выразительную визуальную подачу.</p>
                         <div class="project-actions">
                             <a href="https://melomanergames.itch.io/mind-alchemy" class="project-btn itch" target="_blank" rel="noopener noreferrer">Играть на Itch</a>
                         </div>
@@ -919,7 +946,7 @@
                     <div class="project-thumb"><img src="images/Cursed Labyrinth/CursedLabyrinth_Icon.png" alt="Icon Cursed Labyrinth"></div>
                     <div class="project-info">
                         <h3>Cursed Labyrinth</h3>
-                        <p>Джемовый прототип атмосферного приключения с упором на исследование локаций, риск и принятие решений под давлением.</p>
+                        <p>Siberian Game Jam: разработка с 1 ноября по 4 ноября. Джемовый прототип атмосферного приключения с упором на исследование локаций, риск и принятие решений под давлением.</p>
                         <div class="project-actions">
                             <a href="https://melomanergames.itch.io/for-ld58" class="project-btn itch" target="_blank" rel="noopener noreferrer">Играть на Itch</a>
                         </div>
@@ -927,30 +954,94 @@
                 </article>
             </div>
         </div>
+    </section>
 
-        <div class="project-group">
-            <h3 class="project-group-title">Отложенные игры</h3>
-            <div class="project-grid">
-                <a href="projects/hide-seek.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/hide-seek/hide-seek-icon.jpg" alt="Icon Hide & Seek"></div>
-                    <div class="project-info">
-                        <h3>Hide &amp; Seek (Roblox)</h3>
-                        <p>Проект поставлен на паузу. PvP-формат пряток с ролями «искатель/прячущийся» и ИИ-поведением для динамичных раундов.</p>
-                    </div>
-                </a>
-                <a href="projects/witchs-brew.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/witchs-brew/witchs-brew-icon.jpg" alt="Icon Witch's Brew"></div>
-                    <div class="project-info">
-                        <h3>Witch's Brew</h3>
-                        <p>Проект поставлен на паузу. Система варки зелий, сбор ресурсов и цикл прогрессии вокруг магической фермы.</p>
-                    </div>
-                </a>
+    <!-- Таймлайн -->
+    <section id="timeline" class="section-light">
+        <h2>Таймлайн и стаж</h2>
+        <p class="section-note">Общий коммерческий стаж в геймдеве: 6 лет 8 месяцев (с июня 2019 по февраль 2026).</p>
+        <div class="timeline">
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Июль 2024 — настоящее время · 1 год 8 месяцев</p>
+                    <h3>Uga Dooga</h3>
+                    <p>Producer / Project Manager: релизы, аналитика, гипотезы, монетизация и A/B тесты.</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Сентябрь 2023 — Май 2024 · 9 месяцев</p>
+                    <h3>Sexy Beaches (18+)</h3>
+                    <p>Game Designer: баланс экономики, настройка конфигов, монетизация и пострелизная аналитика.</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Июнь 2023 — Январь 2024 · 8 месяцев</p>
+                    <h3>Magic Solution</h3>
+                    <p>Lead Game Designer: запуск AI Chat и Brain Training, управление командой и документация.</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Январь 2021 — Июнь 2023 · 2 года 6 месяцев</p>
+                    <h3>Ayist Games</h3>
+                    <p>Technical Game Designer: Novels и DreamChat, монетизация, аналитика, Unity/Ink скриптинг.</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Июнь 2019 — Апрель 2020 · 11 месяцев</p>
+                    <h3>Another World</h3>
+                    <p>Technical Game Designer: LBE VR на Unity, AI/оружие, документация и поддержка релиза.</p>
+                </div>
+            </article>
+                        <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">3 мая — 10 июля · релиз 10 июля</p>
+                    <h3>Личные проекты: Obby &amp; Dead River</h3>
+                    <p>Релиз и развитие игры: монетизация, баланс, внутриигровые системы и поддержка обновлений.</p>
+                </div>
+            </article>
+            
+                        <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Ludum Dare 58 · 4 октября — 6 октября</p>
+                    <h3>Mind Alchemy</h3>
+                    <p>Роль: программист и гейм-дизайнер. Быстрая сборка прототипа и проверка core-механики в рамках джема.</p>
+                </div>
+            </article>
+            <article class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <p class="timeline-date">Siberian Game Jam · 1 ноября — 4 ноября</p>
+                    <h3>Cursed Labyrinth</h3>
+                    <p>Роль: программист и гейм-дизайнер. Атмосферный прототип, собранный в жесткие сроки джема.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Обо мне -->
+    <section id="about" class="section-dark">
+        <h2>Обо мне</h2>
+        <div class="info-section">
+            <div class="info-box">
+                <p>Мне нравится собирать проект в понятную систему: чтобы команда видела приоритеты, а у продукта был прозрачный план развития после релиза. Я не про «красивые отчеты ради отчетов», а про рабочие решения, которые улучшают игру и метрики одновременно.</p>
+                <p>В работе я спокойный и практичный: быстро фиксирую проблемы, договариваюсь между командами и довожу задачи до результата. Ближе всего мне роль продюсера, потому что в ней можно держать баланс между интересами игроков, бизнеса и команды.</p>
             </div>
         </div>
     </section>
 
     <!-- Дополнительные проекты -->
-    <section id="info">
+    <section id="info" class="section-light">
         <h2>Дополнительные проекты</h2>
         <div class="info-section">
             <div class="info-box">
