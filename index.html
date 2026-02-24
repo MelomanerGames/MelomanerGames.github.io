@@ -681,6 +681,38 @@
             color: #c9d2d9;
         }
 
+        .timeline-columns {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2rem;
+            align-items: start;
+        }
+
+        .timeline-col {
+            background: rgba(10, 15, 20, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            padding: 0.85rem;
+        }
+
+        .timeline-col-title {
+            margin: 0 0 0.7rem;
+            font-size: 1rem;
+            color: #9ddcff;
+            text-align: left;
+        }
+
+        .timeline-col .timeline {
+            max-width: 100%;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .timeline-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .info-section {
             display: grid;
             justify-content: center;
@@ -1042,72 +1074,81 @@
     <section id="timeline" class="section-light">
         <h2>Таймлайн и стаж</h2>
         <p class="section-note">Общий коммерческий стаж в геймдеве: 6 лет 8 месяцев (с июня 2019 по февраль 2026).</p>
-        <div class="timeline">
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Июль 2024 — настоящее время · 1 год 8 месяцев</p>
-                    <h3>Uga Dooga</h3>
-                    <p>Producer / Project Manager: релизы, аналитика, гипотезы, монетизация и A/B тесты.</p>
+        <div class="timeline-columns">
+            <div class="timeline-col">
+                <h3 class="timeline-col-title">Коммерческие проекты</h3>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <p class="timeline-date">Июль 2024 — настоящее время · 1 год 8 месяцев</p>
+                            <h3>Uga Dooga</h3>
+                            <p>Producer / Project Manager: релизы, аналитика, гипотезы, монетизация и A/B тесты.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <p class="timeline-date">Сентябрь 2023 — Май 2024 · 9 месяцев</p>
+                            <h3>Sexy Beaches (18+)</h3>
+                            <p>Game Designer: баланс экономики, настройка конфигов, монетизация и пострелизная аналитика.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <p class="timeline-date">Июнь 2023 — Январь 2024 · 8 месяцев</p>
+                            <h3>Magic Solution</h3>
+                            <p>Lead Game Designer: запуск AI Chat и Brain Training, управление командой и документация.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <p class="timeline-date">Январь 2021 — Июнь 2023 · 2 года 6 месяцев</p>
+                            <h3>Ayist Games</h3>
+                            <p>Technical Game Designer: Novels и DreamChat, монетизация, аналитика, Unity/Ink скриптинг.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <p class="timeline-date">Июнь 2019 — Апрель 2020 · 11 месяцев</p>
+                            <h3>Another World</h3>
+                            <p>Technical Game Designer: LBE VR на Unity, AI/оружие, документация и поддержка релиза.</p>
+                        </div>
+                    </article>
                 </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Сентябрь 2023 — Май 2024 · 9 месяцев</p>
-                    <h3>Sexy Beaches (18+)</h3>
-                    <p>Game Designer: баланс экономики, настройка конфигов, монетизация и пострелизная аналитика.</p>
+            </div>
+            <div class="timeline-col">
+                <h3 class="timeline-col-title">Личные проекты (2025)</h3>
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <p class="timeline-date">3 мая 2025 — 10 июля 2025 · релиз 10 июля 2025</p>
+                            <h3>Obby &amp; Dead River</h3>
+                            <p>Релиз и развитие игры: монетизация, баланс, внутриигровые системы и поддержка обновлений.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <p class="timeline-date">4 октября 2025 — 6 октября 2025 · Ludum Dare 58</p>
+                            <h3>Mind Alchemy</h3>
+                            <p>Роль: программист и гейм-дизайнер. Быстрая сборка прототипа и проверка core-механики в рамках джема.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <p class="timeline-date">1 ноября 2025 — 4 ноября 2025 · Siberian Game Jam</p>
+                            <h3>Cursed Labyrinth</h3>
+                            <p>Роль: программист и гейм-дизайнер. Атмосферный прототип, собранный в жесткие сроки джема.</p>
+                        </div>
+                    </article>
                 </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Июнь 2023 — Январь 2024 · 8 месяцев</p>
-                    <h3>Magic Solution</h3>
-                    <p>Lead Game Designer: запуск AI Chat и Brain Training, управление командой и документация.</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Январь 2021 — Июнь 2023 · 2 года 6 месяцев</p>
-                    <h3>Ayist Games</h3>
-                    <p>Technical Game Designer: Novels и DreamChat, монетизация, аналитика, Unity/Ink скриптинг.</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Июнь 2019 — Апрель 2020 · 11 месяцев</p>
-                    <h3>Another World</h3>
-                    <p>Technical Game Designer: LBE VR на Unity, AI/оружие, документация и поддержка релиза.</p>
-                </div>
-            </article>
-                        <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">3 мая — 10 июля · релиз 10 июля</p>
-                    <h3>Личные проекты: Obby &amp; Dead River</h3>
-                    <p>Релиз и развитие игры: монетизация, баланс, внутриигровые системы и поддержка обновлений.</p>
-                </div>
-            </article>
-            
-                        <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Ludum Dare 58 · 4 октября — 6 октября</p>
-                    <h3>Mind Alchemy</h3>
-                    <p>Роль: программист и гейм-дизайнер. Быстрая сборка прототипа и проверка core-механики в рамках джема.</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Siberian Game Jam · 1 ноября — 4 ноября</p>
-                    <h3>Cursed Labyrinth</h3>
-                    <p>Роль: программист и гейм-дизайнер. Атмосферный прототип, собранный в жесткие сроки джема.</p>
-                </div>
-            </article>
+            </div>
         </div>
     </section>
 
@@ -1174,5 +1215,3 @@
     </script>
 </body>
 </html>
-
-
