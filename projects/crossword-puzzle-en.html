@@ -14,11 +14,23 @@
             box-sizing: border-box;
         }
 
+        html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
+            max-width: 100%;
+            overflow-x: hidden;
             background: #111;
             color: #eee;
             font-family: 'Segoe UI',sans-serif;
             line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         a {
@@ -47,6 +59,8 @@
                 border-radius: 12px;
                 padding: 0.55rem 1.05rem;
                 box-shadow: 0 8px 20px rgba(10, 165, 255, 0.35);
+                max-width: 100%;
+                overflow-wrap: anywhere;
                 transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
             }
 
@@ -64,9 +78,12 @@
         }
 
         .content {
+            width: 100%;
             max-width: 800px;
+            min-width: 0;
             margin: 2rem auto;
             padding: 0 1rem;
+            overflow-wrap: anywhere;
         }
 
             .content h1 {
@@ -78,6 +95,7 @@
             .content p {
                 margin-bottom: 1.5rem;
                 color: #ccc;
+                overflow-wrap: anywhere;
             }
 
             .content ul {
@@ -114,6 +132,7 @@
                 }
 
         .shot-wrap {
+            min-width: 0;
             position: relative;
         }
 
@@ -186,6 +205,7 @@
                 border-color: #8be6ff;
             }
         .screenshots {
+            min-width: 0;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
@@ -205,6 +225,9 @@
 
             .hero {
                 height: 220px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
             }
 
             .content {

@@ -11,7 +11,14 @@
             box-sizing: border-box;
         }
 
+        html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
+            max-width: 100%;
+            overflow-x: hidden;
             background-color: #111;
             color: #eee;
             font-family: 'Segoe UI', sans-serif;
@@ -40,6 +47,9 @@
             }
 
             header p {
+                max-width: 1120px;
+                margin: 0 auto;
+                padding: 0 0.5rem;
                 font-size: 1.2rem;
                 color: #ccc;
             }
@@ -57,6 +67,10 @@
             }
 
         .contact-short {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.35rem 1rem;
             background: #111;
             padding: 1rem;
             text-align: center;
@@ -68,7 +82,9 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 0.35rem;
-                margin: 0 0.5rem;
+                max-width: 100%;
+                min-width: 0;
+                margin: 0;
                 padding: 0.18rem 0.24rem;
                 color: #aaa;
                 font-size: 0.9rem;
@@ -80,6 +96,11 @@
                     fill: currentColor;
                     opacity: 0.9;
                     flex: 0 0 auto;
+                }
+
+                .contact-short a span {
+                    min-width: 0;
+                    overflow-wrap: anywhere;
                 }
 
                 .contact-short a:hover {
@@ -130,7 +151,7 @@
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             gap: 1.5rem;
         }
 
@@ -154,6 +175,7 @@
             border-radius: 12px;
             padding: 0.72rem;
             display: flex;
+            min-width: 0;
             flex-direction: column;
             justify-content: flex-start;
         }
@@ -166,13 +188,17 @@
             letter-spacing: 0.02em;
             text-transform: uppercase;
             border-radius: 999px;
+            max-width: 100%;
             padding: 0.14rem 0.46rem;
             margin-bottom: 0.42rem;
+            white-space: normal;
+            overflow-wrap: anywhere;
         }
 
         .about-items {
             display: flex;
             flex-wrap: wrap;
+            min-width: 0;
             gap: 0.34rem;
             align-content: flex-start;
         }
@@ -182,9 +208,12 @@
             font-size: 0.73rem;
             font-weight: 600;
             border-radius: 999px;
+            max-width: 100%;
             padding: 0.2rem 0.5rem;
             border: 1px solid transparent;
             line-height: 1.25;
+            white-space: normal;
+            overflow-wrap: anywhere;
         }
 
         .about-block.roles .about-label {
@@ -276,7 +305,7 @@
 
         @media (max-width: 680px) {
             .about-blocks {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
             }
 
             header {
@@ -301,7 +330,7 @@
             }
 
             .project-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
                 gap: 1rem;
             }
 
@@ -310,7 +339,7 @@
             }
 
             .info-section {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
                 gap: 1.15rem;
             }
 
@@ -338,10 +367,13 @@
         }
 
         @media (max-width: 420px) {
+            .contact-short {
+                gap: 0.28rem 0.55rem;
+            }
             .contact-short a {
                 display: inline-flex;
                 align-items: center;
-                margin: 0.15rem 0.28rem;
+                margin: 0;
             }
         }
 
@@ -370,6 +402,7 @@
 
             .project-thumb img {
                 width: 410px;
+                max-width: 100%;
                 height: 210px;
                 object-fit: contain;
             }
@@ -399,7 +432,10 @@
                 color: #9ddcff;
                 font-size: 0.78rem;
                 font-weight: 600;
+                max-width: 100%;
                 line-height: 1.2;
+                white-space: normal;
+                overflow-wrap: anywhere;
             }
 
             .project-info .project-date + p {
@@ -418,8 +454,11 @@
             font-size: 0.8rem;
             font-weight: 700;
             border-radius: 999px;
+            max-width: 100%;
             padding: 0.34rem 0.72rem;
             line-height: 1.25;
+            white-space: normal;
+            overflow-wrap: anywhere;
             transition: transform 0.2s, box-shadow 0.2s, filter 0.2s, border-color 0.2s;
         }
 
@@ -683,7 +722,7 @@
         <div class="lang-switch"><a href="index.html" aria-label="Switch to Russian version"><span class="flag-icon flag-ru" aria-hidden="true"></span><span>RU</span></a></div>
     <header>
         <h1>Roman Abashin</h1>
-        <p><span class="role-highlight">Producer / Game Designer</span> with integrated <span class="role-highlight">Project Manager</span> responsibilities — I lead games from hypotheses and production through releases, A/B tests, and project growth.</p>
+        <p><span class="role-highlight">Producer / Game Designer</span> with <span class="role-highlight">Project Manager</span> responsibilities — 6+ years in game development, leading mobile/web/VR projects from hypotheses and roadmap to release, analytics, monetization, and product growth.</p>
     </header>
 
     <div class="contact-short">
@@ -693,23 +732,28 @@
         <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h8l4 4v12H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm7 1.5V9h3.5L13 5.5zM8 11h8v1.6H8V11zm0 3h8v1.6H8V14z"/></svg><span>Team Blog</span></a>
     </div>
 
-    <!-- About Me -->
+    <!-- Profile Summary -->
     <section id="about">
-        <h2>About Me</h2>
+        <h2>Profile Summary</h2>
         <div class="info-section">
             <div class="info-box">
-                <p>I work as a <strong>Producer / Game Designer</strong> in game development, leading projects from concept and prototype to release and live support. I have worked on mobile, web, VR/LBE VR, and online products. In practice, I also cover <strong>Project Manager</strong> responsibilities: prioritizing backlog, planning roadmap and sprints, and coordinating the team. I make product decisions through data: funnel analysis, hypothesis validation, monetization and balance testing, A/B experiments, and pre-release build checks.</p>
+                <p><strong>Producer / Game Designer with 6+ years of commercial game development experience</strong> across mobile, web, VR/LBE VR, and online products. I work at the intersection of product, game design, and project management: from idea and prototype to release, live operations, analytics, and metric growth.</p>
+                <ul>
+                    <li><strong>Target roles:</strong> Producer, Game Producer, Lead/Technical Game Designer, Product-oriented Game Designer.</li>
+                    <li><strong>Ownership areas:</strong> roadmap, backlog, release planning, task decomposition, team coordination, funnel analytics, monetization, balance, and A/B tests.</li>
+                    <li><strong>Core strength:</strong> translating product goals into clear team tasks and validating decisions through data, build quality, and player feedback.</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section id="about-profile">
-        <h2>Competencies & Skills</h2>
+        <h2>Core Competencies</h2>
         <div class="about-blocks">
             <div class="about-block roles">
                 <span class="about-label">Project Roles</span>
                 <div class="about-items">
-                    <span class="about-chip role">Producer / Game Designer (Core)</span>
+                    <span class="about-chip role">Producer / Game Designer</span>
                     <span class="about-chip role">Project Manager</span>
                     <span class="about-chip role">Analyst</span>
                     <span class="about-chip role">Technical Game Design</span>
@@ -739,16 +783,16 @@
             <div class="about-block tasks">
                 <span class="about-label">Responsibilities</span>
                 <div class="about-items">
-                    <span class="about-chip task">Release support</span>
+                    <span class="about-chip task">Release ownership and live ops</span>
                     <span class="about-chip task">Backlog prioritization</span>
                     <span class="about-chip task">Roadmap planning</span>
                     <span class="about-chip task">Sprint management</span>
                     <span class="about-chip task">Team coordination</span>
-                    <span class="about-chip task">Data and funnel analysis</span>
-                    <span class="about-chip task">Hypothesis building</span>
-                    <span class="about-chip task">Monetization testing</span>
+                    <span class="about-chip task">Product analytics and funnels</span>
+                    <span class="about-chip task">Hypotheses and A/B tests</span>
+                    <span class="about-chip task">Monetization and economy</span>
                     <span class="about-chip task">Balance and progression</span>
-                    <span class="about-chip task">A/B experiments</span>
+                    <span class="about-chip task">Experiment design</span>
                     <span class="about-chip task">Pre-release checks</span>
                     <span class="about-chip task">Cross-device UI checks</span>
                 </div>
@@ -758,14 +802,14 @@
 
     <!-- Key Projects -->
     <section id="projects">
-        <h2>Key Projects</h2>
+        <h2>Key Commercial Projects</h2>
         <div class="project-grid">
             <a href="projects/uga-dooga-en.html" class="project-tile">
                 <div class="project-thumb"><img src="images/UgaDooga/uga-dooga.jpg" alt="Icon Uga Dooga"></div>
                 <div class="project-info">
                     <h3>Uga Dooga</h3>
                     <p class="project-date">July 2024 — Present</p>
-                    <p>Producer / Game Designer with integrated Project Manager responsibilities: releases, product analytics, hypotheses, monetization testing, and pre-release quality checks.</p>
+                    <p>Producer / Game Designer / PM: release process, roadmap and backlog, product hypotheses, analytics, monetization, balance, and pre-release quality checks.</p>
                 </div>
             </a>
 <a href="projects/magic-solution-en.html" class="project-tile">
@@ -773,7 +817,7 @@
                 <div class="project-info">
                     <h3>Magic Solution</h3>
                     <p class="project-date">June 2023 — January 2024</p>
-                    <p>Lead Game Designer. AI Chat and Brain Training: 6-person team, projects from zero to release, scripting, and documentation.</p>
+                    <p>Lead Game Designer: launched AI Chat and Brain Training from zero to release, wrote documentation, decomposed tasks for a 6-person team, balanced systems, and prepared builds.</p>
                 </div>
             </a>
             <a href="projects/ayist-games-en.html" class="project-tile">
@@ -781,7 +825,7 @@
                 <div class="project-info">
                     <h3>Ayist Games</h3>
                     <p class="project-date">Jan 2021 — June 2023</p>
-                    <p>Technical Game Designer. Novels and DreamChat: task management, monetization, DevToDev/SQL, Git, and Unity/Ink scripting.</p>
+                    <p>Technical Game Designer: narrative/mobile products Novels and DreamChat, task decomposition, monetization, DevToDev/SQL analytics, Git, and Unity/Ink scripting.</p>
                 </div>
             </a>
             <a href="projects/another-world-en.html" class="project-tile">
@@ -789,7 +833,7 @@
                 <div class="project-info">
                     <h3>Another World</h3>
                     <p class="project-date">June 2019 — Apr 2020</p>
-                    <p>Technical Game Designer. LBE VR in Unity: Canvas, AI/weapon tuning, Plastic, and technical documentation.</p>
+                    <p>Technical Game Designer: Unity-based LBE VR project, AI and weapon tuning, Canvas, Plastic SCM, technical documentation, and release support.</p>
                 </div>
             </a>
         </div>
@@ -797,14 +841,14 @@
 
     <!-- Career Timeline -->
     <section id="timeline">
-        <h2>Project Timeline</h2>
+        <h2>Experience Timeline</h2>
         <div class="timeline">
             <article class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-card">
                     <p class="timeline-date">July 2024 — Present</p>
                     <h3>Uga Dooga</h3>
-                    <p>Producer / Game Designer, Analyst, with integrated Project Manager responsibilities</p>
+                    <p>Producer / Game Designer / PM: releases, roadmap, analytics, hypotheses, balance, monetization, and A/B tests.</p>
                 </div>
             </article>
 <article class="timeline-item">
@@ -812,7 +856,7 @@
                 <div class="timeline-card">
                     <p class="timeline-date">June 2023 — January 2024</p>
                     <h3>Magic Solution</h3>
-                    <p>Lead Game Designer, AI Chat and Brain Training</p>
+                    <p>Lead Game Designer: AI Chat and Brain Training, task decomposition, documentation, and team coordination.</p>
                 </div>
             </article>
             <article class="timeline-item">
@@ -820,7 +864,7 @@
                 <div class="timeline-card">
                     <p class="timeline-date">Jan 2021 — June 2023</p>
                     <h3>Ayist Games</h3>
-                    <p>Technical Game Designer, Novels and DreamChat</p>
+                    <p>Technical Game Designer: Novels and DreamChat, monetization, analytics, Unity/Ink scripting, and technical specs.</p>
                 </div>
             </article>
             <article class="timeline-item">
@@ -828,7 +872,7 @@
                 <div class="timeline-card">
                     <p class="timeline-date">June 2019 — Apr 2020</p>
                     <h3>Another World</h3>
-                    <p>Technical Game Designer, LBE VR in Unity</p>
+                    <p>Technical Game Designer: LBE VR in Unity, AI/weapon tuning, Canvas, documentation, and release support.</p>
                 </div>
             </article>
         </div>
@@ -837,7 +881,7 @@
     <!-- Personal Projects -->
     <section id="personal-projects">
         <h2>Personal Projects</h2>
-        <p class="section-note">These projects were built by our team "Igrodelnya".</p>
+        <p class="section-note">Side projects show hands-on experience: fast prototyping, releases, jam development, and gameplay hypothesis testing in small teams.</p>
         <div class="project-group">
             <h3 class="project-group-title">Released</h3>
             <div class="project-grid">
@@ -845,7 +889,7 @@
                     <div class="project-thumb"><img src="images/DeadRiver/DeadRiver_icon.jpg" alt="Icon Obby & Dead River"></div>
                     <div class="project-info">
                         <h3>Obby &amp; Dead River</h3>
-                        <p>Available on Yandex Games and CrazyGames. A first-person 3D Roblox-style adventure with the Dead River, castles, combat, loot, and a final boss.</p>
+                        <p>Released on Yandex Games and CrazyGames. I worked on product development, balance, monetization, and gameplay systems for a first-person Roblox-style 3D adventure.</p>
                     </div>
                 </a>
             </div>
@@ -886,7 +930,7 @@
 
         <div class="project-group">
             <h3 class="project-group-title">Game Jam Projects</h3>
-            <p class="project-group-note">In all jam projects, I worked as a programmer and game designer.</p>
+            <p class="project-group-note">In all jam projects, I covered both programming and game design: scope, core loop, build assembly, and playable prototype delivery.</p>
             <div class="project-grid">
                 <article class="project-tile project-tile-link" data-project-url="projects/mind-alchemy-en.html" role="link" tabindex="0" aria-label="Mind Alchemy">
                     <div class="project-thumb"><img src="images/Mind-alchemy/Mind-alchemy_Icon.png" alt="Icon Mind Alchemy"></div>
@@ -932,12 +976,24 @@
         </div>
     </section>
 
+
+    <!-- Work Style -->
+    <section id="work-style">
+        <h2>How I Work</h2>
+        <div class="info-section">
+            <div class="info-box">
+                <p>I am most useful when a team needs to turn scattered ideas, constraints, and metrics into a clear action plan. I identify issues quickly, align stakeholders, move tasks to release, and keep the product focused on player value.</p>
+                <p>My preferred mode is producer-minded: balancing game quality, business goals, and team capacity, then validating decisions through data, tests, and the product's post-release state.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Additional Projects -->
     <section id="info">
         <h2>Additional Projects</h2>
         <div class="info-section">
             <div class="info-box">
-                <h3>Additional Projects</h3>
+                <h3>Mentoring, consulting, and prototypes</h3>
                 <ul>
                     <li><strong><a href="https://t.me/gamedev_club1" target="_blank" rel="noopener noreferrer">Game Dev Club</a></strong> — mentor and workshop lead for analytics, balance, and product decisions</li>
                     <li><strong><a href="https://play.google.com/store/apps/details?id=com.gardenofdreams.pocketsurvivorai" target="_blank" rel="noopener noreferrer">Pocket Survivor AI</a></strong> — consulting on balance, progression, and retention</li>
