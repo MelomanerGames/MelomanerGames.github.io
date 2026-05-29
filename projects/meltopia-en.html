@@ -1,0 +1,285 @@
+<!-- File: projects/meltopia-en.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meltopia - Roman Abashin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            background: #111;
+            color: #eee;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: #0af;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background: #000;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header a,
+        .menu-return-bottom a {
+            display: inline-block;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            color: #041018;
+            background: linear-gradient(135deg, #38d4ff 0%, #0aa5ff 55%, #0a84ff 100%);
+            border: 1px solid #56d8ff;
+            border-radius: 12px;
+            padding: 0.55rem 1.05rem;
+            box-shadow: 0 8px 20px rgba(10, 165, 255, 0.35);
+            transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+            text-decoration: none;
+        }
+
+        header a:hover,
+        .menu-return-bottom a:hover {
+            color: #001018;
+            filter: brightness(1.06);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px rgba(10, 165, 255, 0.45);
+            text-decoration: none;
+        }
+
+        .hero {
+            height: 300px;
+            background: #111 url('../images/meltopia/meltopia-hero.jpg') center/cover no-repeat;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 880px;
+            min-width: 0;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        .content h1 {
+            color: #0af;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .content p {
+            margin-bottom: 1.5rem;
+            color: #ccc;
+            overflow-wrap: anywhere;
+        }
+
+        .content h2 {
+            margin: 1.2rem 0 0.65rem;
+            color: #8fd3ff;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .content ul {
+            list-style: disc inside;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .content li {
+            margin-bottom: 0.45rem;
+            overflow-wrap: anywhere;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.42rem;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tech-list li {
+            margin: 0;
+            border: 1px solid #2e587f;
+            border-radius: 999px;
+            background: #11263a;
+            color: #a8deff;
+            font-size: 0.86rem;
+            font-weight: 700;
+            padding: 0.22rem 0.62rem;
+        }
+
+        .menu-return-bottom {
+            margin: 1rem 0 1.2rem;
+            text-align: center;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 0.9rem;
+            right: 0.9rem;
+            z-index: 12000;
+        }
+
+        .lang-switch a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #e8f6ff;
+            background: rgba(5, 16, 25, 0.88);
+            border: 1px solid rgba(110, 210, 255, 0.55);
+            border-radius: 999px;
+            padding: 0.42rem 0.62rem;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+            backdrop-filter: blur(2px);
+        }
+
+        .flag-icon {
+            display: inline-block;
+            width: 18px;
+            height: 12px;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+            flex: 0 0 auto;
+        }
+
+        .flag-us {
+            position: relative;
+            background: repeating-linear-gradient(to bottom, #b22234 0 1.2px, #ffffff 1.2px 2.4px);
+            background-size: 100% 2.4px;
+        }
+
+        .flag-us::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40%;
+            height: 54%;
+            background: #3c3b6e;
+        }
+
+        .flag-ru {
+            background: linear-gradient(to bottom, #ffffff 0 33.333%, #1f4fbf 33.333% 66.666%, #d62f2f 66.666% 100%);
+        }
+
+        .lang-switch a:hover {
+            color: #fff;
+            border-color: #9be8ff;
+            background: rgba(10, 135, 205, 0.85);
+            text-decoration: none;
+        }
+
+        @media (max-width: 780px) {
+            header {
+                padding-top: 2.8rem;
+            }
+
+            .hero {
+                height: 220px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .content {
+                margin: 1.4rem auto;
+            }
+
+            .content h1 {
+                font-size: 1.65rem;
+            }
+
+            .lang-switch {
+                top: 0.55rem;
+                right: 0.55rem;
+            }
+
+            .lang-switch a {
+                font-size: 0.74rem;
+                padding: 0.34rem 0.52rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch"><a href="meltopia.html" aria-label="Switch to Russian version"><span class="flag-icon flag-ru" aria-hidden="true"></span><span>RU</span></a></div>
+    <header><a href="../index-en.html">Back to main menu</a></header>
+    <div class="hero"></div>
+    <div class="content">
+        <h1>Meltopia</h1>
+        <p>A <strong>Windows / Steam</strong> project built with <strong>Unreal Engine 5.5</strong>. I worked as a <strong>Level Designer</strong> focused on procedural caves, room assets, voxel environments, and location integration into the production pipeline.</p>
+        <ul>
+            <li><strong>Role:</strong> Level Designer</li>
+            <li><strong>Engine:</strong> Unreal Engine 5.5</li>
+            <li><strong>Platform:</strong> Windows / Steam</li>
+            <li><strong>Developer / publisher:</strong> Garden of Dreams</li>
+            <li><strong>Steam release:</strong> May 1, 2026</li>
+            <li><strong>Focus:</strong> procedural cave rooms, voxel layers, blockout, integration, and location polish</li>
+        </ul>
+
+        <h2>Technologies</h2>
+        <ul class="tech-list">
+            <li>Unreal Engine 5.5</li>
+            <li>Blueprints</li>
+            <li>PCG</li>
+            <li>VoxelFree</li>
+            <li>Geometry Scripting</li>
+            <li>Git LFS</li>
+        </ul>
+
+        <h2>Project Link</h2>
+        <ul>
+            <li><a href="https://store.steampowered.com/app/3601800/Meltopia/" target="_blank" rel="noopener noreferrer">Meltopia on Steam</a> - official project page.</li>
+        </ul>
+
+        <h2>Main Contribution</h2>
+        <ul>
+            <li><strong>Procedural caves and rooms:</strong> created and updated PCG room/cave assets, added new rooms, tuned cave sizes, transitions, room variation, and visual readability.</li>
+            <li><strong>Voxel environment:</strong> configured voxel levels for snow and mud, fixed voxel asset issues, and aligned them with cave locations.</li>
+            <li><strong>Procedural room generation:</strong> created and updated PCG graphs for cave rooms, worked with Blueprint room assets, and prepared a demo map for procedural cave generation checks.</li>
+            <li><strong>Blockout and integration:</strong> blocked out and integrated locations, checking readability, transitions, and compatibility with procedural systems.</li>
+            <li><strong>Polish and fixes:</strong> fixed legacy cave PCG assets, added hints and supporting navigation/location elements, and iterated on assets after merges from develop.</li>
+        </ul>
+
+        <h2>Project Value</h2>
+        <p>The work sat between level design and technical implementation: the goal was not only to build locations, but to keep the procedural room system varied, readable, and easy to validate in a demo map.</p>
+
+        <div class="menu-return-bottom">
+            <a href="../index-en.html">Back to main menu</a>
+        </div>
+    </div>
+</body>
+</html>
