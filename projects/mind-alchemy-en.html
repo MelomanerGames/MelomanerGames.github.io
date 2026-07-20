@@ -1,9 +1,24 @@
-<!-- File: projects/mind-alchemy.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mind Alchemy case study by Roman Abashin: role, responsibilities, tools, production contribution, and project materials.">
+    <meta name="theme-color" content="#111111">
+    <link rel="canonical" href="https://melomanergames.github.io/projects/mind-alchemy-en.html">
+    <link rel="alternate" hreflang="ru" href="https://melomanergames.github.io/projects/mind-alchemy.html">
+    <link rel="alternate" hreflang="en" href="https://melomanergames.github.io/projects/mind-alchemy-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://melomanergames.github.io/projects/mind-alchemy.html">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mind Alchemy — Roman Abashin">
+    <meta property="og:description" content="Mind Alchemy case study by Roman Abashin: role, responsibilities, tools, production contribution, and project materials.">
+    <meta property="og:url" content="https://melomanergames.github.io/projects/mind-alchemy-en.html">
+    <meta property="og:image" content="https://melomanergames.github.io/assets/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Mind Alchemy","url":"https://melomanergames.github.io/projects/mind-alchemy-en.html","author":{"@type":"Person","name":"Roman Abashin","url":"https://melomanergames.github.io/index-en.html"}}</script>
     <title>Mind Alchemy — Roman Abashin</title>
     <style>
         * {
@@ -213,7 +228,7 @@
                 border: 1px solid #333;
                 border-radius: 4px
             }
-    
+
 
         @media (max-width: 780px) {
             header {
@@ -336,12 +351,14 @@
             text-decoration: none;
         }
     </style>
+    <link rel="stylesheet" href="../assets/project-enhancements.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to case study</a>
         <div class="lang-switch"><a href="mind-alchemy.html" aria-label="Switch to Russian version"><span class="flag-icon flag-ru" aria-hidden="true"></span><span>RU</span></a></div>
     <header><a href="../index-en.html">Back to main menu</a></header>
     <div class="hero"></div>
-    <div class="content">
+    <main id="main" class="content">
         <h1>Mind Alchemy</h1>
         <p><strong>Game Jam Project</strong></p>
         <p><strong>Platforms:</strong> <a href="https://melomanergames.itch.io/mind-alchemy" target="_blank" rel="noopener noreferrer">Itch.io</a> | <a href="https://yandex.ru/games/app/476191?draft=true&lang=ru" target="_blank" rel="noopener noreferrer">Yandex Games (draft)</a></p>
@@ -351,15 +368,16 @@
             <li><strong>Tasks:</strong> Implemented mechanics, tuned pacing, and set up base balance</li>
             <li><strong>Process:</strong> Rapid prototyping, feedback-driven iterations, and final polish before the deadline</li>
         </ul>
+
+        <div class="screenshots">
+            <img src="../images/Mind-alchemy/mind-alchemy-1.jpg" alt="Screenshot Mind Alchemy 1" loading="lazy" decoding="async" width="1247" height="935">
+            <img src="../images/Mind-alchemy/mind-alchemy-2.jpg" alt="Screenshot Mind Alchemy 2" loading="lazy" decoding="async" width="1247" height="935">
+            <img src="../images/Mind-alchemy/mind-alchemy-3.png" alt="Screenshot Mind Alchemy 3" loading="lazy" decoding="async" width="577" height="325">
+        </div>
         <div class="menu-return-bottom">
             <a href="../index-en.html">Back to main menu</a>
         </div>
-        <div class="screenshots">
-            <img src="../images/Mind-alchemy/mind-alchemy-1.jpg" alt="Screenshot Mind Alchemy 1">
-            <img src="../images/Mind-alchemy/mind-alchemy-2.jpg" alt="Screenshot Mind Alchemy 2">
-            <img src="../images/Mind-alchemy/mind-alchemy-3.png" alt="Screenshot Mind Alchemy 3">
-        </div>
-    </div>
+    </main>
 <script>
 (() => {
     const screenshots = document.querySelector('.screenshots');
@@ -371,7 +389,7 @@
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';
     modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">\u00d7</button><img alt="Enlarged screenshot">';
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">\u00d7</button><img alt="Enlarged screenshot" loading="lazy" decoding="async">';
 
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.lightbox-close');
@@ -421,5 +439,6 @@
     document.body.appendChild(modal);
 })();
 </script>
+    <script src="../assets/project-enhancements.js" defer></script>
 </body>
 </html>

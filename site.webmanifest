@@ -1,0 +1,15 @@
+{
+  "name": "Roman Abashin — Game Producer Portfolio",
+  "short_name": "Roman Abashin",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d12",
+  "theme_color": "#090d12",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

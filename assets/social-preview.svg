@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Roman Abashin — Game Producer and Product Game Designer</title>
+  <desc id="desc">Portfolio cover in a dark blue visual style.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#071019"/>
+      <stop offset="1" stop-color="#111d29"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(210 40) rotate(48) scale(600 500)">
+      <stop stop-color="#2fb9ff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#2fb9ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="70" y="72" width="1060" height="486" rx="36" fill="#101923" stroke="#36566c"/>
+  <text x="120" y="220" fill="#f2f7fb" font-family="Segoe UI, Arial, sans-serif" font-size="76" font-weight="800">Roman Abashin</text>
+  <text x="120" y="305" fill="#2fb9ff" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="750">Game Producer / Product Game Designer</text>
+  <text x="120" y="385" fill="#b8c7d3" font-family="Segoe UI, Arial, sans-serif" font-size="30">6+ years · Mobile · Web · VR · PC</text>
+  <text x="120" y="455" fill="#78d6ff" font-family="Segoe UI, Arial, sans-serif" font-size="26">Roadmap → Release → Analytics → LiveOps</text>
+  <circle cx="1055" cy="478" r="27" fill="#2fb9ff"/>
+</svg>

@@ -1,1068 +1,436 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roman Abashin — Producer & Game Designer</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            max-width: 100%;
-            overflow-x: hidden;
-            background-color: #111;
-            color: #eee;
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-            a:hover {
-                text-decoration: none;
-            }
-
-        header {
-            background: #000;
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-
-            header h1 {
-                font-size: 3rem;
-                color: #0af;
-                margin-bottom: 0.5rem;
-            }
-
-            header p {
-                max-width: 1120px;
-                margin: 0 auto;
-                padding: 0 0.5rem;
-                font-size: 1.2rem;
-                color: #ccc;
-            }
-
-            .role-highlight {
-                display: inline-block;
-                color: #bfeeff;
-                background: rgba(10, 170, 255, 0.14);
-                border: 1px solid rgba(90, 210, 255, 0.38);
-                border-radius: 8px;
-                padding: 0.08rem 0.45rem;
-                margin: 0 0.08rem;
-                font-weight: 700;
-                line-height: 1.35;
-            }
-
-        .contact-short {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.35rem 1rem;
-            background: #111;
-            padding: 1rem;
-            text-align: center;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-
-            .contact-short a {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.35rem;
-                max-width: 100%;
-                min-width: 0;
-                margin: 0;
-                padding: 0.18rem 0.24rem;
-                color: #aaa;
-                font-size: 0.9rem;
-            }
-
-                .contact-short a svg {
-                    width: 14px;
-                    height: 14px;
-                    fill: currentColor;
-                    opacity: 0.9;
-                    flex: 0 0 auto;
-                }
-
-                .contact-short a span {
-                    min-width: 0;
-                    overflow-wrap: anywhere;
-                }
-
-                .contact-short a:hover {
-                    color: #0af;
-                }
-
-        section {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-
-            section h2 {
-                font-size: 2rem;
-                margin-bottom: 1.5rem;
-                text-align: center;
-                color: #0af;
-            }
-
-        .section-note {
-            text-align: center;
-            color: #aab7c2;
-            font-size: 0.95rem;
-            margin: -0.65rem auto 1.35rem;
-            max-width: 760px;
-        }
-
-        .project-group {
-            margin-bottom: 2rem;
-        }
-
-            .project-group:last-child {
-                margin-bottom: 0;
-            }
-
-        .project-group-title {
-            margin: 0 0 0.85rem;
-            font-size: 1.2rem;
-            color: #9ddcff;
-            letter-spacing: 0.01em;
-        }
-
-        .project-group-note {
-            margin: -0.4rem 0 0.9rem;
-            color: #99a8b5;
-            font-size: 0.88rem;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
-            gap: 1.5rem;
-        }
-
-        .about-summary {
-            color: #d0dae2;
-            margin-bottom: 1rem;
-        }
-
-        .about-blocks {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.85rem;
-            max-width: 1040px;
-            margin: 0 auto;
-            align-items: start;
-        }
-
-        .about-block {
-            background: #141414;
-            border: 1px solid #262626;
-            border-radius: 12px;
-            padding: 0.72rem;
-            display: flex;
-            min-width: 0;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .about-label {
-            display: inline-block;
-            width: fit-content;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            border-radius: 999px;
-            max-width: 100%;
-            padding: 0.14rem 0.46rem;
-            margin-bottom: 0.42rem;
-            white-space: normal;
-            overflow-wrap: anywhere;
-        }
-
-        .about-items {
-            display: flex;
-            flex-wrap: wrap;
-            min-width: 0;
-            gap: 0.34rem;
-            align-content: flex-start;
-        }
-
-        .about-chip {
-            display: inline-block;
-            font-size: 0.73rem;
-            font-weight: 600;
-            border-radius: 999px;
-            max-width: 100%;
-            padding: 0.2rem 0.5rem;
-            border: 1px solid transparent;
-            line-height: 1.25;
-            white-space: normal;
-            overflow-wrap: anywhere;
-        }
-
-        .about-block.roles .about-label {
-            background: #1a2636;
-            color: #9dd8ff;
-            border: 1px solid #2a4766;
-        }
-
-        .about-chip.role {
-            background: #11263a;
-            border-color: #2e587f;
-            color: #a8deff;
-        }
-
-        .about-block.platforms .about-label {
-            background: #1f2a19;
-            color: #b3e591;
-            border: 1px solid #3e6530;
-        }
-
-        .about-chip.platform {
-            background: #172615;
-            border-color: #3f6f34;
-            color: #c0f3a0;
-        }
-
-        .about-block.tasks .about-label {
-            background: #2e1f14;
-            color: #ffcb95;
-            border: 1px solid #6b4428;
-        }
-
-        .about-chip.task {
-            background: #2a1b12;
-            border-color: #744c2f;
-            color: #ffd4a8;
-        }
-
-        .about-block.tasks {
-            grid-column: 1 / -1;
-        }
-
-        .about-block.tasks .about-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.34rem;
-            align-content: flex-start;
-        }
-
-        .about-block.tasks .about-chip.task {
-            display: inline-block;
-            border-radius: 999px;
-            padding: 0.2rem 0.5rem;
-        }
-
-        .about-block.tools .about-label {
-            background: #2a1b32;
-            color: #e3b8ff;
-            border: 1px solid #654178;
-        }
-
-        .about-chip.tool {
-            background: #24182b;
-            border-color: #6e4a82;
-            color: #e9c4ff;
-        }
-
-        @media (max-width: 900px) {
-            .about-blocks {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                max-width: 100%;
-            }
-
-            header h1 {
-                font-size: 2.35rem;
-            }
-
-            header p {
-                font-size: 1.05rem;
-            }
-
-            .project-thumb img {
-                width: 100%;
-                max-width: 360px;
-                height: auto;
-                max-height: 210px;
-            }
-        }
-
-        @media (max-width: 680px) {
-            .about-blocks {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            header {
-                padding: 2.1rem 1rem 1.5rem;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            header p {
-                font-size: 0.95rem;
-            }
-
-            section {
-                margin: 2.1rem auto;
-            }
-
-            section h2 {
-                font-size: 1.55rem;
-                margin-bottom: 1.1rem;
-            }
-
-            .project-grid {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 1rem;
-            }
-
-            .project-thumb {
-                padding: 0.75rem;
-            }
-
-            .info-section {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 1.15rem;
-            }
-
-            .timeline {
-                padding-left: 1.18rem;
-            }
-
-            .timeline::before {
-                left: 0.34rem;
-            }
-
-            .timeline-dot {
-                left: -1.06rem;
-            }
-
-            .lang-switch {
-                top: 0.55rem;
-                right: 0.55rem;
-            }
-
-            .lang-switch a {
-                font-size: 0.74rem;
-                padding: 0.34rem 0.52rem;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .contact-short {
-                gap: 0.28rem 0.55rem;
-            }
-            .contact-short a {
-                display: inline-flex;
-                align-items: center;
-                margin: 0;
-            }
-        }
-
-        .project-tile {
-            display: block;
-            background: #1a1a1a;
-            border: 1px solid #222;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
-            cursor: pointer;
-        }
-
-        .project-tile:hover {
-                transform: translateY(-5px);
-                border-color: #0af;
-            }
-
-        .project-thumb {
-            background: #222;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-            .project-thumb img {
-                width: 410px;
-                max-width: 100%;
-                height: 210px;
-                object-fit: contain;
-            }
-
-        .project-info {
-            padding: 1rem;
-        }
-
-            .project-info h3 {
-                margin-bottom: 0.5rem;
-                font-size: 1.2rem;
-                color: #eee;
-            }
-
-            .project-info p {
-                font-size: 0.9rem;
-                color: #ccc;
-            }
-
-            .project-info .project-date {
-                display: inline-block;
-                margin-bottom: 0.45rem;
-                padding: 0.18rem 0.55rem;
-                border: 1px solid #24495c;
-                border-radius: 999px;
-                background: #122330;
-                color: #9ddcff;
-                font-size: 0.78rem;
-                font-weight: 600;
-                max-width: 100%;
-                line-height: 1.2;
-                white-space: normal;
-                overflow-wrap: anywhere;
-            }
-
-            .project-info .project-date + p {
-                margin-top: 0.15rem;
-            }
-
-        .project-actions {
-            margin-top: 0.85rem;
-            display: flex;
-            gap: 0.55rem;
-            flex-wrap: wrap;
-        }
-
-        .project-btn {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border-radius: 999px;
-            max-width: 100%;
-            padding: 0.34rem 0.72rem;
-            line-height: 1.25;
-            white-space: normal;
-            overflow-wrap: anywhere;
-            transition: transform 0.2s, box-shadow 0.2s, filter 0.2s, border-color 0.2s;
-        }
-
-            .project-btn:hover {
-                transform: translateY(-1px);
-                text-decoration: none;
-            }
-
-        .project-tile-link:focus-visible {
-            outline: 2px solid #0af;
-            outline-offset: 2px;
-        }
-
-        .project-btn.secondary {
-            color: #d8f3ff;
-            border: 1px solid #2e5268;
-            background: #162733;
-        }
-
-            .project-btn.secondary:hover {
-                filter: brightness(1.08);
-                border-color: #3f7291;
-            }
-
-        .project-btn.itch {
-            color: #1b1106;
-            border: 1px solid #ffc36a;
-            background: linear-gradient(135deg, #ffda85 0%, #ffbf54 58%, #f6a73f 100%);
-            box-shadow: 0 6px 18px rgba(246, 167, 63, 0.28);
-        }
-
-            .project-btn.itch:hover {
-                filter: brightness(1.05);
-                box-shadow: 0 8px 22px rgba(246, 167, 63, 0.38);
-            }
-
-        .timeline {
-            max-width: 980px;
-            margin: 0 auto;
-            position: relative;
-            padding-left: 1.75rem;
-        }
-
-            .timeline::before {
-                content: "";
-                position: absolute;
-                left: 0.55rem;
-                top: 0;
-                bottom: 0;
-                width: 2px;
-                background: linear-gradient(180deg, #0af 0%, #1f2e3a 100%);
-            }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 1rem;
-            padding-left: 0.9rem;
-        }
-
-            .timeline-item:last-child {
-                margin-bottom: 0;
-            }
-
-        .timeline-dot {
-            position: absolute;
-            left: -1.34rem;
-            top: 0.72rem;
-            width: 0.7rem;
-            height: 0.7rem;
-            border-radius: 999px;
-            background: #0af;
-            box-shadow: 0 0 0 4px rgba(10, 170, 255, 0.15);
-        }
-
-        .timeline-card {
-            background: #1a1a1a;
-            border: 1px solid #242424;
-            border-radius: 0.5rem;
-            padding: 0.85rem 1rem;
-        }
-
-            .timeline-card h3 {
-                color: #eee;
-                font-size: 1.1rem;
-                margin-bottom: 0.2rem;
-            }
-
-            .timeline-card .timeline-date {
-                color: #9ddcff;
-                font-size: 0.8rem;
-                font-weight: 700;
-                margin-bottom: 0.3rem;
-            }
-
-            .timeline-card p {
-                color: #c9d2d9;
-                font-size: 0.9rem;
-            }
-
-        .info-section {
-            display: grid;
-            justify-content: center;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .info-box {
-            background: #1a1a1a;
-            border: 1px solid #222;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-        }
-
-            .info-box h3 {
-                margin-bottom: 1rem;
-                font-size: 1.5rem;
-                color: #0af;
-                text-align: center;
-            }
-
-            .info-box p, .info-box ul {
-                color: #ccc;
-                font-size: 0.9rem;
-            }
-
-            .info-box ul {
-                list-style: disc inside;
-            }
-
-                .info-box ul li {
-                    margin-bottom: 0.5rem;
-                }
-
-        .info-box strong {
-            color: #0af;
-        }
-
-            .info-box strong a {
-                color: inherit;
-                text-decoration: underline;
-                text-underline-offset: 2px;
-            }
-
-            .info-box strong a:hover {
-                color: #fff;
-            }
-
-        .info-box ul.external-links {
-            list-style: none;
-            padding-left: 0;
-        }
-
-            .info-box ul.external-links li {
-                margin-bottom: 0.55rem;
-            }
-
-            .info-box ul.external-links a {
-                color: #8fd3ff;
-                text-decoration: underline;
-                text-underline-offset: 2px;
-            }
-
-                .info-box ul.external-links a:hover {
-                    color: #fff;
-                }
-
-        .muted-note {
-            color: #999;
-            font-size: 0.85rem;
-            margin-top: 1rem;
-        }
-
-        footer {
-            background: #000;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-            footer a {
-                margin: 0 0.5rem;
-                color: #aaa;
-                font-size: 0.9rem;
-            }
-
-                footer a:hover {
-                    color: #0af;
-                }
-    
-        .lang-switch {
-            position: fixed;
-            top: 0.9rem;
-            right: 0.9rem;
-            z-index: 12000;
-        }
-
-        .lang-switch a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            font-size: 0.82rem;
-            font-weight: 700;
-            line-height: 1;
-            color: #e8f6ff;
-            background: rgba(5, 16, 25, 0.88);
-            border: 1px solid rgba(110, 210, 255, 0.55);
-            border-radius: 999px;
-            padding: 0.42rem 0.62rem;
-            text-decoration: none;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
-            backdrop-filter: blur(2px);
-        }
-
-
-        .flag-icon {
-            display: inline-block;
-            width: 18px;
-            height: 12px;
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
-            flex: 0 0 auto;
-        }
-
-        .flag-us {
-            position: relative;
-            background: repeating-linear-gradient(
-                to bottom,
-                #b22234 0 1.2px,
-                #ffffff 1.2px 2.4px
-            );
-            background-size: 100% 2.4px;
-        }
-
-        .flag-us::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 40%;
-            height: 54%;
-            background: #3c3b6e;
-        }
-
-        .flag-ru {
-            background: linear-gradient(
-                to bottom,
-                #ffffff 0 33.333%,
-                #1f4fbf 33.333% 66.666%,
-                #d62f2f 66.666% 100%
-            );
-        }
-        .lang-switch a:hover {
-            color: #fff;
-            border-color: #9be8ff;
-            background: rgba(10, 135, 205, 0.85);
-            text-decoration: none;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roman Abashin — Game Producer / Product Game Designer</title>
+    <meta name="description" content="Portfolio of Roman Abashin: 6+ years in game production, product game design, and project management across mobile, web, VR, and PC games.">
+    <meta name="theme-color" content="#090d12">
+    <link rel="canonical" href="https://melomanergames.github.io/index-en.html">
+    <link rel="alternate" hreflang="ru" href="https://melomanergames.github.io/">
+    <link rel="alternate" hreflang="en" href="https://melomanergames.github.io/index-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://melomanergames.github.io/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="assets/site.css">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Roman Abashin — Game Producer / Product Game Designer">
+    <meta property="og:description" content="6+ years in game development: roadmaps, releases, product analytics, monetization, and LiveOps.">
+    <meta property="og:url" content="https://melomanergames.github.io/index-en.html">
+    <meta property="og:image" content="https://melomanergames.github.io/assets/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Roman Abashin — Game Producer / Product Game Designer">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Roman Abashin",
+      "alternateName": "Роман Абашин",
+      "url": "https://melomanergames.github.io/index-en.html",
+      "email": "mailto:melomanergames@gmail.com",
+      "jobTitle": "Game Producer / Product Game Designer",
+      "knowsAbout": ["Game Production", "Game Design", "Project Management", "Product Analytics", "Monetization", "LiveOps", "Unity", "Unreal Engine"],
+      "sameAs": [
+        "https://github.com/MelomanerGames",
+        "https://www.linkedin.com/in/melomanergames/",
+        "https://t.me/MelomanerL"
+      ]
+    }
+    </script>
 </head>
 <body>
-        <div class="lang-switch"><a href="index.html" aria-label="Switch to Russian version"><span class="flag-icon flag-ru" aria-hidden="true"></span><span>RU</span></a></div>
-    <header>
-        <h1>Roman Abashin</h1>
-        <p><span class="role-highlight">Producer / Game Designer</span> with <span class="role-highlight">Project Manager</span> responsibilities — 6+ years in game development, leading mobile/web/VR projects from hypotheses and roadmap to release, analytics, monetization, and product growth.</p>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <nav class="nav" aria-label="Primary navigation">
+            <a class="brand" href="#top">Roman <span>Abashin</span></a>
+            <div class="nav-links">
+                <a href="#cases">Case studies</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a class="lang-link" href="index.html" lang="ru" aria-label="Открыть русскую версию">RU</a>
+        </nav>
     </header>
 
-    <div class="contact-short">
-        <a href="mailto:melomanergames@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2 8 5 8-5H4zm16 10V9l-8 5-8-5v8h16z"/></svg><span>melomanergames@gmail.com</span></a>
-        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5a1.53 1.53 0 1 1 0-3.06 1.53 1.53 0 0 1 0 3.06zM5.6 9.76h2.68v8.64H5.6V9.76zm4.36 0h2.57v1.18h.04c.36-.68 1.24-1.4 2.55-1.4 2.72 0 3.22 1.79 3.22 4.12v4.74h-2.68v-4.2c0-1-.02-2.29-1.4-2.29-1.4 0-1.61 1.09-1.61 2.22v4.27H9.96V9.76z"/></svg><span>LinkedIn</span></a>
-        <a href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.86 6.85-1.64 7.73c-.12.55-.45.68-.91.42l-2.52-1.86-1.22 1.17c-.13.13-.25.25-.51.25l.18-2.58 4.7-4.24c.2-.18-.04-.28-.31-.1l-5.8 3.65-2.5-.78c-.54-.17-.55-.54.11-.8l9.77-3.77c.45-.17.84.1.69.91z"/></svg><span>Telegram</span></a>
-        <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h8l4 4v12H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm7 1.5V9h3.5L13 5.5zM8 11h8v1.6H8V11zm0 3h8v1.6H8V14z"/></svg><span>Team Blog</span></a>
-    </div>
-
-    <!-- Profile Summary -->
-    <section id="about">
-        <h2>Profile Summary</h2>
-        <div class="info-section">
-            <div class="info-box">
-                <p><strong>Producer / Game Designer with 6+ years of commercial game development experience</strong> across mobile, web, VR/LBE VR, and online products. I work at the intersection of product, game design, and project management: from idea and prototype to release, live operations, analytics, and metric growth.</p>
-                <ul>
-                    <li><strong>Target roles:</strong> Producer, Game Producer, Lead/Technical Game Designer, Product-oriented Game Designer.</li>
-                    <li><strong>Ownership areas:</strong> roadmap, backlog, release planning, task decomposition, team coordination, funnel analytics, monetization, balance, and A/B tests.</li>
-                    <li><strong>Core strength:</strong> translating product goals into clear team tasks and validating decisions through data, build quality, and player feedback.</li>
+    <main id="main">
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div>
+                <p class="eyebrow">Game production · Product game design</p>
+                <h1 id="hero-title">Roman Abashin <span>Game Producer / Product Game Designer</span></h1>
+                <p class="hero-lead">For 6+ years, I have been developing mobile, web, VR, and PC games—turning product goals into roadmaps, guiding teams to release, and validating decisions through analytics, A/B tests, and player feedback.</p>
+                <div class="hero-actions">
+                    <a class="button" href="#cases">View selected case studies</a>
+                    <a class="button secondary" href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer">Contact me on Telegram</a>
+                    <button class="button ghost" type="button" data-print>Print / Save as PDF</button>
+                </div>
+            </div>
+            <aside class="hero-proof" aria-label="Key facts">
+                <h2>At a glance</h2>
+                <ul class="proof-list">
+                    <li><strong>6+ years of commercial experience</strong>Production, game design, and project management</li>
+                    <li><strong>11 mobile titles in my current portfolio</strong>Casual, word, mini-game, and idle products</li>
+                    <li><strong>2 products launched from zero</strong>AI Chat and Brain Training as Lead Game Designer</li>
+                    <li><strong>From hypothesis to LiveOps</strong>Roadmaps, releases, QA, analytics, economy, and A/B tests</li>
                 </ul>
-            </div>
-        </div>
-    </section>
+            </aside>
+        </section>
 
-    <section id="about-profile">
-        <h2>Core Competencies</h2>
-        <div class="about-blocks">
-            <div class="about-block roles">
-                <span class="about-label">Project Roles</span>
-                <div class="about-items">
-                    <span class="about-chip role">Producer / Game Designer</span>
-                    <span class="about-chip role">Project Manager</span>
-                    <span class="about-chip role">Analyst</span>
-                    <span class="about-chip role">Technical Game Design</span>
-                </div>
+        <section class="section" id="cases" aria-labelledby="cases-title">
+            <div class="section-heading">
+                <p class="eyebrow">Selected case studies</p>
+                <h2 id="cases-title">Experience you can verify</h2>
             </div>
-            <div class="about-block platforms">
-                <span class="about-label">Platforms</span>
-                <div class="about-items">
-                    <span class="about-chip platform">Mobile</span>
-                    <span class="about-chip platform">Web</span>
-                    <span class="about-chip platform">VR / LBE VR</span>
-                    <span class="about-chip platform">Online Multiplayer</span>
-                    <span class="about-chip platform">Narrative Games</span>
-                </div>
-            </div>
-            <div class="about-block tools">
-                <span class="about-label">Tools</span>
-                <div class="about-items">
-                    <span class="about-chip tool">Unity (C#)</span>
-                    <span class="about-chip tool">Canvas / Ink</span>
-                    <span class="about-chip tool">SQL / DevToDev</span>
-                    <span class="about-chip tool">Firebase / AppMetrica</span>
-                    <span class="about-chip tool">Jira / FigJam</span>
-                    <span class="about-chip tool">Unreal Engine 5.5</span>
-                    <span class="about-chip tool">Blueprints / PCG</span>
-                    <span class="about-chip tool">Git LFS</span>
-                    <span class="about-chip tool">Git / Plastic SCM</span>
-                </div>
-            </div>
-            <div class="about-block tasks">
-                <span class="about-label">Responsibilities</span>
-                <div class="about-items">
-                    <span class="about-chip task">Release ownership and live ops</span>
-                    <span class="about-chip task">Backlog prioritization</span>
-                    <span class="about-chip task">Roadmap planning</span>
-                    <span class="about-chip task">Sprint management</span>
-                    <span class="about-chip task">Team coordination</span>
-                    <span class="about-chip task">Product analytics and funnels</span>
-                    <span class="about-chip task">Hypotheses and A/B tests</span>
-                    <span class="about-chip task">Monetization and economy</span>
-                    <span class="about-chip task">Balance and progression</span>
-                    <span class="about-chip task">Experiment design</span>
-                    <span class="about-chip task">Pre-release checks</span>
-                    <span class="about-chip task">Cross-device UI checks</span>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="case-grid">
+                <a class="case-card" href="projects/uga-dooga-en.html">
+                    <div class="case-media">
+                        <img src="images/UgaDooga/uga-dooga.jpg" width="511" height="165" alt="Uga Dooga studio logo" loading="lazy" decoding="async">
+                    </div>
+                    <div class="case-body">
+                        <p class="case-kicker">July 2024 — Present</p>
+                        <h3>Uga Dooga</h3>
+                        <p class="case-outcome">Systematized the release cycle and established regular validation of product and monetization hypotheses across a mobile game portfolio.</p>
+                        <div class="case-meta" aria-label="Roles and tools">
+                            <span class="tag">Producer / PM</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">A/B tests</span>
+                            <span class="tag">QA</span>
+                        </div>
+                        <span class="case-link">Open case study →</span>
+                    </div>
+                </a>
 
-    <!-- Key Projects -->
-    <section id="projects">
-        <h2>Key Commercial Projects</h2>
-        <div class="project-grid">
-            <a href="projects/meltopia-en.html" class="project-tile">
-                <div class="project-thumb"><img src="images/meltopia/meltopia-header.jpg" alt="Icon Meltopia"></div>
-                <div class="project-info">
+                <a class="case-card" href="projects/magic-solution-en.html">
+                    <div class="case-media">
+                        <img src="images/magic-solution/magic-solution-icon.jpg" width="667" height="257" alt="Magic Solution AI Chat and Brain Training products" loading="lazy" decoding="async">
+                    </div>
+                    <div class="case-body">
+                        <p class="case-kicker">June 2023 — January 2024</p>
+                        <h3>Magic Solution</h3>
+                        <p class="case-outcome">Launched two products from zero: shaped their design and documentation, decomposed the work, and coordinated a six-person team.</p>
+                        <div class="case-meta" aria-label="Roles and tools">
+                            <span class="tag">Lead Game Designer</span>
+                            <span class="tag">Team of 6</span>
+                            <span class="tag">0 → Release</span>
+                        </div>
+                        <span class="case-link">Open case study →</span>
+                    </div>
+                </a>
+
+                <a class="case-card" href="projects/ayist-games-en.html">
+                    <div class="case-media logo">
+                        <img src="images/ayist-games/ayist-games-icon-512.jpg" width="512" height="512" alt="Ayist Games logo" loading="lazy" decoding="async">
+                    </div>
+                    <div class="case-body">
+                        <p class="case-kicker">January 2021 — June 2023</p>
+                        <h3>Ayist Games</h3>
+                        <p class="case-outcome">Owned technical game design across two narrative products: content, monetization, analytics, and the Unity/Ink pipeline.</p>
+                        <div class="case-meta" aria-label="Roles and tools">
+                            <span class="tag">Technical GD</span>
+                            <span class="tag">SQL / DevToDev</span>
+                            <span class="tag">Unity / Ink</span>
+                        </div>
+                        <span class="case-link">Open case study →</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="latest-callout">
+                <img src="images/meltopia/meltopia-header.jpg" width="460" height="215" alt="Meltopia gameplay scene" loading="lazy" decoding="async">
+                <div>
+                    <p class="case-kicker">Technical case · Steam release May 1, 2026</p>
                     <h3>Meltopia</h3>
-                    <p class="project-date">Level Designer - Unreal Engine 5.5 - Steam release May 1, 2026</p>
-                    <p>Procedural cave room level design: PCG graphs and room assets, snow and mud voxel layers, blockout, demo map setup, and iterative polish after merges from develop.</p>
+                    <p>Procedural caves and rooms in Unreal Engine 5.5: PCG, Blueprints, voxel environments, and production integration.</p>
                 </div>
-            </a>
-            <a href="projects/uga-dooga-en.html" class="project-tile">
-                <div class="project-thumb"><img src="images/UgaDooga/uga-dooga.jpg" alt="Icon Uga Dooga"></div>
-                <div class="project-info">
-                    <h3>Uga Dooga</h3>
-                    <p class="project-date">July 2024 — Present</p>
-                    <p>Producer / Game Designer / PM: release process, roadmap and backlog, product hypotheses, analytics, monetization, balance, and pre-release quality checks.</p>
-                </div>
-            </a>
-<a href="projects/magic-solution-en.html" class="project-tile">
-                <div class="project-thumb"><img src="images/magic-solution/magic-solution-icon.jpg" alt="Icon Magic Solution"></div>
-                <div class="project-info">
-                    <h3>Magic Solution</h3>
-                    <p class="project-date">June 2023 — January 2024</p>
-                    <p>Lead Game Designer: launched AI Chat and Brain Training from zero to release, wrote documentation, decomposed tasks for a 6-person team, balanced systems, and prepared builds.</p>
-                </div>
-            </a>
-            <a href="projects/ayist-games-en.html" class="project-tile">
-                <div class="project-thumb"><img src="images/ayist-games/ayist-games-icon.jpg" alt="Icon Ayist Games"></div>
-                <div class="project-info">
-                    <h3>Ayist Games</h3>
-                    <p class="project-date">Jan 2021 — June 2023</p>
-                    <p>Technical Game Designer: narrative/mobile products Novels and DreamChat, task decomposition, monetization, DevToDev/SQL analytics, Git, and Unity/Ink scripting.</p>
-                </div>
-            </a>
-            <a href="projects/another-world-en.html" class="project-tile">
-                <div class="project-thumb"><img src="images/another-world/another-world-icon.jpg" alt="Icon Another World"></div>
-                <div class="project-info">
-                    <h3>Another World</h3>
-                    <p class="project-date">June 2019 — Apr 2020</p>
-                    <p>Technical Game Designer: Unity-based LBE VR project, AI and weapon tuning, Canvas, Plastic SCM, technical documentation, and release support.</p>
-                </div>
-            </a>
-        </div>
-    </section>
+                <a class="text-link" href="projects/meltopia-en.html">Open case study →</a>
+            </div>
+        </section>
 
-    <!-- Career Timeline -->
-    <section id="timeline">
-        <h2>Experience Timeline</h2>
-        <div class="timeline">
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">2026 · Steam release May 1, 2026</p>
+        <section class="section" id="experience" aria-labelledby="experience-title">
+            <div class="section-heading">
+                <p class="eyebrow">Commercial experience</p>
+                <h2 id="experience-title">Roles and ownership</h2>
+            </div>
+            <div class="experience-list">
+                <article class="experience-row">
+                    <time datetime="2024-07">07.2024 — Present</time>
+                    <h3>Uga Dooga</h3>
+                    <p>Producer / Project Manager / Game Designer — roadmaps, releases, analytics, monetization, balance, and QA.</p>
+                </article>
+                <article class="experience-row">
+                    <time datetime="2026">2026</time>
                     <h3>Meltopia</h3>
-                    <p>Level Designer: Unreal Engine 5.5, PCG cave rooms, snow and mud voxel layers, Blueprint room assets, blockout, demo map setup, and procedural location polish.</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">July 2024 — Present</p>
-                    <h3>Uga Dooga</h3>
-                    <p>Producer / Game Designer / PM: releases, roadmap, analytics, hypotheses, balance, monetization, and A/B tests.</p>
-                </div>
-            </article>
-<article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">June 2023 — January 2024</p>
+                    <p>Level Designer — Unreal Engine 5.5, PCG cave rooms, voxel layers, blockout, and procedural location polish.</p>
+                </article>
+                <article class="experience-row">
+                    <time datetime="2023-09">09.2023 — 05.2024</time>
+                    <h3>Sexy Beaches</h3>
+                    <p>Game Designer — economy, balance, configs, monetization, and post-release analytics for a Web Idle game on Nutaku.</p>
+                </article>
+                <article class="experience-row">
+                    <time datetime="2023-06">06.2023 — 01.2024</time>
                     <h3>Magic Solution</h3>
-                    <p>Lead Game Designer: AI Chat and Brain Training, task decomposition, documentation, and team coordination.</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">Jan 2021 — June 2023</p>
+                    <p>Lead Game Designer — two products from concept to release, task decomposition, and team coordination.</p>
+                </article>
+                <article class="experience-row">
+                    <time datetime="2021-01">01.2021 — 06.2023</time>
                     <h3>Ayist Games</h3>
-                    <p>Technical Game Designer: Novels and DreamChat, monetization, analytics, Unity/Ink scripting, and technical specs.</p>
-                </div>
-            </article>
-            <article class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <p class="timeline-date">June 2019 — Apr 2020</p>
+                    <p>Technical Game Designer — narrative products, monetization, analytics, and Unity/Ink scripting.</p>
+                </article>
+                <article class="experience-row">
+                    <time datetime="2019-06">06.2019 — 04.2020</time>
                     <h3>Another World</h3>
-                    <p>Technical Game Designer: LBE VR in Unity, AI/weapon tuning, Canvas, documentation, and release support.</p>
-                </div>
-            </article>
-        </div>
-    </section>
+                    <p>Technical Game Designer — Unity LBE VR, AI, weapons, Canvas, documentation, and release support.</p>
+                </article>
+            </div>
+        </section>
 
-    <!-- Personal Projects -->
-    <section id="personal-projects">
-        <h2>Personal Projects</h2>
-        <p class="section-note">Side projects show hands-on experience: fast prototyping, releases, jam development, and gameplay hypothesis testing in small teams.</p>
-        <div class="project-group">
-            <h3 class="project-group-title">Released</h3>
+        <section class="section" aria-labelledby="skills-title">
+            <div class="section-heading">
+                <p class="eyebrow">Capabilities</p>
+                <h2 id="skills-title">What I own</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Product & Production</h3>
+                    <ul>
+                        <li>Roadmaps and prioritization</li>
+                        <li>Release planning and LiveOps</li>
+                        <li>Sprints, timelines, and risks</li>
+                        <li>Cross-team alignment</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Game Design</h3>
+                    <ul>
+                        <li>Core loops and progression</li>
+                        <li>Balance and economy</li>
+                        <li>Monetization and retention</li>
+                        <li>Prototypes and documentation</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Analytics & Quality</h3>
+                    <ul>
+                        <li>Funnels and product metrics</li>
+                        <li>Hypotheses and A/B tests</li>
+                        <li>SQL, Firebase, AppMetrica</li>
+                        <li>Pre-release QA</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Technical</h3>
+                    <ul>
+                        <li>Unity, C#, Canvas, Ink</li>
+                        <li>Unreal Engine, Blueprints, PCG</li>
+                        <li>Git, Git LFS, Plastic SCM</li>
+                        <li>Jira, FigJam, Google Sheets</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects" aria-labelledby="projects-title">
+            <div class="section-heading">
+                <p class="eyebrow">All projects</p>
+                <h2 id="projects-title">Commercial games, releases, and prototypes</h2>
+            </div>
             <div class="project-grid">
-                <a href="projects/river-quest-en.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/DeadRiver/DeadRiver_icon.jpg" alt="Icon Obby & Dead River"></div>
-                    <div class="project-info">
+                <article class="project-card">
+                    <img src="images/DeadRiver/DeadRiver_icon-640.jpg" width="640" height="640" alt="Obby &amp; Dead River game cover" loading="lazy" decoding="async">
+                    <div class="project-card-body">
+                        <p class="case-kicker">Released on Yandex Games and CrazyGames</p>
                         <h3>Obby &amp; Dead River</h3>
-                        <p>Released on Yandex Games and CrazyGames. I worked on product development, balance, monetization, and gameplay systems for a first-person Roblox-style 3D adventure.</p>
+                        <p>Product development, balance, monetization, and gameplay systems for a first-person 3D adventure.</p>
+                        <div class="project-actions"><a class="text-link" href="projects/river-quest-en.html">Details →</a></div>
                     </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="project-group">
-            <h3 class="project-group-title">Previously released, now delisted</h3>
-            <div class="project-grid">
-                <a href="projects/horror-mita-en.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/horror-mita/horror-mita-icon.jpg" alt="Icon Horror Mita"></div>
-                    <div class="project-info">
-                        <h3>Horror Mita</h3>
-                        <p>Previously released on Yandex Games. A horror project with escape mechanics, key searching, and a leaderboard system.</p>
-                    </div>
-                </a>
-                <a href="projects/downhill-racers-en.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/downhill-racers/downhill-racers-icon.jpg" alt="Icon Downhill Racers"></div>
-                    <div class="project-info">
-                        <h3>Downhill Racers</h3>
-                        <p>Previously released on Yandex Games. Arcade downhill racing with car tuning and an in-game economy.</p>
-                    </div>
-                </a>
-                <a href="projects/sexy-beaches-en.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/sexy-beaches/sexy-beaches-icon.jpg" alt="Icon Sexy Beaches"></div>
-                    <div class="project-info">
-                        <h3>Sexy Beaches (18+)</h3>
-                        <p>18+ web idle game: balance, economy, progression, retention, monetization, and regular content update support.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="project-group">
-            <h3 class="project-group-title">Games in Development</h3>
-            <div class="project-grid">
-                <a href="projects/zoo-online-en.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/ZooOnline/ZooOnline_Icon.png" alt="Icon Zoo Online"></div>
-                    <div class="project-info">
-                        <h3>Zoo Online</h3>
-                        <p>A new online project: raise your own animals, grow your zoo, and meet other players and their zoos.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="project-group">
-            <h3 class="project-group-title">Game Jam Projects</h3>
-            <p class="project-group-note">In all jam projects, I covered both programming and game design: scope, core loop, build assembly, and playable prototype delivery.</p>
-            <div class="project-grid">
-                <article class="project-tile project-tile-link" data-project-url="projects/mind-alchemy-en.html" role="link" tabindex="0" aria-label="Mind Alchemy">
-                    <div class="project-thumb"><img src="images/Mind-alchemy/Mind-alchemy_Icon.png" alt="Icon Mind Alchemy"></div>
-                    <div class="project-info">
+                </article>
+                <article class="project-card">
+                    <img src="images/Mind-alchemy/Mind-alchemy_Icon.png" width="315" height="250" alt="Mind Alchemy game cover" loading="lazy" decoding="async">
+                    <div class="project-card-body">
+                        <p class="case-kicker">Ludum Dare 58 · 3 days</p>
                         <h3>Mind Alchemy</h3>
-                        <p>A jam project focused on experimental mechanics, pacing, and expressive visual presentation.</p>
+                        <p>Programming and game design for an experimental jam prototype.</p>
                         <div class="project-actions">
-                            <a href="https://melomanergames.itch.io/mind-alchemy" class="project-btn itch" target="_blank" rel="noopener noreferrer">Play on Itch</a>
+                            <a class="text-link" href="projects/mind-alchemy-en.html">Case →</a>
+                            <a class="text-link" href="https://melomanergames.itch.io/mind-alchemy" target="_blank" rel="noopener noreferrer">Play ↗</a>
                         </div>
                     </div>
                 </article>
-                <article class="project-tile project-tile-link" data-project-url="projects/cursed-labyrinth-en.html" role="link" tabindex="0" aria-label="Cursed Labyrinth">
-                    <div class="project-thumb"><img src="images/Cursed Labyrinth/CursedLabyrinth_Icon.png" alt="Icon Cursed Labyrinth"></div>
-                    <div class="project-info">
+                <article class="project-card">
+                    <img src="images/Cursed Labyrinth/CursedLabyrinth_Icon.png" width="512" height="406" alt="Cursed Labyrinth game cover" loading="lazy" decoding="async">
+                    <div class="project-card-body">
+                        <p class="case-kicker">Siberian Game Jam · 4 days</p>
                         <h3>Cursed Labyrinth</h3>
-                        <p>A jam prototype of an atmospheric adventure focused on exploration, risk, and decision-making under pressure.</p>
+                        <p>Programming and game design for an atmospheric adventure under a tight timebox.</p>
                         <div class="project-actions">
-                            <a href="https://melomanergames.itch.io/for-ld58" class="project-btn itch" target="_blank" rel="noopener noreferrer">Play on Itch</a>
+                            <a class="text-link" href="projects/cursed-labyrinth-en.html">Case →</a>
+                            <a class="text-link" href="https://melomanergames.itch.io/for-ld58" target="_blank" rel="noopener noreferrer">Play ↗</a>
                         </div>
                     </div>
                 </article>
             </div>
-        </div>
 
-        <div class="project-group">
-            <h3 class="project-group-title">Shelved Projects</h3>
-            <div class="project-grid">
-                <a href="projects/hide-seek-en.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/hide-seek/hide-seek-icon.jpg" alt="Icon Hide & Seek"></div>
-                    <div class="project-info">
-                        <h3>Hide &amp; Seek (Roblox)</h3>
-                        <p>Project paused. PvP hide-and-seek with seeker/hider roles and AI behavior for dynamic rounds.</p>
+            <div class="catalog-heading">
+                <p class="eyebrow">Complete catalog</p>
+                <h3>9 more projects</h3>
+            </div>
+            <div class="project-catalog" aria-label="More projects">
+                <a class="project-mini-card" href="projects/another-world-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/another-world/another-world-card.jpg" width="640" height="360" alt="Another World VR game cover" loading="lazy" decoding="async">
+                        <span class="project-status">Commercial LBE VR</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Another World</h3>
+                        <p>Unity LBE VR: core logic, AI, balance, and support for the released version.</p>
+                        <span class="project-mini-link">Open case →</span>
                     </div>
                 </a>
-                <a href="projects/witchs-brew-en.html" class="project-tile">
-                    <div class="project-thumb"><img src="images/witchs-brew/witchs-brew-icon.jpg" alt="Icon Witch's Brew"></div>
-                    <div class="project-info">
-                        <h3>Witch's Brew</h3>
-                        <p>Project paused. Potion brewing, resource gathering, and a progression loop around a magical farm.</p>
+                <a class="project-mini-card" href="projects/sexy-beaches-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/sexy-beaches/sexy-beaches-card.jpg" width="640" height="360" alt="Sexy Beaches game cover" loading="lazy" decoding="async">
+                        <span class="project-status project-status--adult">Web Idle · 18+</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Sexy Beaches</h3>
+                        <p>Economy, configs, monetization modeling, and post-release analytics for a Web Idle game.</p>
+                        <span class="project-mini-link">Open case →</span>
+                    </div>
+                </a>
+                <a class="project-mini-card" href="projects/horror-mita-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/horror-mita/horror-mita-card.jpg" width="640" height="360" alt="Horror Mita game cover" loading="lazy" decoding="async">
+                        <span class="project-status">Released on Yandex Games</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Horror Mita</h3>
+                        <p>Escape and key-search mechanics, a leaderboard, analytics, and advertising integrations.</p>
+                        <span class="project-mini-link">Open case →</span>
+                    </div>
+                </a>
+                <a class="project-mini-card" href="projects/downhill-racers-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/downhill-racers/downhill-racers-card.jpg" width="640" height="360" alt="Downhill Racers game cover" loading="lazy" decoding="async">
+                        <span class="project-status">Released on Yandex Games</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Downhill Racers</h3>
+                        <p>Track and downhill mechanics, car tuning, in-game purchases, and a leaderboard.</p>
+                        <span class="project-mini-link">Open case →</span>
+                    </div>
+                </a>
+                <a class="project-mini-card" href="projects/zoo-online-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/ZooOnline/ZooOnline-card.jpg" width="640" height="360" alt="Zoo Online gameplay" loading="lazy" decoding="async">
+                        <span class="project-status project-status--active">In active development</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Zoo Online</h3>
+                        <p>Online zoo core loop, server-side systems, and early progression balance.</p>
+                        <span class="project-mini-link">Open case →</span>
+                    </div>
+                </a>
+                <a class="project-mini-card" href="projects/hide-seek-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/hide-seek/hide-seek-card.jpg" width="640" height="360" alt="Hide and Seek game cover" loading="lazy" decoding="async">
+                        <span class="project-status">Roblox · Paused</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Hide &amp; Seek</h3>
+                        <p>Hider and seeker roles, game bots, analytics, and advertising integrations.</p>
+                        <span class="project-mini-link">Open case →</span>
+                    </div>
+                </a>
+                <a class="project-mini-card" href="projects/witchs-brew-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/witchs-brew/witchs-brew-card.jpg" width="640" height="360" alt="Witch’s Brew game cover" loading="lazy" decoding="async">
+                        <span class="project-status">Game prototype</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Witch’s Brew</h3>
+                        <p>Harvesting, potion brewing, progression, and programming the core mechanics.</p>
+                        <span class="project-mini-link">Open case →</span>
+                    </div>
+                </a>
+                <a class="project-mini-card" href="projects/tetris-puzzle-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/tetris-puzzle/tetris-puzzle-card.jpg" width="640" height="360" alt="Tetris Puzzle game cover" loading="lazy" decoding="async">
+                        <span class="project-status">Solo development</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Tetris Puzzle</h3>
+                        <p>Full solo cycle: design, programming, testing, and preparation for publication.</p>
+                        <span class="project-mini-link">Open case →</span>
+                    </div>
+                </a>
+                <a class="project-mini-card" href="projects/crossword-puzzle-en.html">
+                    <div class="project-mini-media">
+                        <img src="images/crossword-puzzle/crossword-puzzle-card.jpg" width="640" height="360" alt="Crossword Puzzle game cover" loading="lazy" decoding="async">
+                        <span class="project-status">Solo development</span>
+                    </div>
+                    <div class="project-mini-body">
+                        <h3>Crossword Puzzle</h3>
+                        <p>A crossword game from prototype to release: levels, programming, and store publication.</p>
+                        <span class="project-mini-link">Open case →</span>
                     </div>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="section" aria-labelledby="process-title">
+            <div class="section-heading">
+                <p class="eyebrow">Working approach</p>
+                <h2 id="process-title">From ambiguity to release</h2>
+            </div>
+            <div class="process-grid">
+                <article class="process-card">
+                    <span class="process-number">1</span>
+                    <h3>Frame the problem</h3>
+                    <p>I collect constraints, product data, player feedback, and references—then separate symptoms from causes.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-number">2</span>
+                    <h3>Build the plan</h3>
+                    <p>I translate a hypothesis into requirements, priorities, owners, acceptance criteria, and a release path.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-number">3</span>
+                    <h3>Validate the result</h3>
+                    <p>I follow build quality, launch, and post-release signals, feeding the findings into the next iteration.</p>
+                </article>
+            </div>
+        </section>
 
-    <!-- Work Style -->
-    <section id="work-style">
-        <h2>How I Work</h2>
-        <div class="info-section">
-            <div class="info-box">
-                <p>I am most useful when a team needs to turn scattered ideas, constraints, and metrics into a clear action plan. I identify issues quickly, align stakeholders, move tasks to release, and keep the product focused on player value.</p>
-                <p>My preferred mode is producer-minded: balancing game quality, business goals, and team capacity, then validating decisions through data, tests, and the product's post-release state.</p>
+        <section class="section" id="contact" aria-labelledby="contact-title">
+            <div class="contact-card">
+                <div>
+                    <p class="eyebrow">Contact</p>
+                    <h2 id="contact-title">Let's discuss your product and team challenges</h2>
+                    <p>Telegram is the fastest way to reach me. For a formal introduction or materials, use email or LinkedIn.</p>
+                </div>
+                <div class="contact-actions">
+                    <a class="button" href="https://t.me/MelomanerL" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <a class="button secondary" href="mailto:melomanergames@gmail.com">Email</a>
+                    <a class="button ghost" href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <span>© <span data-current-year>2026</span> Roman Abashin</span>
+            <div class="footer-links">
+                <a href="https://github.com/MelomanerGames" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://t.me/GameForgeStudio" target="_blank" rel="noopener noreferrer">Team blog</a>
+                <a href="mailto:melomanergames@gmail.com">melomanergames@gmail.com</a>
             </div>
         </div>
-    </section>
-
-    <!-- Additional Projects -->
-    <section id="info">
-        <h2>Additional Projects</h2>
-        <div class="info-section">
-            <div class="info-box">
-                <h3>Mentoring, consulting, and prototypes</h3>
-                <ul>
-                    <li><strong><a href="https://t.me/gamedev_club1" target="_blank" rel="noopener noreferrer">Game Dev Club</a></strong> — mentor and workshop lead for analytics, balance, and product decisions</li>
-                    <li><strong><a href="https://play.google.com/store/apps/details?id=com.gardenofdreams.pocketsurvivorai" target="_blank" rel="noopener noreferrer">Pocket Survivor AI</a></strong> — consulting on balance, progression, and retention</li>
-                    <li><strong><a href="https://store.steampowered.com/app/1825110/Castle_of_Secrets/" target="_blank" rel="noopener noreferrer">Castle of Secrets</a></strong> — game design and UX consulting at mechanics prototyping stage</li>
-                    <li><strong>Team Mentoring</strong> — task spec reviews, decomposition, and support for junior/middle game designers</li>
-                    <li><strong>Unity Prototypes</strong> — rapid MVPs for testing mechanics and monetization hypotheses</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <a href="https://github.com/MelomanerGames" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/melomanergames/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:melomanergames@gmail.com">Email</a>
     </footer>
-    <script>
-        (() => {
-            const tiles = document.querySelectorAll('.project-tile-link[data-project-url]');
-            if (!tiles.length) return;
-
-            tiles.forEach((tile) => {
-                const url = tile.getAttribute('data-project-url');
-                if (!url) return;
-
-                const goToProject = () => {
-                    window.location.href = url;
-                };
-
-                tile.addEventListener('click', (event) => {
-                    if (event.target.closest('a, button')) return;
-                    goToProject();
-                });
-
-                tile.addEventListener('keydown', (event) => {
-                    if (event.target.closest('a, button')) return;
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        goToProject();
-                    }
-                });
-            });
-        })();
-    </script>
+    <script src="assets/site.js" defer></script>
 </body>
 </html>

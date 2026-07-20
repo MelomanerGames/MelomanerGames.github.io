@@ -1,0 +1,69 @@
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(scriptDir, '..');
+const htmlFiles = [
+    path.join(rootDir, 'index.html'),
+    path.join(rootDir, 'index-en.html'),
+    ...readdirSync(path.join(rootDir, 'projects'))
+        .filter((name) => name.endsWith('.html'))
+        .map((name) => path.join(rootDir, 'projects', name)),
+];
+const errors = [];
+
+for (const filePath of htmlFiles) {
+    const relativeFile = path.relative(rootDir, filePath).replaceAll(path.sep, '/');
+    const html = readFileSync(filePath, 'utf8');
+
+    const requiredPatterns = [
+        ['description', /<meta\s+name=["']description["']/i],
+        ['canonical URL', /<link\s+rel=["']canonical["']/i],
+        ['Open Graph title', /<meta\s+property=["']og:title["']/i],
+        ['Russian hreflang', /hreflang=["']ru["']/i],
+        ['English hreflang', /hreflang=["']en["']/i],
+        ['main landmark', /<main\b/i],
+    ];
+
+    for (const [label, pattern] of requiredPatterns) {
+        if (!pattern.test(html)) errors.push(`${relativeFile}: missing ${label}`);
+    }
+
+    const ids = [...html.matchAll(/\bid=["']([^"']+)["']/gi)].map((match) => match[1]);
+    for (const id of new Set(ids)) {
+        if (ids.filter((candidate) => candidate === id).length > 1) {
+            errors.push(`${relativeFile}: duplicate id "${id}"`);
+        }
+    }
+
+    for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/gi)) {
+        const reference = match[1];
+        if (/^(?:https?:|mailto:|tel:|#|data:|javascript:)/i.test(reference)) continue;
+        const cleanReference = decodeURIComponent(reference.split(/[?#]/)[0]);
+        const target = path.resolve(path.dirname(filePath), cleanReference.replaceAll('/', path.sep));
+        if (!existsSync(target)) errors.push(`${relativeFile}: missing internal reference ${reference}`);
+    }
+
+    for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
+        const tag = match[0];
+        if (!/\bsrc=["'][^"']+["']/i.test(tag)) continue;
+        if (!/\balt=["'][^"']*["']/i.test(tag)) errors.push(`${relativeFile}: image missing alt text`);
+        if (!/\bwidth=["']\d+["']/i.test(tag) || !/\bheight=["']\d+["']/i.test(tag)) {
+            errors.push(`${relativeFile}: image missing intrinsic dimensions`);
+        }
+    }
+}
+
+const sitemap = readFileSync(path.join(rootDir, 'sitemap.xml'), 'utf8');
+const sitemapUrlCount = [...sitemap.matchAll(/<url>/g)].length;
+if (sitemapUrlCount !== htmlFiles.length) {
+    errors.push(`sitemap.xml: expected ${htmlFiles.length} URLs, found ${sitemapUrlCount}`);
+}
+
+if (errors.length) {
+    console.error(errors.join('\n'));
+    process.exitCode = 1;
+} else {
+    console.log(`Site check passed: ${htmlFiles.length} HTML pages, ${sitemapUrlCount} sitemap URLs, no missing internal references.`);
+}

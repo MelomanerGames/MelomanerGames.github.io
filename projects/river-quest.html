@@ -1,9 +1,24 @@
-<!-- File: projects/river-quest.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Кейс Обби и Река Смерти (Obby &amp; Dead River) в портфолио Романа Абашина: роль, задачи, инструменты, вклад в производство и материалы проекта.">
+    <meta name="theme-color" content="#111111">
+    <link rel="canonical" href="https://melomanergames.github.io/projects/river-quest.html">
+    <link rel="alternate" hreflang="ru" href="https://melomanergames.github.io/projects/river-quest.html">
+    <link rel="alternate" hreflang="en" href="https://melomanergames.github.io/projects/river-quest-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://melomanergames.github.io/projects/river-quest.html">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Обби и Река Смерти (Obby &amp; Dead River) — Roman Abashin">
+    <meta property="og:description" content="Кейс Обби и Река Смерти (Obby &amp; Dead River) в портфолио Романа Абашина: роль, задачи, инструменты, вклад в производство и материалы проекта.">
+    <meta property="og:url" content="https://melomanergames.github.io/projects/river-quest.html">
+    <meta property="og:image" content="https://melomanergames.github.io/assets/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Обби и Река Смерти (Obby & Dead River)","url":"https://melomanergames.github.io/projects/river-quest.html","author":{"@type":"Person","name":"Роман Абашин","url":"https://melomanergames.github.io/"}}</script>
     <title>Обби и Река Смерти (Obby & Dead River) — Роман Абашин</title>
     <style>
         * {
@@ -216,7 +231,7 @@
                 border: 1px solid #333;
                 border-radius: 4px
             }
-    
+
 
         @media (max-width: 780px) {
             header {
@@ -339,12 +354,14 @@
             text-decoration: none;
         }
     </style>
+    <link rel="stylesheet" href="../assets/project-enhancements.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Перейти к кейсу</a>
     <div class="lang-switch"><a href="river-quest-en.html" aria-label="Switch to English version"><span class="flag-icon flag-us" aria-hidden="true"></span><span>EN</span></a></div>
     <header><a href="../index.html">Вернуться в главное меню</a></header>
     <div class="hero"></div>
-    <div class="content">
+    <main id="main" class="content">
         <h1>Обби и Река Смерти (Obby &amp; Dead River)</h1>
         <p><strong>Статус:</strong> В релизе</p>
         <p><strong>Платформы:</strong> <a href="https://yandex.ru/games/app/444817?lang=ru" target="_blank" rel="noopener noreferrer">Яндекс Игры</a> | <a href="https://www.crazygames.com/ru/game/obby-dead-river" target="_blank" rel="noopener noreferrer">CrazyGames</a></p>
@@ -368,16 +385,17 @@
             <li>Улучшение оружия, покупка аптечек и подготовка к новым рейсам</li>
             <li>Вид от первого лица и визуальный стиль Roblox</li>
         </ul>
+
+        <div class="screenshots">
+            <img src="../images/DeadRiver/DeadRiver_01.png" alt="Скриншот Обби и Река Смерти 1" loading="lazy" decoding="async" width="2551" height="1161">
+            <img src="../images/DeadRiver/DeadRiver_02.png" alt="Скриншот Обби и Река Смерти 2" loading="lazy" decoding="async" width="2555" height="1270">
+            <img src="../images/DeadRiver/DeadRiver_03.jpg" alt="Скриншот Обби и Река Смерти 3" loading="lazy" decoding="async" width="2312" height="1173">
+            <img src="../images/DeadRiver/DeadRiver_04.jpg" alt="Скриншот Обби и Река Смерти 4" loading="lazy" decoding="async" width="2316" height="1167">
+        </div>
         <div class="menu-return-bottom">
             <a href="../index.html">Вернуться в главное меню</a>
         </div>
-        <div class="screenshots">
-            <img src="../images/DeadRiver/DeadRiver_01.png" alt="Скриншот Обби и Река Смерти 1">
-            <img src="../images/DeadRiver/DeadRiver_02.png" alt="Скриншот Обби и Река Смерти 2">
-            <img src="../images/DeadRiver/DeadRiver_03.jpg" alt="Скриншот Обби и Река Смерти 3">
-            <img src="../images/DeadRiver/DeadRiver_04.jpg" alt="Скриншот Обби и Река Смерти 4">
-        </div>
-    </div>
+    </main>
 <script>
 (() => {
     const screenshots = document.querySelector('.screenshots');
@@ -389,7 +407,7 @@
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';
     modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот">';
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот" loading="lazy" decoding="async">';
 
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.lightbox-close');
@@ -439,6 +457,7 @@
     document.body.appendChild(modal);
 })();
 </script>
+    <script src="../assets/project-enhancements.js" defer></script>
 </body>
 </html>
 

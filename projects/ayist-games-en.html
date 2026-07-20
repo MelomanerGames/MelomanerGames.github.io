@@ -1,12 +1,27 @@
-<!-- File: projects/ayist-games.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ayist Games case study by Roman Abashin: role, responsibilities, tools, production contribution, and project materials.">
+    <meta name="theme-color" content="#111111">
+    <link rel="canonical" href="https://melomanergames.github.io/projects/ayist-games-en.html">
+    <link rel="alternate" hreflang="ru" href="https://melomanergames.github.io/projects/ayist-games.html">
+    <link rel="alternate" hreflang="en" href="https://melomanergames.github.io/projects/ayist-games-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://melomanergames.github.io/projects/ayist-games.html">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ayist Games — Roman Abashin">
+    <meta property="og:description" content="Ayist Games case study by Roman Abashin: role, responsibilities, tools, production contribution, and project materials.">
+    <meta property="og:url" content="https://melomanergames.github.io/projects/ayist-games-en.html">
+    <meta property="og:image" content="https://melomanergames.github.io/assets/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Ayist Games","url":"https://melomanergames.github.io/projects/ayist-games-en.html","author":{"@type":"Person","name":"Roman Abashin","url":"https://melomanergames.github.io/index-en.html"}}</script>
     <title>Ayist Games — Roman Abashin</title>
     <style>
-        /* same style */
+
 
         * {
             margin: 0;
@@ -253,7 +268,7 @@
                 border: 1px solid #222;
                 border-radius: 4px;
             }
-    
+
 
         @media (max-width: 780px) {
             header {
@@ -376,12 +391,14 @@
             text-decoration: none;
         }
     </style>
+    <link rel="stylesheet" href="../assets/project-enhancements.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to case study</a>
         <div class="lang-switch"><a href="ayist-games.html" aria-label="Switch to Russian version"><span class="flag-icon flag-ru" aria-hidden="true"></span><span>RU</span></a></div>
     <header><a href="../index-en.html">Back to main menu</a></header>
     <div class="hero"></div>
-    <div class="content">
+    <main id="main" class="content">
         <h1>Ayist Games</h1>
         <p>Worked on the visual novel <strong>Novels</strong> and the new project <strong>DreamChat</strong>. Responsibilities included production workflows, task management, monetization, analytics, and content scripting.</p>
         <ul>
@@ -433,14 +450,15 @@
         <ul>
             <li>Contributed to community workflows and player communication support.</li>
         </ul>
+
+        <div class="screenshots">
+            <img src="../images/ayist-games/ayist1.jpg" alt="Screenshot Ayist Games 1" loading="lazy" decoding="async" width="711" height="1240">
+            <img src="../images/ayist-games/ayist2.jpg" alt="Screenshot Ayist Games 2" loading="lazy" decoding="async" width="720" height="1600">
+        </div>
         <div class="menu-return-bottom">
             <a href="../index-en.html">Back to main menu</a>
         </div>
-        <div class="screenshots">
-            <img src="../images/ayist-games/ayist1.jpg" alt="Screenshot Ayist Games 1">
-            <img src="../images/ayist-games/ayist2.jpg" alt="Screenshot Ayist Games 2">
-        </div>
-    </div>
+    </main>
 <script>
 (() => {
     const screenshots = document.querySelector('.screenshots');
@@ -452,7 +470,7 @@
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';
     modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">\u00d7</button><img alt="Enlarged screenshot">';
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">\u00d7</button><img alt="Enlarged screenshot" loading="lazy" decoding="async">';
 
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.lightbox-close');
@@ -502,6 +520,7 @@
     document.body.appendChild(modal);
 })();
 </script>
+    <script src="../assets/project-enhancements.js" defer></script>
 </body>
 </html>
 

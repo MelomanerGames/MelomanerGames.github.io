@@ -1,9 +1,24 @@
-<!-- File: projects/uga-dooga.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Кейс Uga Dooga в портфолио Романа Абашина: роль, задачи, инструменты, вклад в производство и материалы проекта.">
+    <meta name="theme-color" content="#111111">
+    <link rel="canonical" href="https://melomanergames.github.io/projects/uga-dooga.html">
+    <link rel="alternate" hreflang="ru" href="https://melomanergames.github.io/projects/uga-dooga.html">
+    <link rel="alternate" hreflang="en" href="https://melomanergames.github.io/projects/uga-dooga-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://melomanergames.github.io/projects/uga-dooga.html">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Uga Dooga — Roman Abashin">
+    <meta property="og:description" content="Кейс Uga Dooga в портфолио Романа Абашина: роль, задачи, инструменты, вклад в производство и материалы проекта.">
+    <meta property="og:url" content="https://melomanergames.github.io/projects/uga-dooga.html">
+    <meta property="og:image" content="https://melomanergames.github.io/assets/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Uga Dooga","url":"https://melomanergames.github.io/projects/uga-dooga.html","author":{"@type":"Person","name":"Роман Абашин","url":"https://melomanergames.github.io/"}}</script>
     <title>Uga Dooga — Роман Абашин</title>
     <style>
         * {
@@ -251,7 +266,7 @@
                 border: 1px solid #222;
                 border-radius: 4px;
             }
-    
+
 
         @media (max-width: 780px) {
             header {
@@ -374,12 +389,14 @@
             text-decoration: none;
         }
     </style>
+    <link rel="stylesheet" href="../assets/project-enhancements.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Перейти к кейсу</a>
     <div class="lang-switch"><a href="uga-dooga-en.html" aria-label="Switch to English version"><span class="flag-icon flag-us" aria-hidden="true"></span><span>EN</span></a></div>
     <header><a href="../index.html">Вернуться в главное меню</a></header>
     <div class="hero"></div>
-    <div class="content">
+    <main id="main" class="content">
         <h1>Uga Dooga</h1>
         <p>В Uga Dooga я совмещаю несколько продуктовых ролей: <strong>Project Manager / Producer</strong>, <strong>QA</strong>, <strong>Аналитик</strong> и <strong>Гейм-дизайнер</strong>. Основной фокус работы: стабильный релизный процесс, рост продуктовых метрик и развитие игр на основе данных, а не интуитивных решений.</p>
         <ul>
@@ -438,18 +455,19 @@
             <li><a href="https://play.google.com/store/apps/details?id=com.minesweeper.classic.ud.go" target="_blank" rel="noopener noreferrer">Сапер GG: классический (Minesweeper GG)</a></li>
         </ul>
         <p class="note">Часть игр в Google Play доступна под англоязычными названиями.</p>
+
+        <div class="screenshots">
+            <img src="../images/UgaDooga/uga-dooga-1.jpg" alt="Скриншот Uga Dooga 1" loading="lazy" decoding="async" width="1479" height="731">
+            <img src="../images/UgaDooga/uga-dooga-2.jpg" alt="Скриншот Uga Dooga 2" loading="lazy" decoding="async" width="1420" height="912">
+            <img src="../images/UgaDooga/uga-dooga-3.png" alt="Скриншот Uga Dooga 3" loading="lazy" decoding="async" width="1415" height="1063">
+            <img src="../images/UgaDooga/uga-dooga-4.png" alt="Скриншот Uga Dooga 4" loading="lazy" decoding="async" width="1337" height="866">
+            <img src="../images/UgaDooga/uga-dooga-5.png" alt="Скриншот Uga Dooga 5" loading="lazy" decoding="async" width="1564" height="1100">
+            <img src="../images/UgaDooga/uga-dooga-6.png" alt="Скриншот Uga Dooga 6" loading="lazy" decoding="async" width="1238" height="1111">
+        </div>
         <div class="menu-return-bottom">
             <a href="../index.html">Вернуться в главное меню</a>
         </div>
-        <div class="screenshots">
-            <img src="../images/UgaDooga/uga-dooga-1.jpg" alt="Скриншот Uga Dooga 1">
-            <img src="../images/UgaDooga/uga-dooga-2.jpg" alt="Скриншот Uga Dooga 2">
-            <img src="../images/UgaDooga/uga-dooga-3.png" alt="Скриншот Uga Dooga 3">
-            <img src="../images/UgaDooga/uga-dooga-4.png" alt="Скриншот Uga Dooga 4">
-            <img src="../images/UgaDooga/uga-dooga-5.png" alt="Скриншот Uga Dooga 5">
-            <img src="../images/UgaDooga/uga-dooga-6.png" alt="Скриншот Uga Dooga 6">
-        </div>
-    </div>
+    </main>
 <script>
 (() => {
     const screenshots = document.querySelector('.screenshots');
@@ -461,7 +479,7 @@
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';
     modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот">';
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот" loading="lazy" decoding="async">';
 
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.lightbox-close');
@@ -511,6 +529,7 @@
     document.body.appendChild(modal);
 })();
 </script>
+    <script src="../assets/project-enhancements.js" defer></script>
 </body>
 </html>
 

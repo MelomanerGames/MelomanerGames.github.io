@@ -1,12 +1,27 @@
-<!-- File: projects/crossword-puzzle.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crossword Puzzle case study by Roman Abashin: role, responsibilities, tools, production contribution, and project materials.">
+    <meta name="theme-color" content="#111111">
+    <link rel="canonical" href="https://melomanergames.github.io/projects/crossword-puzzle-en.html">
+    <link rel="alternate" hreflang="ru" href="https://melomanergames.github.io/projects/crossword-puzzle.html">
+    <link rel="alternate" hreflang="en" href="https://melomanergames.github.io/projects/crossword-puzzle-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://melomanergames.github.io/projects/crossword-puzzle.html">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Crossword Puzzle — Roman Abashin">
+    <meta property="og:description" content="Crossword Puzzle case study by Roman Abashin: role, responsibilities, tools, production contribution, and project materials.">
+    <meta property="og:url" content="https://melomanergames.github.io/projects/crossword-puzzle-en.html">
+    <meta property="og:image" content="https://melomanergames.github.io/assets/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Crossword Puzzle","url":"https://melomanergames.github.io/projects/crossword-puzzle-en.html","author":{"@type":"Person","name":"Roman Abashin","url":"https://melomanergames.github.io/index-en.html"}}</script>
     <title>Crossword Puzzle — Roman Abashin</title>
     <style>
-        /* shared style */
+
 
         * {
             margin: 0;
@@ -216,7 +231,7 @@
                 border: 1px solid #222;
                 border-radius: 4px;
             }
-    
+
 
         @media (max-width: 780px) {
             header {
@@ -339,12 +354,14 @@
             text-decoration: none;
         }
     </style>
+    <link rel="stylesheet" href="../assets/project-enhancements.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to case study</a>
         <div class="lang-switch"><a href="crossword-puzzle.html" aria-label="Switch to Russian version"><span class="flag-icon flag-ru" aria-hidden="true"></span><span>RU</span></a></div>
     <header><a href="../index-en.html">Back to main menu</a></header>
     <div class="hero"></div>
-    <div class="content">
+    <main id="main" class="content">
         <h1>Crossword Puzzle</h1>
         <p>Built a crossword puzzle with a full cycle from prototype to release.</p>
         <ul>
@@ -353,14 +370,15 @@
             <li><strong>Link:</strong> <a href="https://melomanergames.itch.io/crossword-puzzle" target="_blank" rel="noopener noreferrer">itch.io</a></li>
             <li><strong>Tasks:</strong> level design, programming, and publishing</li>
         </ul>
+
+        <div class="screenshots">
+            <img src="../images/crossword-puzzle/cw1.jpg" alt="Screenshot Crossword Puzzle 1" loading="lazy" decoding="async" width="1908" height="1058">
+            <img src="../images/crossword-puzzle/cw2.jpg" alt="Screenshot Crossword Puzzle 2" loading="lazy" decoding="async" width="710" height="1280">
+        </div>
         <div class="menu-return-bottom">
             <a href="../index-en.html">Back to main menu</a>
         </div>
-        <div class="screenshots">
-            <img src="../images/crossword-puzzle/cw1.jpg" alt="Screenshot Crossword Puzzle 1">
-            <img src="../images/crossword-puzzle/cw2.jpg" alt="Screenshot Crossword Puzzle 2">
-        </div>
-    </div>
+    </main>
 <script>
 (() => {
     const screenshots = document.querySelector('.screenshots');
@@ -372,7 +390,7 @@
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';
     modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">\u00d7</button><img alt="Enlarged screenshot">';
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close">\u00d7</button><img alt="Enlarged screenshot" loading="lazy" decoding="async">';
 
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.lightbox-close');
@@ -422,6 +440,7 @@
     document.body.appendChild(modal);
 })();
 </script>
+    <script src="../assets/project-enhancements.js" defer></script>
 </body>
 </html>
 

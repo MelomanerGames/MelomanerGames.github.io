@@ -1,9 +1,24 @@
-<!-- File: projects/downhill-racers.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Кейс Downhill Racers в портфолио Романа Абашина: роль, задачи, инструменты, вклад в производство и материалы проекта.">
+    <meta name="theme-color" content="#111111">
+    <link rel="canonical" href="https://melomanergames.github.io/projects/downhill-racers.html">
+    <link rel="alternate" hreflang="ru" href="https://melomanergames.github.io/projects/downhill-racers.html">
+    <link rel="alternate" hreflang="en" href="https://melomanergames.github.io/projects/downhill-racers-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://melomanergames.github.io/projects/downhill-racers.html">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Downhill Racers — Roman Abashin">
+    <meta property="og:description" content="Кейс Downhill Racers в портфолио Романа Абашина: роль, задачи, инструменты, вклад в производство и материалы проекта.">
+    <meta property="og:url" content="https://melomanergames.github.io/projects/downhill-racers.html">
+    <meta property="og:image" content="https://melomanergames.github.io/assets/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Downhill Racers","url":"https://melomanergames.github.io/projects/downhill-racers.html","author":{"@type":"Person","name":"Роман Абашин","url":"https://melomanergames.github.io/"}}</script>
     <title>Downhill Racers — Роман Абашин</title>
     <style>
         * {
@@ -210,7 +225,7 @@
                 border: 1px solid #333;
                 border-radius: 4px
             }
-    
+
 
         @media (max-width: 780px) {
             header {
@@ -333,12 +348,14 @@
             text-decoration: none;
         }
     </style>
+    <link rel="stylesheet" href="../assets/project-enhancements.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Перейти к кейсу</a>
     <div class="lang-switch"><a href="downhill-racers-en.html" aria-label="Switch to English version"><span class="flag-icon flag-us" aria-hidden="true"></span><span>EN</span></a></div>
     <header><a href="../index.html">Вернуться в главное меню</a></header>
     <div class="hero"></div>
-    <div class="content">
+    <main id="main" class="content">
         <h1>Downhill Racers</h1>
         <p><strong>Статус:</strong> Была в релизе на Яндекс Играх (снята)</p>
         <ul>
@@ -346,14 +363,15 @@
             <li><strong>Фича:</strong> Тюнинг машин, внутриигровые покупки, лидерборд</li>
             <li><strong>Интеграция:</strong> SDK аналитики и рекламы</li>
         </ul>
+
+        <div class="screenshots">
+            <img src="../images/downhill-racers/down1.jpg" alt="Скриншот Downhill Racers 1" loading="lazy" decoding="async" width="1280" height="720">
+            <img src="../images/downhill-racers/down2.jpg" alt="Скриншот Downhill Racers 2" loading="lazy" decoding="async" width="1280" height="720">
+        </div>
         <div class="menu-return-bottom">
             <a href="../index.html">Вернуться в главное меню</a>
         </div>
-        <div class="screenshots">
-            <img src="../images/downhill-racers/down1.jpg" alt="Скриншот Downhill Racers 1">
-            <img src="../images/downhill-racers/down2.jpg" alt="Скриншот Downhill Racers 2">
-        </div>
-    </div>
+    </main>
 <script>
 (() => {
     const screenshots = document.querySelector('.screenshots');
@@ -365,7 +383,7 @@
     const modal = document.createElement('div');
     modal.className = 'lightbox-modal';
     modal.setAttribute('aria-hidden', 'true');
-    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот">';
+    modal.innerHTML = '<button class="lightbox-close" type="button" aria-label="Закрыть">\u00d7</button><img alt="Увеличенный скриншот" loading="lazy" decoding="async">';
 
     const modalImg = modal.querySelector('img');
     const closeBtn = modal.querySelector('.lightbox-close');
@@ -415,6 +433,7 @@
     document.body.appendChild(modal);
 })();
 </script>
+    <script src="../assets/project-enhancements.js" defer></script>
 </body>
 </html>
 
