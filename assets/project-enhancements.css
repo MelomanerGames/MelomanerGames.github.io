@@ -235,6 +235,46 @@ main.content {
     color: var(--case-text);
 }
 
+.content .project-summary p {
+    color: inherit;
+    margin: 0 0 1rem;
+    font-size: inherit;
+}
+
+.content .project-summary p:last-child {
+    margin-bottom: 0;
+}
+
+.project-overview > :only-child {
+    grid-column: 1 / -1;
+}
+
+.case-contents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+}
+
+.case-contents a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    border: 1px solid var(--case-line);
+    border-radius: 999px;
+    padding: 0.5rem 0.9rem;
+    background: var(--case-surface);
+    color: var(--case-muted);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+.case-contents a:hover {
+    color: var(--case-accent-strong);
+    background: var(--case-surface-strong);
+}
+
 .content .project-facts {
     display: grid;
     align-content: center;
@@ -684,6 +724,7 @@ header a:active,
 @media print {
     .lang-switch,
     .case-progress,
+    .case-contents,
     .zoom-btn,
     .lightbox-modal,
     .gallery-heading p {

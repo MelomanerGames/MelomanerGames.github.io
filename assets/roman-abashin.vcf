@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N;CHARSET=UTF-8:Абашин;Роман;;;
+FN;CHARSET=UTF-8:Роман Абашин
+NICKNAME:MelomanerGames
+TITLE:Game Producer / Product Game Designer
+EMAIL;TYPE=INTERNET:melomanergames@gmail.com
+URL:https://melomanergames.github.io/
+X-SOCIALPROFILE;TYPE=telegram:https://t.me/MelomanerL
+NOTE:Telegram: @MelomanerL
+END:VCARD

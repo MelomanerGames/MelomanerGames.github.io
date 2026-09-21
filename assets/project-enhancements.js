@@ -20,18 +20,25 @@
         kicker.textContent = isEnglish ? 'Game project · Case study' : 'Игровой проект · Кейс';
         heading.before(kicker);
 
-        const firstParagraph = heading.nextElementSibling?.matches('p') ? heading.nextElementSibling : null;
-        const firstList = firstParagraph?.nextElementSibling?.matches('ul') ? firstParagraph.nextElementSibling : null;
+        const paragraphs = [];
+        let intro = heading.nextElementSibling;
+        while (intro?.matches('p')) {
+            paragraphs.push(intro);
+            intro = intro.nextElementSibling;
+        }
+        const firstList = intro?.matches('ul') ? intro : null;
 
-        if (firstParagraph || firstList) {
+        if (paragraphs.length || firstList) {
             const overview = document.createElement('section');
             overview.className = 'project-overview';
             overview.setAttribute('aria-label', isEnglish ? 'Project overview' : 'Обзор проекта');
             heading.after(overview);
 
-            if (firstParagraph) {
-                firstParagraph.classList.add('project-summary');
-                overview.appendChild(firstParagraph);
+            if (paragraphs.length) {
+                const summary = document.createElement('div');
+                summary.className = 'project-summary';
+                summary.append(...paragraphs);
+                overview.appendChild(summary);
             }
             if (firstList) {
                 firstList.classList.add('project-facts');
@@ -41,11 +48,12 @@
     }
 
     const sectionHeadings = Array.from(content.querySelectorAll(':scope > h2'));
-    sectionHeadings.forEach((sectionHeading) => {
+    sectionHeadings.forEach((sectionHeading, index) => {
         const section = document.createElement('section');
         section.className = 'project-section';
         sectionHeading.before(section);
         section.appendChild(sectionHeading);
+        if (!sectionHeading.id) sectionHeading.id = `case-section-${index + 1}`;
 
         while (section.nextElementSibling) {
             const next = section.nextElementSibling;
@@ -53,6 +61,19 @@
             section.appendChild(next);
         }
     });
+
+    if (sectionHeadings.length >= 2) {
+        const contents = document.createElement('nav');
+        contents.className = 'case-contents';
+        contents.setAttribute('aria-label', isEnglish ? 'Case study sections' : 'Разделы кейса');
+        sectionHeadings.forEach((sectionHeading) => {
+            const link = document.createElement('a');
+            link.href = `#${sectionHeading.id}`;
+            link.textContent = sectionHeading.textContent;
+            contents.appendChild(link);
+        });
+        content.querySelector('.project-section').before(contents);
+    }
 
     const screenshots = content.querySelector(':scope > .screenshots');
     if (screenshots) {
@@ -63,9 +84,12 @@
 
         const galleryHeading = document.createElement('div');
         galleryHeading.className = 'gallery-heading';
+        const imageWord = isEnglish
+            ? (images.length === 1 ? 'image' : 'images')
+            : ({ one: 'изображение', few: 'изображения', many: 'изображений', other: 'изображения' })[new Intl.PluralRules('ru').select(images.length)];
         galleryHeading.innerHTML = `
             <h2 id="project-gallery-title">${isEnglish ? 'Project gallery' : 'Галерея проекта'}</h2>
-            <p>${isEnglish ? `${images.length} images · click to enlarge` : `${images.length} изображений · нажмите, чтобы увеличить`}</p>`;
+            <p>${images.length} ${imageWord} · ${isEnglish ? 'click to enlarge' : 'нажмите, чтобы увеличить'}</p>`;
 
         screenshots.before(gallery);
         gallery.append(galleryHeading, screenshots);
@@ -122,6 +146,7 @@
             previous.addEventListener('click', () => showRelativeImage(-1));
             next.addEventListener('click', () => showRelativeImage(1));
             modal.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') event.preventDefault();
                 if (event.key === 'ArrowLeft') showRelativeImage(-1);
                 if (event.key === 'ArrowRight') showRelativeImage(1);
             });

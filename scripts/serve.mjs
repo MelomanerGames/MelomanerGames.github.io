@@ -13,6 +13,8 @@ const types = {
     '.js': 'text/javascript; charset=utf-8',
     '.json': 'application/json; charset=utf-8',
     '.png': 'image/png',
+    '.pdf': 'application/pdf',
+    '.vcf': 'text/vcard; charset=utf-8',
     '.svg': 'image/svg+xml',
     '.txt': 'text/plain; charset=utf-8',
     '.webmanifest': 'application/manifest+json',

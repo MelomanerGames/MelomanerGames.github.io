@@ -39,10 +39,35 @@ for (const filePath of htmlFiles) {
 
     for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/gi)) {
         const reference = match[1];
+        if (reference.startsWith('#') && reference.length > 1 && !ids.includes(reference.slice(1))) {
+            errors.push(`${relativeFile}: missing anchor target ${reference}`);
+        }
         if (/^(?:https?:|mailto:|tel:|#|data:|javascript:)/i.test(reference)) continue;
         const cleanReference = decodeURIComponent(reference.split(/[?#]/)[0]);
         const target = path.resolve(path.dirname(filePath), cleanReference.replaceAll('/', path.sep));
         if (!existsSync(target)) errors.push(`${relativeFile}: missing internal reference ${reference}`);
+    }
+
+    if (!relativeFile.startsWith('projects/')) {
+        const linkedProjects = new Set([...html.matchAll(/href=["'](projects\/[^"'#?]+\.html)["']/gi)]
+            .map((match) => match[1]));
+        const isEnglish = relativeFile === 'index-en.html';
+        const expectedProjects = htmlFiles.filter((file) => path.dirname(file) === path.join(rootDir, 'projects')
+            && path.basename(file).endsWith('-en.html') === isEnglish);
+        for (const project of expectedProjects) {
+            if (!linkedProjects.has(`projects/${path.basename(project)}`)) {
+                errors.push(`${relativeFile}: project missing from homepage ${path.basename(project)}`);
+            }
+        }
+        const cardSuffix = isEnglish ? '-en' : '';
+        const cardImage = `assets/roman-abashin-card${cardSuffix}.png`;
+        if (!html.includes(`class="pass-preview" href="${cardImage}"`)
+            || !html.includes(`<img src="${cardImage}"`)) {
+            errors.push(`${relativeFile}: business card preview has the wrong language`);
+        }
+        for (const asset of [cardImage, `assets/roman-abashin${cardSuffix}.vcf`, `assets/portfolio-qr${cardSuffix}.svg`, `output/pdf/roman-abashin-card${cardSuffix}.pdf`]) {
+            if (!html.includes(`href="${asset}"`)) errors.push(`${relativeFile}: missing business card download ${asset}`);
+        }
     }
 
     for (const match of html.matchAll(/<img\b[^>]*>/gi)) {

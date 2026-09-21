@@ -247,6 +247,72 @@ body > .site-footer {
     color: var(--text);
 }
 
+.experience-row h3 a {
+    text-decoration: none;
+    text-underline-offset: 0.25em;
+}
+
+.experience-row h3 a::after {
+    content: " ↗";
+    color: var(--accent-strong);
+    font-size: 0.8em;
+}
+
+.experience-row h3 a:hover {
+    color: var(--accent-strong);
+    text-decoration: underline;
+}
+
+.portfolio-pass {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+    margin-top: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: clamp(1rem, 3vw, 2rem);
+    background: var(--surface-soft);
+}
+
+.pass-preview {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.pass-preview:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.portfolio-pass h3 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.03em;
+}
+
+.portfolio-pass p:not(.eyebrow) {
+    color: var(--muted);
+}
+
+.pass-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+}
+
+.pass-downloads a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--accent-strong);
+    text-underline-offset: 0.25em;
+}
+
 .lang-link {
     border: 1px solid var(--line);
     color: var(--accent-strong);
@@ -1142,11 +1208,40 @@ body > .site-footer {
 
     .nav {
         min-height: 58px;
-        gap: 0.65rem;
+        flex-wrap: wrap;
+        gap: 0;
+        padding-top: 0.35rem;
     }
 
-    .nav-links a:not(.lang-link) {
-        display: none;
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        margin: 0;
+        padding-block: 0.25rem;
+    }
+
+    .nav-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding-inline: 0.45rem;
+        font-size: 0.8rem;
+    }
+
+    .lang-link {
+        margin-left: auto;
+        min-height: 40px;
+    }
+
+    .section,
+    .hero {
+        scroll-margin-top: 112px;
+    }
+
+    .portfolio-pass {
+        grid-template-columns: 1fr;
     }
 
     .hero {
@@ -1260,6 +1355,7 @@ body > .site-footer {
     .game-world,
     .hero-actions,
     .contact-actions,
+    .portfolio-pass,
     .archive,
     .site-footer {
         display: none !important;
